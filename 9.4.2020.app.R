@@ -1,6 +1,3 @@
-#library(shiny)
-#library(rmcorr)
-#library(rlang)
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(shiny, rmcorr, rlang, tidyverse)
