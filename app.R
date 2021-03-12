@@ -376,10 +376,14 @@ server <- function(input, output, session) {
     ##Add code for calculating rmcorr
     code <- reactive({
       glue('## Calculate rmcorr using selected columns
-         my.rmc <- rmcorr(participant = {subColumn},
-           measure1 = {m1Column},
-           measure2 = {m2Column},
-           dataset = inputData)\n\n')
+my.rmc <- rmcorr(participant = {subColumn},
+                 measure1 = {m1Column},
+                 measure2 = {m2Column},
+                 dataset = inputData,
+                 CI.level = {input$CIlevel},
+                 CIs = "{ifelse(input$bootstrap, "bootstrap", "analytic")}",
+                 nreps = {input$bootstrapnreps},
+                 bstrap.out = {input$bootstrapout})\n\n')
     })
     
     return(list(
@@ -430,38 +434,7 @@ server <- function(input, output, session) {
   
   
   
-  # df <- reactive({
-  #   file <- input$file1
-  #   ext <- tools::file_ext(file$datapath)
-  #   
-  #   req(file)
-  #   validate(need(ext == "csv", "Please upload a csv file"))
-  #   
-  #   read.csv(file$datapath, header = input$header)
-  # })
-  # 
-  # 
-  # output$df <- DT::renderDataTable(df())
-  # 
-  # observe({
-  #   choices1 = colnames(df())
-  #   updateSelectInput(session,"subvar", choices =  choices1, selected = choices1[1]) #selected to set default column
-  #   updateSelectInput(session,"xvar",   choices =  choices1, selected = choices1[2])
-  #   updateSelectInput(session,"yvar",   choices =  choices1, selected = choices1[3])
-  # })
-  # 
-  # pal.choices <- eventReactive(input$palette, {(input$palette)})
-  # #observe({updateSelectInput(session, "palette", selected = pal.choices$pal)})
-  # 
-  # data <- eventReactive(input$compute, {
-  #   rmcorr(input$subvar, input$xvar, input$yvar, dataset = df())
-  #   
-  # })
-  # 
-  # # observeEvent(input$legend == FALSE, { returnValue <- "No Legend" }) $tableOut <- if(input$legend == F) Yes
-  # # # observe({updateSelectInput(session, "legend")})
-  # # # output$legend <- reactive(input$legend)
-  # # # renderPrint({output$legend})
+  
   # 
   #Add diag info: Sample size (N) and mean repeated measures (k) with range?
   
@@ -472,7 +445,7 @@ server <- function(input, output, session) {
   
   # Evaluate the code based on the processed data.
   plotFigure <- reactive({
-    plotData <- processedData()$df()
+    plotData <- inputData$inputData()
     my.rmc <- processedData()$rmc()
     eval(parse(text = glue(plotCode())))
   })
@@ -482,10 +455,9 @@ server <- function(input, output, session) {
     # We don't render the plot without inputData.
     req(inputData$name())
     plotFigure()},
-    # height = function(x) input$height,
-    # width = function(x) input$width
-    height = 600,
-    width = 600
+    height = function(x) input$height,
+    width = function(x) input$width
+
   )
   
   

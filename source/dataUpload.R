@@ -14,7 +14,7 @@ dataUpload <- function(input, output, session) {
       return(input$excelFile)
     } else {
       if(input$sampleData) {
-        return(list('name' = 'sampleData',
+        return(list('name' = 'bland1995.csv',
                     'datapath' = 'bland1995.csv'
         ))
       }
@@ -47,12 +47,12 @@ dataUpload <- function(input, output, session) {
     quoteCode <- ifelse(input$quote == '\'', '"{input$quote}"', '\'{input$quote}\'')
     sepCode <- ifelse(input$sep == '\t', '\\t', '{input$sep}')
     glue('## Load the data
-  inputData <- read.delim2("{name()}",
-  header = {input$header},
-  sep = \'', sepCode, '\',
-  quote = ', quoteCode, ',
-  check.names = FALSE,
-  dec = \'{input$decimalPoint}\')\n\n')})
+inputData <- read.delim2("{name()}",
+                          header = {input$header},
+                          sep = \'', sepCode, '\',
+                          quote = ', quoteCode, ',
+                          check.names = FALSE,
+                          dec = \'{input$decimalPoint}\')\n\n')})
   
   return(list(
     inputData = inputData,
