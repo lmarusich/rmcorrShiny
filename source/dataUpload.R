@@ -14,9 +14,18 @@ dataUpload <- function(input, output, session) {
       return(input$excelFile)
     } else {
       if(input$sampleData) {
-        return(list('name' = 'bland1995.csv',
-                    'datapath' = 'bland1995.csv'
-        ))
+        if (input$whichsampleData == 'bland1995'){
+          return(list('name' = 'bland1995.csv',
+                      'datapath' = 'bland1995.csv'))
+        } else if (input$whichsampleData == 'gilden2010'){
+          return(list('name' = 'gilden2010.csv',
+                      'datapath' = 'gilden2010.csv'))
+        } else if (input$whichsampleData == 'raz2005'){
+          return(list('name' = 'raz2005.csv',
+                      'datapath' = 'raz2005.csv'))
+        }
+        
+        
       }
       req(input$excelFile)
     }

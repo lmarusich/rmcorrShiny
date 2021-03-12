@@ -321,9 +321,15 @@ server <- function(input, output, session) {
              bstrap.out = input$bootstrapout)
     })
     
+    n = reactive({
+      length(unique(cleanedData[[subColumn]]))
+    })
+    
     ##Add code for calculating rmcorr
     code <- reactive({
-      glue('## Calculate rmcorr using selected columns
+      glue('## Get sample size
+n <- length(unique(inputData${subColumn}))\n
+## Calculate rmcorr using selected columns
 my.rmc <- rmcorr(participant = {subColumn},
                  measure1 = {m1Column},
                  measure2 = {m2Column},
@@ -337,6 +343,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     return(list(
       rmc = my.rmc,
       df = df,
+      n = n,
       code = code
     ))
   }
@@ -391,6 +398,7 @@ my.rmc <- rmcorr(participant = {subColumn},
   plotFigure <- reactive({
     plotData <- inputData$inputData()
     my.rmc <- processedData()$rmc()
+    n <- processedData()$n()
     eval(parse(text = glue(plotCode())))
   })
   

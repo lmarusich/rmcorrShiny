@@ -88,34 +88,11 @@ scale_shape_identity() + ')
       p <- paste0(p, 'scale_color_simpsons() + scale_fill_simpsons() + ')
     } else {
       ## Color Brewer
-      p <- paste0(p, 'scale_colour_brewer(palette = "{input$plotPalette}") \\
-+ scale_fill_brewer(palette = "{input$plotPalette}") + ')
+      p <- paste0(p, 'scale_colour_manual(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')
     }
   }
 # 
 
-# 
-#   ## Violin Plots
-#   if (input$plotViolins) {
-#     p <- paste0(p, {input$violinType}, '(position = position_nudge(x = {input$violinNudge}, y = 0),
-#              adjust = {input$violinAdjust},', ifelse (input$violinQuantiles && input$violinType == "geom_violin",'
-#              draw_quantiles = c(0.5),',''),'
-#              alpha = {input$violinAlpha},
-#              trim = {input$violinTrim},
-#              scale = "{input$violinScale}") + ')
-#   }
-# 
-#   ## BoxPlots
-#   if (input$boxPlots) {
-#     p <- paste0(p, 'geom_boxplot(aes(x = as.numeric(condition)+ {input$boxplotNudge}, y = value),
-#              notch = {input$boxplotNotch},
-#              width = {input$boxplotWidth},
-#              varwidth = {input$boxplotBoxWidth},
-#              outlier.shape = ', ifelse(input$boxplotOutliers, 16, NA), ',
-#              alpha = {input$boxplotAlpha},
-#              colour = "black",
-#              show.legend = FALSE) + ')
-#   }
 #   ## Mean
 #   if (input$statsMean) {
 #     ## Just the mean

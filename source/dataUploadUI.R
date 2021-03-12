@@ -36,6 +36,21 @@ dataUploadUI <- function(id, label = "File input") {
                                     "Single Quote" = "'"),
                         selected = "")),
     column(12,
-           checkboxInput(ns("sampleData"), "Use sample data", FALSE))
+           checkboxInput(ns("sampleData"), "Use sample data", FALSE)),
+    conditionalPanel(
+      
+      condition = 'input.sampleData == true',
+      ns = ns,
+      column(12,
+             selectInput(ns("whichsampleData"),
+                          label = h5("Sample dataset:"),
+                         choices = list(
+                           "bland1995",
+                           "gilden2010",
+                           "raz2005"
+                         ),
+                          multiple = FALSE))
+ 
+    )
   )
 }
