@@ -212,7 +212,40 @@ ui <- fluidPage(
                                              hr()))
         # column(12,
         #        hr())))),
-      )))
+      ))),
+      column(12,
+             h4("Download the plot")),
+      # downloadPlotUI(id = 'rainCloudDownload',
+      #                label = "Image format",
+      #                buttonLabel = "Download"),
+      column(12,
+             p("Select the image format or download a zip file with all the 
+               images, the script and data used to generate the plot.")),
+      column(6,
+             selectInput("downloadFormat",
+                         label = "Image format",
+                         choices = list(
+                           "Vectorial" = list(
+                             "pdf" = "pdf",
+                             "svg" = "svg",
+                             "eps" = "eps"
+                           ),
+                           "Non-vectorial" = list(
+                             "tiff" = "tiff",
+                             "png" = "png")
+                         ),
+                         selected = "pdf"),
+             downloadButton("downloadPlot", 
+                            label = "Download Image"),
+             br(),
+             br(),
+             downloadButton('downloadZip',
+                            label = 'Download Zip')),
+
+             
+      ## Clearfix
+      tags$div(class = 'clearfix')
+    
     ),
     mainPanel(
       tabsetPanel(type = "tabs",
@@ -514,24 +547,96 @@ my.rmc <- rmcorr(participant = {subColumn},
     req(inputData$name())
     inputData$inputData()
   })
-  # })
   
-  # output$downloadPlot <- downloadHandler(
-  #   filename = function() { paste(input$dataset, '.pdf', sep='') },
-  #   content = function(file) {
-  #     ggsave(file, plot = plotInput(), device = "pdf")
-  #   }
-  # )
-  # 
-  # output$exdf <- DT::renderDataTable({
-  #   get(input$exdata)
-  # })
-  # 
-  # tmp <- tempfile()
-  # onSessionEnded(function(){ unlink(tmp) })
-  # output$documentation <- renderUI({
-  #   Rd2HTML(Rd_fun(input$exdata, keep_section = "\\source"),tmp)
-  #   HTML(read_html(tmp) %>% html_nodes("p")%>% html_text())
-  # })
+  # Download button
+  output$downloadPlot <- downloadHandler(
+    filename = function() {
+      paste(paste('rmcorrPlot-',inputData$name(), sep = ""), 
+            input$downloadFormat, sep = ".")
+    },
+    content = function(file) {
+      if(input$downloadFormat == 'tiff') {
+        ggsave(file,
+               plot = plotFigure(),
+               device = input$downloadFormat,
+               # Width and height are in inches. We increase the dpi to 300, so we
+               # have to divide by 72 (original default pixels per inch) 
+               width = input$width / 72,
+               height = input$height / 72,
+               compression = "lzw",
+               units = "in",
+               dpi = 300)
+      } else {
+        ggsave(file,
+               plot = plotFigure(),
+               device = input$downloadFormat,
+               # Width and height are in inches. We increase the dpi to 300, so we
+               # have to divide by 72 (original default pixels per inch) 
+               width = input$width / 72,
+               height = input$height / 72,
+               units = "in",
+               dpi = 300)
+      }
+    }
+  )
+  
+  # Download zip file with script, data, and plots.
+  output$downloadZip <- downloadHandler(
+    filename = function() {
+      paste0("rmcorrPlot-", inputData$name(), ".zip")
+    },
+    content = function(fname) {
+      fileList <- c()
+      tmpdir <- tempdir()
+      # Copy inputData to tmpDir
+      file.copy(from = c(inputData$datapath()),
+                to = tmpdir)
+      
+      # Move to the tmpDir to work with the tmpFiles
+      setwd(tmpdir)
+      
+      # Change the name of the uploaded file so that the code still works.
+      tmpInputFile <- basename(inputData$datapath())
+      file.rename(from = tmpInputFile,
+                  to = inputData$name())
+      
+      # Code
+      write(scriptCode(), "rmcorrPlot.R")
+      
+      fileList <- c(fileList, inputData$name(), "rmcorrPlot.R")
+      
+      # Create all images (except tiff that is compressed).
+      for (format in c('pdf','svg','eps','png')) {
+        file <- paste(paste0('rmcorrPlot-',inputData$name()),
+                      format, sep = ".")
+        ggsave(file,
+               plot = plotFigure(),
+               device = format,
+               width = input$width / 72,
+               height = input$height / 72,
+               units = "in",
+               dpi = 300)
+        fileList <- c(fileList, file)
+      }
+      
+      # Add compressed .tiff
+      tiffFile <- paste(paste0('rmcorrPlot-',inputData$name()),
+                        'tiff', sep = ".")
+      ggsave(tiffFile,
+             plot = plotFigure(),
+             device = 'tiff',
+             compression = "lzw",
+             width = input$width / 72,
+             height = input$height / 72,
+             units = "in",
+             dpi = 300)
+      fileList <- c(fileList, tiffFile)
+      
+      # And create the zip
+      zip(zipfile=fname, files=fileList)
+    },
+    contentType = "application/zip"
+  )
+
 }
 shinyApp(ui = ui, server = server)
