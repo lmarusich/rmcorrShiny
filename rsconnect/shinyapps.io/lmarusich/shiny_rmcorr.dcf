@@ -1,0 +1,13 @@
+name: shiny_rmcorr
+title: shiny_rmcorr
+username:
+account: lmarusich
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3778364
+bundleId: 4333821
+url: https://lmarusich.shinyapps.io/shiny_rmcorr/
+when: 1615515936.82944
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|3.8.2021.app.R|gilden2010.csv|marusich2016_exp2.csv|raz2005.csv|README.md|sampleData
