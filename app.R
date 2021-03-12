@@ -22,13 +22,11 @@ source("source/paletteColours.R", local = TRUE)
 #remotes::install_github("rstudio/shinymeta")
 #require(shinymeta)
 
-
-
 ui <- fluidPage(
   theme = shinytheme("paper"),
-  # CSS, fixes palette picker (//github.com/gabrifc/raincloud-shiny/issues/12)
-  # tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
-  #            #downloadPlot, #downloadZip {margin-top: 25px}"), 
+  # CSS, fixes palette picker
+  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
+             #downloadPlot, #downloadZip {margin-top: 25px}"),
   
   #Title 
   titlePanel("Repeated Measures Correlation"),
@@ -43,7 +41,7 @@ ui <- fluidPage(
                  tabsetPanel(
                    tabPanel("Input",
                             column(12,hr()),
-                            dataUploadUI("rainCloud", label = "File input")),
+                            dataUploadUI("rmcorr", label = "File input")),
                    tabPanel("Variables",
                             column(12,
                                    uiOutput('DataFilterColumnsUI')) ),
@@ -215,9 +213,6 @@ ui <- fluidPage(
       ))),
       column(12,
              h4("Download the plot")),
-      # downloadPlotUI(id = 'rainCloudDownload',
-      #                label = "Image format",
-      #                buttonLabel = "Download"),
       column(12,
              p("Select the image format or download a zip file with all the 
                images, the script and data used to generate the plot.")),
@@ -267,8 +262,10 @@ ui <- fluidPage(
                                     withSpinner(
                                       tableOutput("bootstrapResamples"))
                                   ))),
-                  tabPanel("Plot",withSpinner(
-                    plotOutput("rainCloudPlot", 
+                  tabPanel("Plot",
+                           br(),
+                           withSpinner(
+                            plotOutput("rmcorrPlot", 
                                height = "auto"))
                     
                   ),
@@ -278,9 +275,9 @@ ui <- fluidPage(
                                   withSpinner(
                                     verbatimTextOutput("rmcorrCode")))),
                   tabPanel("Processed Data",
-                           verbatimTextOutput("rainCloudDataSummary"),
-                           
-                           tableOutput("rainCloudData"))
+                           # verbatimTextOutput("rmcorrDataSummary"),
+                           htmlOutput("rmcorrDataSummary"),
+                           tableOutput("rmcorrData"))
                   ,
                   tabPanel("About",
                            includeHTML("www/about.html"))
@@ -290,100 +287,18 @@ ui <- fluidPage(
   )
 )
 
-#   tabsetPanel(
-#     tabPanel("Explore", fluid = T,
-#              sidebarLayout(
-#                sidebarPanel(
-#                  fileInput("file1", "Choose CSV File", accept = ".csv"),
-#                  checkboxInput("header", "Header", TRUE),
-#                  #also allow them to paste in data?
-#                  
-#                  selectInput("subvar", label = "Subject Variable", choices = NULL),
-#                  selectInput("xvar", label = "x Variable", choices = NULL),
-#                  selectInput("yvar", label = "y Variable", choices = NULL),
-#                  
-#                  #only enable this if three columns are selected?
-#                  actionButton("compute", label = "Compute repeated measures correlation"),
-#                  actionButton("plot", label = "Plot"),
-#                  
-#                  #Move to a better place
-#                  br(),
-#                  br(), 
-#                  br(),
-#                  h4("Plot Options"), 
-#                  checkboxInput("legend", label = "Legend", value = FALSE),
-#                  selectInput("palette",  label = "Color Palette", choices = c("viridis", "parula", "coolwarm", "stepped")),
-#                  
-#                  br(),
-#                  br(),
-#                  helpText("This Shiny app computes and visualizes repeated measures correlation (rmcorr). Rmcorr is the common within-individual linear association for paired, 
-#                     repeated measures data.  Rmcorr is conceptually similar to a null multilevel model: A fixed slope and varying intercept by participant. For details 
-#                     about rmcorr and analyzing repeated measures data see below."),
-#                  helpText(a(href = "http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00456/full", "Journal Article: Bakdash and Marusich (2017)")),
-#                  helpText(a(href = "https://doi.org/10.3389/fpsyg.2019.01201", "Corrigendum to Journal Article (equations): Bakdash and Marusich (2019)")),
-#                  helpText(a(href = "https://cran.r-project.org/web/packages/rmcorr/", "rmcorr R package")), 
-#                  helpText(a(href = "https://doi.org/10.1038/nn.3648", "Journal Article: Aarts et al. (2014), Excellent overview on why repeated measures should be modeled and overview of multilevel modeling")),
-#                  helpText(a(href = "https://github.com/lmarusich/shiny_rmcorr", target="_blank", "Shiny code for this app")),
-#                  
-#                ), 
-#                mainPanel(
-#                  h2("Dataset"),
-#                  DT::dataTableOutput("df"),
-#                  h1("Model Output"),
-#                  uiOutput(outputId = "rmc"),
-#                  h1("Plot"),
-#                  plotOutput("rmcplot"),
-#                  downloadButton('downloadPlot'),
-#                ) 
-#              )
-#     ),
-#     tabPanel("Tutorial", fluid = T,
-#              sidebarLayout(
-#                sidebarPanel(
-#                  selectInput("exdata", label = "Choose example dataset", 
-#                              choices = c("Bland1995" = "bland1995", 
-#                                          "Raz2005" = "raz2005", 
-#                                          "Gilden2010" = "gilden2010")),
-#                  sliderInput("bslider", label = "Between correlation", min = -1, max = 1, step = 0.1,
-#                              value = 0, animate = T),
-#                  sliderInput("wslider", label = "Within correlation", min = -1, max = 1, step = 0.1,
-#                              value = 0, animate = T)
-#                ),
-#                mainPanel(
-#                  h2("Example Dataset"),
-#                  uiOutput("documentation"),
-#                  br(),
-#                  DT::dataTableOutput("exdf")
-#                )
-#              )
-#     )
-#   )
-# )
+
 server <- function(input, output, session) {
   
-  
-  
   # Read the input data.
-  # inputData <- moduleServer("rainCloud", dataUpload)
-  inputData <- callModule(dataUpload,"rainCloud")
+  inputData <- callModule(dataUpload,"rmcorr")
   
   
   # Process the data. This is a reactive depending on the inputData!
   processedData <- reactive({
-    
     req(input$CIlevel)
-    # callModule(dataManipulation,"rainCloud", 
-    #           inputData,
-    #           # input$subColumn,
-    #           input$m1Column,
-    #           input$m2Column,
-    #           input$CIlevel
-    # }
-    
     dataManipulation(input, inputData)
-    
   })
-  
   
   dataManipulation <- function(input, inputData) {
     
@@ -464,11 +379,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     updateTextInput(session, "yAxisTitle", value = input$m2Column)}
   )
   
-  
-  
-  
-  
-  # 
+    # 
   #Add diag info: Sample size (N) and mean repeated measures (k) with range?
   
   #Need warnings for missing data, non-numeric input in X and Y? 
@@ -484,7 +395,7 @@ my.rmc <- rmcorr(participant = {subColumn},
   })
   
   # Render the plot.
-  output$rainCloudPlot <- renderPlot({
+  output$rmcorrPlot <- renderPlot({
     # We don't render the plot without inputData.
     req(inputData$name())
     plotFigure()},
@@ -493,9 +404,7 @@ my.rmc <- rmcorr(participant = {subColumn},
 
   )
   
-  
-  
-  
+ 
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
@@ -536,13 +445,20 @@ my.rmc <- rmcorr(participant = {subColumn},
               {ifelse(processedData()$rmc()$p < .001, 'p < 0.001', paste('p = ',round(processedData()$rmc()$p, digits = 3),sep = ''))}"))
   })
   
-  output$rainCloudDataSummary <- renderPrint({
+  output$rmcorrDataSummary <- renderPrint({
     # We don't render the table without inputData.
     req(inputData$name())
-    summary(processedData()$df())
+    # summary(processedData()$df())
+    HTML(glue("<h5>Sample size:</h5>
+    N = {length(unique(inputData$inputData()[[input$subColumn]]))}
+              <h5>Number of repeated measures (k):</h5>
+              k<sub>avg</sub> = {mean(table(inputData$inputData()[[input$subColumn]]))}<br>
+              k<sub>min</sub> = {min(table(inputData$inputData()[[input$subColumn]]))}<br>
+              k<sub>max</sub> = {max(table(inputData$inputData()[[input$subColumn]]))}
+              <h5>Dataset:</h5>"))
   })
   
-  output$rainCloudData <- renderTable({
+  output$rmcorrData <- renderTable({
     # We don't render the table without inputData.
     req(inputData$name())
     inputData$inputData()
