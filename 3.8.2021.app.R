@@ -19,15 +19,24 @@ source("source/downloadPlot.R",   local = TRUE)
 
 #Items to add:
 #1) Add: Sample size (N) and mean repeated measures (k) with range (min and max)?
-#2) Need warnings for: missing data, non-numeric input in X and Y, and too few palette colors? 
-#3) For reproducibility:  set.seed for bootstrapping?
-#4) Overall fit using data averaged by participant? Output OLS regression  
-#5) Palettes and plots
-#- Set default with enough colors to graph all participants. Sequential only?
-#- Cut off the first color in sequential by default? it's usually too faint to see 
-#- Add download plot button: DONE!
-#6) How to handle p-values that round to zero? Round to p < 0.0001 instead? Add sci notation elsewhere for exact value- Probably not?
-  
+#2) Need warnings for: missing data, non-numeric input in X and Y, and too few palette colors (N/A if ggsci and qual pals are removed)? 
+#3) For reproducibility:  set.seed for bootstrapping? where to put bootstrapped CIs? 
+#4) Palettes and plots
+#a) Set default with enough colors to graph all participants. Drop ggsci and qual palettes? Keep the sequential and brewer palettes that can be extended. 
+#Maybe add coolwarm, viridis, and parula too? https://cran.r-project.org/web/packages/pals/vignettes/pals_examples.html
+#Will pal.bands() have the same prob as qual and ggsci? 
+#b) Cut off the first color in sequential by default or move the start up? The first color is usually too faint to see 
+#c) Add download plot and download zip buttons: DONE!
+#5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
+#6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots
+
+#Jon: I can record a video tutorial and we can embed in Shiny- maybe under about? An interactive tutorial in Shiny would be really challenging to code  
+
+#Pie in the sky items
+#1) Power calculation: Could be an additional panel?
+#2) Additional plot options: Print stats and specify the location where it's printed
+#3) Interactive Tutorial
+
 light <- bs_theme()
 dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 
