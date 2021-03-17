@@ -35,15 +35,6 @@ getLibrariesCode <- function(input) {
   } else {
     librariesUsed <- c(librariesUsed, 'RColorBrewer')
   }
-  # if(input$plotDots && (input$dotColumnType == 'beeswarm')) {
-  #   librariesUsed <- c(librariesUsed, 'ggbeeswarm')
-  # }
-  # if(input$statistics) {
-  #   librariesUsed <- c(librariesUsed, 'ggpubr')
-  # }
-  # if(input$statsMeanErrorBars == 'mean_cl_boot') {
-  #   librariesUsed <- c(librariesUsed, 'Hmisc')
-  # }
 
   librariesCode <- paste(paste0('library("',librariesUsed, '") \n'),
                          collapse = "")

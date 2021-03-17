@@ -3,16 +3,18 @@ dataUploadUI <- function(id, label = "File input") {
   ns <- NS(id)
   
   tagList(
-    column(12,
-           h4("Data Upload"),
+    column(12, #offset = 0, 
+           h5("Data Upload"),
            p("Upload a .txt or .csv file with the different 
                              conditions and values separated by columns."),
            fileInput(ns("excelFile"), 
-                     label = h5(label),
+                     label = h4(label),
                      multiple = FALSE,
                      accept = c("text/csv",
                                 "text/comma-separated-values,text/plain",
-                                ".csv")),
+                                ".csv"),
+                     buttonLabel = "Browse...", #Unnecessary line, it's the default
+                     placeholder = "No file selected"), #Ditto 
            p("If a plot does not directly appear on the right, edit the file details here.")),
     column(6,
            checkboxInput(ns("header"), "Header", TRUE)),

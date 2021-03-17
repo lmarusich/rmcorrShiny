@@ -91,67 +91,7 @@ scale_shape_identity() + ')
       p <- paste0(p, 'scale_colour_manual(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')
     }
   }
-# 
 
-#   ## Mean
-#   if (input$statsMean) {
-#     ## Just the mean
-#     p <- paste0(p, 'stat_summary(fun.ymin = mean,
-#              fun.ymax = mean,
-#              geom = "errorbar",
-#              width = {input$statsMeanWidth},
-#              position = position_nudge(x = {input$statsMeanNudge}, y = 0),
-#              size = {input$statsMeanSize},
-#              color = "black") + ')
-# 
-#     ## Adding error bars to the mean
-#     if (input$statsMeanErrorBars != 'none') {
-#       p <- paste0(p, 'stat_summary(fun.data = {input$statsMeanErrorBars},
-#              geom = "errorbar",
-#              width = {input$statsMeanWidth},
-#              position = position_nudge(x = {input$statsMeanNudge}, y = 0),
-#              size = {input$statsMeanSize},
-#              color = "black") + ')
-#     }
-#   }
-#
-#   ## Things to add:
-#   # ref.group = condition or .all.
-#   # p.adjust.method = "{input$statsPairwiseCorrection}",
-#   # method.args = list(p.adjust.method = "{input$statsPairwiseCorrection}"),
-# 
-#   ## Significance
-#   if (input$statistics) {
-#     if (!is.null(input$statsCombinations)) {
-#       ## Get the Combinations for the pairwise comparisons as text
-#       ## Would be nice to clean and search for something more elegant.
-#       statsPairwiseTestsText <- getSelectedCombinations(input$statsCombinations)
-#       if (input$statsType == 'parametric' && input$statsTtest) {
-#         statsMethods <- 't.test'
-#       } else if (input$statsType == 'nonParametric' && input$statsWilcoxon) {
-#         statsMethods <- 'wilcox.test'
-#       }
-#       ## Double check to prevent 'statsMethods not found'.
-#       if(input$statsTtest || input$statsWilcoxon) {
-#         p <- paste0(p, 'stat_compare_means(aes(label = ',
-#                     ifelse(input$statsLabelFormat == "..p.signif..",
-#                            '{input$statsLabelFormat}',
-#                            'format.pval({input$statsLabelFormat}, digits = {input$statsLabelDigits})'),'),
-#              method = "',statsMethods,'",
-#              comparisons = ',statsPairwiseTestsText,') + ')
-#       }
-#     }
-# 
-#     if (input$statsAnova) {
-#       ## ANOVA
-#       p <- paste0(p, 'stat_compare_means(method = "anova",
-#              label.y = {input$statsLabelY}) + ')
-#     } else if (input$statsKruskal) {
-#       ## Kruskal-Wallis
-#       p <- paste0(p, 'stat_compare_means(label.y = {input$statsLabelY}) + ')
-#     }
-#   }
-# 
   if (input$autoScale == FALSE) {
     p <- paste0(p, 'ylim({input$minScale}, {input$maxScale}) + ')
   }

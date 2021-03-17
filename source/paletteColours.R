@@ -1,4 +1,4 @@
-## Adding RColorBrewer here also becaus 'brewer.pal.info' is required to load
+## Adding RColorBrewer here also becausd 'brewer.pal.info' is required to load
 ## the UI at this moment. Same thing with ggsci
 library("ggsci")
 library("RColorBrewer")

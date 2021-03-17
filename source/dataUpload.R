@@ -59,10 +59,12 @@ dataUpload <- function(input, output, session) {
 inputData <- read.delim2("{name()}",
                           header = {input$header},
                           sep = \'', sepCode, '\',
-                          quote = ', quoteCode, ',
+                          quote = ', quoteCode, ', 
                           check.names = FALSE,
                           dec = \'{input$decimalPoint}\')\n\n')})
   
+  name2 <- paste0("     ", " 'eval(name)' ") 
+  #inputData.formatted <- c('\t', (inputData))
   return(list(
     inputData = inputData,
     conditions = conditions,
