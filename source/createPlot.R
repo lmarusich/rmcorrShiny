@@ -86,6 +86,23 @@ scale_shape_identity() + ')
       p <- paste0(p, 'scale_color_rickandmorty() + scale_fill_rickandmorty() + ')
     } else if (input$plotPalette == "The Simpsons") {
       p <- paste0(p, 'scale_color_simpsons() + scale_fill_simpsons() + ')
+      
+      #New palettes from pals 
+    } else if (input$plotPalette == "coolwarm") {
+      p <- paste0(p, 'scale_fill_manual(values = coolwarm(maxcolors)) + ')
+    } else if (input$plotPalette == "parula") {
+      p <- paste0(p, 'scale_fill_manual(values = parula(maxcolors)) + ')
+    } else if (input$plotPalette == "ocean.haline") {
+      p <- paste0(p, 'scale_fill_manual(values = ocean.haline(maxcolors)) + ')
+    } else if (input$plotPalette == "cubicl") {
+      p <- paste0(p, 'scale_fill_manual(values = cubicl(maxcolors)) + ')    
+    } else if (input$plotPalette == "kovesi.rainbow") {
+      p <- paste0(p, 'scale_fill_manual(values = kovesi.rainbow(maxcolors)) + ')   
+    } else if (input$plotPalette == "ocean.phase") {
+      p <- paste0(p, 'scale_fill_manual(values = ocean.phase(maxcolors)) + ')   
+    } else if (input$plotPalette == "viridis") {
+      p <- paste0(p, 'scale_fill_manual(values = viridis(maxcolors)) + ')   
+
     } else {
       ## Color Brewer
       p <- paste0(p, 'scale_colour_manual(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')

@@ -1,7 +1,8 @@
-## Adding RColorBrewer here also becausd 'brewer.pal.info' is required to load
+## Adding RColorBrewer here also because 'brewer.pal.info' is required to load
 ## the UI at this moment. Same thing with ggsci
 library("ggsci")
 library("RColorBrewer")
+library("pals")
 
 # For the palette UI
 library("shinyWidgets")
@@ -16,13 +17,29 @@ colors_pal <- lapply(
   FUN = rownames
 )
 
-# GSEA doesn't work right now.
+colors_pal <- colors_pal[-2] #Drop Qualitative, second list element
 
-colors_pal$Scientific <- c('NPG', 'AAAS', 'NEJM','Lancet', 'JAMA', 'JCO',
-                           'UCSCGB', 'LocusZoom', 'IGV', 'UChicago', 
-                           'UChicago Light', 'UChicago Dark', 'Star Trek',
-                           'Tron Legacy', 'Futurama', 'Rick and Morty', 
-                           'The Simpsons')
+#Removing sci colors too 
+# GSEA doesn't work right now.
+# # 
+#   colors_pal$Scientific <- c('NPG', 'AAAS', 'NEJM','Lancet', 'JAMA', 'JCO',
+#                              'UCSCGB', 'LocusZoom', 'IGV', 'UChicago', 
+#                              'UChicago Light', 'UChicago Dark', 'Star Trek',
+#                              'Tron Legacy', 'Futurama', 'Rick and Morty', 
+#                              'The Simpsons')
+
+#Needs to be reactive, maxcolors is updated after data are loaded? 
+#maxcolors <- unique(subColumn)
+#Temp hard coding with large N
+#I set max colors in createPlot.R for Pals_Recommended too 
+maxcolors <- 100
+
+#Color palettes from pals
+#pal.bands(coolwarm, parula, ocean.haline, brewer.blues, cubicl, kovesi.rainbow, ocean.phase, viridis, n = 100) 
+colors_pal$Pals_Recommended <- c('coolwarm', 'parula', 'ocean.haline', 
+                                 'cubicl', 'kovesi.rainbow', 'ocean.phase', 'viridis')
+
+
 
 # Get all colors given a palette name(s)
 get_brewer_name <- function(name) {
@@ -36,27 +53,38 @@ get_brewer_name <- function(name) {
   unlist(res)
 }
 
+# rownames(brewer.pal.info)
+# rownames(colors_pal)
+
 background_pals <- sapply(unlist(colors_pal, use.names = FALSE), 
                           get_brewer_name)
-background_pals$NPG <- pal_npg()(10)
-background_pals$AAAS <- pal_aaas()(10)
-background_pals$NEJM <- pal_nejm()(8)
-background_pals$Lancet <- pal_lancet()(9)
-background_pals$JAMA <- pal_jama()(7)
-background_pals$JCO <- pal_jco()(10)
-background_pals$UCSCGB <- pal_ucscgb()(10)
-background_pals$LocusZoom <- pal_locuszoom()(7)
-background_pals$IGV <- pal_igv()(10)
-background_pals$UChicago <- pal_uchicago()(9)
-background_pals$`UChicago Light` <- pal_uchicago("light")(9)
-background_pals$`UChicago Dark` <- pal_uchicago("dark")(9)
-background_pals$`Star Trek` <- pal_startrek()(7)
-background_pals$`Tron Legacy` <- pal_tron()(7)
-background_pals$Futurama <- pal_futurama()(12)
-background_pals$`Rick and Morty` <- pal_rickandmorty()(12)
-background_pals$`The Simpsons` <- pal_simpsons()(16)
-#background_pals$GSEA <- pal_gsea()(12)
 
+ # background_pals$NPG <- pal_npg()(10)
+ # background_pals$AAAS <- pal_aaas()(10)
+ # background_pals$NEJM <- pal_nejm()(8)
+ # background_pals$Lancet <- pal_lancet()(9)
+ # background_pals$JAMA <- pal_jama()(7)
+ # background_pals$JCO <- pal_jco()(10)
+ # background_pals$UCSCGB <- pal_ucscgb()(10)
+ # background_pals$LocusZoom <- pal_locuszoom()(7)
+ # background_pals$IGV <- pal_igv()(10)
+ # background_pals$UChicago <- pal_uchicago()(9)
+ # background_pals$`UChicago Light` <- pal_uchicago("light")(9)
+ # background_pals$`UChicago Dark` <- pal_uchicago("dark")(9)
+ # background_pals$`Star Trek` <- pal_startrek()(7)
+ # background_pals$`Tron Legacy` <- pal_tron()(7)
+ # background_pals$Futurama <- pal_futurama()(12)
+ # background_pals$`Rick and Morty` <- pal_rickandmorty()(12)
+ # background_pals$`The Simpsons` <- pal_simpsons()(16)
+ #background_pals$GSEA <- pal_gsea()(12)
+
+ background_pals$coolwarm        <- coolwarm(n = maxcolors)
+ background_pals$parula          <- parula(n = maxcolors)
+ background_pals$ocean.haline    <- ocean.haline(n = maxcolors)
+ background_pals$cubicl          <- cubicl(n = maxcolors)
+ background_pals$kovesi.rainbow  <- kovesi.rainbow(n = maxcolors)
+ background_pals$ocean.phase     <- ocean.phase(n = maxcolors)
+ background_pals$viridis         <- viridis(n = maxcolors)
 
 # Calc linear gradient for CSS
 linear_gradient <- function(cols) {
@@ -76,5 +104,9 @@ linear_gradient <- function(cols) {
 
 background_pals <- unlist(lapply(X = background_pals, FUN = linear_gradient))
 
-colortext_pals <- rep(c("white", "black", "black", "black"), 
+ # test <- data.frame(background_pals)
+ # test
+
+#length(colors_pal)
+colortext_pals <- rep(c("white", "black", "white"), 
                       times = sapply(colors_pal, length))
