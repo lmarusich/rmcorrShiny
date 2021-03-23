@@ -9,8 +9,8 @@ createPlot <- function(input) {
 
   p <- 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
   group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
-  geom_point(aes(colour = factor({input$subColumn}))) + \\
-  geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + '
+geom_point(aes(colour = factor({input$subColumn}))) + \\
+geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + '
   
   p <- paste0(p, 'ggtitle("{input$plotTitle}") + \\
 ylab("{input$yAxisTitle}") + \\
@@ -23,16 +23,16 @@ scale_shape_identity() + ')
              plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
              axis.title = element_text(size = {input$axisLabelFontSize}),
              axis.text = element_text(size = {input$scaleFontSize}),
-             axis.text.x = element_text(angle = {input$xAxisAngle},
-                hjust = {input$xAxishjust},
-                vjust = {input$xAxisvjust})) + ')
+             axis.text.x = element_text(angle = {input$xAxisAngle}, \\
+hjust = {input$xAxishjust}, \\
+vjust = {input$xAxisvjust})) + ')
   } else {
     p <- paste0(p, 'theme(plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
              axis.title = element_text(size = {input$axisLabelFontSize}),
              axis.text = element_text(size = {input$scaleFontSize}),
-             axis.text.x = element_text(angle = {input$xAxisAngle},
-                hjust = {input$xAxishjust},
-                vjust = {input$xAxisvjust})) + ')
+             axis.text.x = element_text(angle = {input$xAxisAngle}, \\
+hjust = {input$xAxishjust}, \\
+vjust = {input$xAxisvjust})) + ')
   }
 
   if (input$plotMajorGrid == TRUE) {
@@ -70,8 +70,19 @@ scale_shape_identity() + ')
   if (input$autoScale == FALSE) {
     p <- paste0(p, 'ylim({input$minScale}, {input$maxScale}) + ')
   }
+  
+  if (input$addText == TRUE){
+    
+     p <- paste0(p, 'annotate("text", \\
+x = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-Inf,Inf)}, \\
+y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, \\
+label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),\\
+~italic(p)~.(ifelse(my.rmc$p < 0.01, "< 0.01",paste0("= ",round(my.rmc$p, digits = 2)))))), \\
+hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, \\
+vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
+  }
 
-
+  
   ## Remove the 3 last characters of p, as we don't know where is the end
   p <- substr(p,1,nchar(p)-3)
 

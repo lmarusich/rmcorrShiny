@@ -20,6 +20,7 @@ source("source/paletteColours.R", local = TRUE)
 #c) Cut off the first color in sequential by default? The first color is usually too faint to see 
 #5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
+#7) add option to change legend label
 
 #Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
 
@@ -92,35 +93,41 @@ ui <- fluidPage(
                    # type = "pills",
                    tabPanel("General Options",
                             column(12,
-                                   h4("Size")),
-                            column(6,
+                                   h5("Size"),
                                    numericInput("height",
-                                                label = h5("Plot Height"),
-                                                value = 600)
-                            ),
-                            column(6,
+                                                label = "Plot Height:",
+                                                value = 600),
                                    numericInput("width",
-                                                label = h5("Plot Width"),
-                                                value = 600)
-                            ),
-                            column(6,
+                                                label = "Plot Width:",
+                                                value = 600),
+                                   h5("Legend"),
                                    checkboxInput("plotLegend",
                                                  "Show Legend",
-                                                 FALSE)
-                            ),
-                            column(6,
+                                                 FALSE),
+                                   h5("Annotations"),
+                                   checkboxInput("addText",
+                                                 "Add rmcorr output text",
+                                                 FALSE),
+                                   conditionalPanel(
+                                     condition = 'input.addText == true',
+                                     selectInput("textLocation",
+                                                 label = "rmcorr text location",
+                                                 choices = list(
+                                                   "topleft",
+                                                   "topright",
+                                                   "bottomleft",
+                                                   "bottomright"
+                                                 ))),
+                                   h5("Gridlines"),
                                    checkboxInput("plotMajorGrid",
                                                  "Plot Major Grid",
-                                                 FALSE)
-                            ),
-                            column(6,
+                                                 FALSE),
+                                   
                                    conditionalPanel(
                                      condition = 'input.plotMajorGrid == true',
                                      checkboxInput("plotMinorGrid",
                                                    "Plot Minor Grid",
-                                                   FALSE))
-                            ),
-                            column(12,
+                                                   FALSE)),
                                    hr())),
                    tabPanel("Theme and colors",
                             
@@ -162,59 +169,50 @@ ui <- fluidPage(
                             column(12,
                                    textInput("plotTitle",
                                              label = h5("Main Plot Title"),
-                                             value = "Main Plot Title")),
-                            column(6,
+                                             value = "Main Plot Title"),
                                    textInput("xAxisTitle",
                                              label = h5("x Axis Title"),
-                                             value = "x Axis Title")
-                            ),
-                            column(6,
+                                             value = "x Axis Title"),
                                    textInput("yAxisTitle",
                                              label = h5("y Axis Title"),
-                                             value = "y Axis Title")
-                            ),
-                            column(6,
+                                             value = "y Axis Title"),
                                    numericInput("titleFontSize",
                                                 label = h5("Main Title Font Size"),
                                                 value = 20,
-                                                min = 0)),
-                            column(6,
+                                                min = 0),
                                    numericInput("axisLabelFontSize",
                                                 label = h5("Axis Title Font Size"),
                                                 value = 15,
-                                                min = 0)),
-                            column(12,
+                                                min = 0),
                                    hr()))
                    ,
                    tabPanel("Scale",
-                            column(6,
+                            column(12,
                                    numericInput("scaleFontSize",
                                                 label = h5("Scale Text Font Size"),
                                                 value = 15,
-                                                min = 0)),
-                            column(6,
+                                                min = 0),
                                    numericInput("xAxisAngle",
                                                 label = h5("X Axis Scale Angle"),
                                                 value = 0,
                                                 min = 0,
-                                                max = 360)),
-                            column(6,
+                                                max = 360),
                                    selectInput("xAxishjust",
                                                label = h5("Horizontal Scale Justification"),
                                                choices = list(
                                                  "Left" = 0,
                                                  "Middle" = 0.5,
                                                  "Right" = 1),
-                                               selected = 0)),
-                            column(6,
+                                               selected = 0),
+                                   
                                    selectInput("xAxisvjust",
                                                label = h5("Vertical Scale Justification"),
                                                choices = list(
                                                  "Top" = 0,
                                                  "Middle" = 0.5,
                                                  "Bottom" = 1),
-                                               selected = 0)),
-                            column(12,
+                                               selected = 0),
+                                   
                                    checkboxInput("autoScale",
                                                  "Automatic Scale Limits",
                                                  TRUE)),

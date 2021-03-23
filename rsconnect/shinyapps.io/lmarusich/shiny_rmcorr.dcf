@@ -5,9 +5,9 @@ account: lmarusich
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3778364
-bundleId: 4336967
+bundleId: 4385230
 url: https://lmarusich.shinyapps.io/shiny_rmcorr/
-when: 1615574222.59404
+when: 1616515635.74345
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .RData|3.8.2021.app.R|marusich2016_exp2.csv|README.md|sampleData|old
+ignoredFiles: .RData|3.8.2021.app.R|README.md|sampleData|old
