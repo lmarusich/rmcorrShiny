@@ -1,16 +1,8 @@
 # ## ggplot & cowplot theme
 library("ggplot2")
 library("cowplot")
-# ## Statistics
-# library("ggpubr")
-# ## 95% CI interval for the mean
-# library("Hmisc")
-# ## Beeswarm dots
-# library("ggbeeswarm")
-# ## Already loaded from ui.R
-# ## Colour themes
-# # library("ggsci")
 library("RColorBrewer")
+library("pals")
 
 
 createPlot <- function(input) {
@@ -52,56 +44,22 @@ scale_shape_identity() + ')
   }
 
   if (input$plotPalette != "default") {
-    if (input$plotPalette == "NPG") {
-      p <- paste0(p, 'scale_color_npg() + scale_fill_npg() + ')
-    } else if (input$plotPalette == "AAAS") {
-      p <- paste0(p, 'scale_color_aaas() + scale_fill_aaas() + ')
-    } else if (input$plotPalette == "NEJM") {
-      p <- paste0(p, 'scale_color_nejm() + scale_fill_nejm() + ')
-    } else if (input$plotPalette == "Lancet") {
-      p <- paste0(p, 'scale_color_lancet() + scale_fill_lancet() + ')
-    } else if (input$plotPalette == "JAMA") {
-      p <- paste0(p, 'scale_color_jama() + scale_fill_jama() + ')
-    } else if (input$plotPalette == "JCO") {
-      p <- paste0(p, 'scale_color_jco() + scale_fill_jco() + ')
-    } else if (input$plotPalette == "UCSCGB") {
-      p <- paste0(p, 'scale_color_ucscgb() + scale_fill_ucscgb() + ')
-    } else if (input$plotPalette == "LocusZoom") {
-      p <- paste0(p, 'scale_color_locuszoom() + scale_fill_locuszoom() + ')
-    } else if (input$plotPalette == "IGV") {
-      p <- paste0(p, 'scale_color_igv() + scale_fill_igv() + ')
-    } else if (input$plotPalette == "UChicago") {
-      p <- paste0(p, 'scale_color_uchicago() + scale_fill_uchicago() + ')
-    } else if (input$plotPalette == "UChicago Light") {
-      p <- paste0(p, 'scale_color_uchicago("light") + scale_fill_uchicago("light") + ')
-    } else if (input$plotPalette == "UChicago Dark") {
-      p <- paste0(p, 'scale_color_uchicago("dark") + scale_fill_uchicago("dark") + ')
-    } else if (input$plotPalette == "Star Trek") {
-      p <- paste0(p, 'scale_color_startrek() + scale_fill_startrek() + ')
-    } else if (input$plotPalette == "Tron Legacy") {
-      p <- paste0(p, 'scale_color_tron() + scale_fill_tron() + ')
-    } else if (input$plotPalette == "Futurama") {
-      p <- paste0(p, 'scale_color_futurama() + scale_fill_futurama() + ')
-    } else if (input$plotPalette == "Rick and Morty") {
-      p <- paste0(p, 'scale_color_rickandmorty() + scale_fill_rickandmorty() + ')
-    } else if (input$plotPalette == "The Simpsons") {
-      p <- paste0(p, 'scale_color_simpsons() + scale_fill_simpsons() + ')
-      
+
       #New palettes from pals 
-    } else if (input$plotPalette == "coolwarm") {
-      p <- paste0(p, 'scale_fill_manual(values = coolwarm(maxcolors)) + ')
+    if (input$plotPalette == "coolwarm") {
+      p <- paste0(p, 'scale_colour_manual(values = coolwarm(n)) + ')
     } else if (input$plotPalette == "parula") {
-      p <- paste0(p, 'scale_fill_manual(values = parula(maxcolors)) + ')
+      p <- paste0(p, 'scale_colour_manual(values = parula(n)) + ')
     } else if (input$plotPalette == "ocean.haline") {
-      p <- paste0(p, 'scale_fill_manual(values = ocean.haline(maxcolors)) + ')
+      p <- paste0(p, 'scale_colour_manual(values = ocean.haline(n)) + ')
     } else if (input$plotPalette == "cubicl") {
-      p <- paste0(p, 'scale_fill_manual(values = cubicl(maxcolors)) + ')    
+      p <- paste0(p, 'scale_colour_manual(values = cubicl(n)) + ')    
     } else if (input$plotPalette == "kovesi.rainbow") {
-      p <- paste0(p, 'scale_fill_manual(values = kovesi.rainbow(maxcolors)) + ')   
+      p <- paste0(p, 'scale_colour_manual(values = kovesi.rainbow(n)) + ')   
     } else if (input$plotPalette == "ocean.phase") {
-      p <- paste0(p, 'scale_fill_manual(values = ocean.phase(maxcolors)) + ')   
+      p <- paste0(p, 'scale_colour_manual(values = ocean.phase(n)) + ')   
     } else if (input$plotPalette == "viridis") {
-      p <- paste0(p, 'scale_fill_manual(values = viridis(maxcolors)) + ')   
+      p <- paste0(p, 'scale_colour_manual(values = viridis(n)) + ')   
 
     } else {
       ## Color Brewer

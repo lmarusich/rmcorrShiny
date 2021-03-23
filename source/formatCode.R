@@ -26,12 +26,10 @@ getLibrariesCode <- function(input) {
   if(input$plotTheme == 'theme_cowplot()') {
     librariesUsed <- c(librariesUsed, 'cowplot')
   }
-  ggsciPalettes <- c("NPG", "AAAS", "NEJM", "Lancet", "JAMA", "JCO", "UCSCGB",
-                     "LocusZoom", "IGV", "UChicago", "UChicago Light",
-                     "UChicago Dark", "Star Trek", "Tron Legacy", "Futurama",
-                     "Rick and Morty", "The Simpsons")
-  if(input$plotPalette %in% ggsciPalettes) {
-    librariesUsed <- c(librariesUsed, 'ggsci')
+  palPalettes <- c('coolwarm', 'parula', 'ocean.haline',
+                                   'cubicl', 'kovesi.rainbow', 'ocean.phase', 'viridis')
+  if(input$plotPalette %in% palPalettes) {
+    librariesUsed <- c(librariesUsed, 'pal')
   } else {
     librariesUsed <- c(librariesUsed, 'RColorBrewer')
   }

@@ -23,9 +23,11 @@ dataUpload <- function(input, output, session) {
         } else if (input$whichsampleData == 'raz2005'){
           return(list('name' = 'raz2005.csv',
                       'datapath' = 'raz2005.csv'))
+        } else if (input$whichsampleData == 'marusich2016'){
+          return(list('name' = 'marusich2016_exp2.csv',
+                      'datapath' = 'marusich2016_exp2.csv'))
+          
         }
-        
-        
       }
       req(input$excelFile)
     }
@@ -50,7 +52,10 @@ dataUpload <- function(input, output, session) {
     colnames(inputData())
   })
   
-  name <- reactive({userFile()$name})
+  name <- reactive({
+    userFile()$name
+  })
+  
   
   code <- reactive({
     quoteCode <- ifelse(input$quote == '\'', '"{input$quote}"', '\'{input$quote}\'')
@@ -63,8 +68,6 @@ inputData <- read.delim2("{name()}",
                           check.names = FALSE,
                           dec = \'{input$decimalPoint}\')\n\n')})
   
-  name2 <- paste0("     ", " 'eval(name)' ") 
-  #inputData.formatted <- c('\t', (inputData))
   return(list(
     inputData = inputData,
     conditions = conditions,

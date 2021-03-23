@@ -6,6 +6,7 @@ library(glue)
 library(stringr)
 library(tidyr)
 library(dplyr)
+library(bslib) #https://rstudio.github.io/bslib/index.html
 
 source("source/dataUploadUI.R", local = TRUE)
 source("source/dataUpload.R", local = TRUE)
@@ -13,23 +14,38 @@ source("source/formatCode.R", local = TRUE)
 source("source/createPlot.R", local = TRUE)
 source("source/paletteColours.R", local = TRUE)
 
+#Items to add:
+#2) Need warnings for: missing data, non-numeric input in X and Y? 
+#4) Palettes and plots
+#c) Cut off the first color in sequential by default? The first color is usually too faint to see 
+#5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
+#6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 
-# if (!require("pacman")) install.packages("pacman")
-# pacman::p_load(shiny, rmcorr, rlang, tidyverse, shinythemes, RColorBrewer, pals, gbRd, rvest) #thematic
+#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
 
-#Intriguing but doesn't look stable and hasn't been updated in a while 
-#https://rstudio.github.io/shinymeta/index.html
-#remotes::install_github("rstudio/shinymeta")
-#require(shinymeta)
+#Pie in the sky items
+#1) Power calculation: Could be an additional panel?
+#2) Additional plot options: Print stats on plot and specify the location where it's printed
+#3) Interactive Tutorial
+
+light <- bs_theme()
+dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 
 ui <- fluidPage(
-  theme = shinytheme("paper"),
+  theme = light,
+  div(
+    class = "custom-control custom-switch", 
+    tags$input(
+      id = "dark_mode", type = "checkbox", class = "custom-control-input",
+      onclick = HTML("Shiny.setInputValue('dark_mode', document.getElementById('dark_mode').value);")
+    ),
+    tags$label("Dark mode", `for` = "dark_mode", class = "custom-control-label")),
   # CSS, fixes palette picker
   tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
              #downloadPlot, #downloadZip {margin-top: 25px}"),
   
   #Title 
-  titlePanel("Repeated Measures Correlation"),
+  titlePanel("Shiny Repeated Measures Correlation"),
   
   # Sidebar  
   sidebarLayout(
@@ -74,173 +90,143 @@ ui <- fluidPage(
                  ,
                  tabsetPanel(
                    # type = "pills",
-                 tabPanel("General Options",
-                                      column(12,
-                                             h4("Size")),
-                                      column(6,
-                                             numericInput("height",
-                                                          label = h5("Plot Height"),
-                                                          value = 600)
-                                      ),
-                                      column(6,
-                                             numericInput("width",
-                                                          label = h5("Plot Width"),
-                                                          value = 600)
-                                      ),
-                                      column(6,
-                                             checkboxInput("plotLegend",
-                                                           "Show Legend",
-                                                           FALSE)
-                                      ),
-                                      column(6,
-                                             checkboxInput("plotMajorGrid",
-                                                           "Plot Major Grid",
-                                                           FALSE)
-                                      ),
-                                      column(6,
-                                             conditionalPanel(
-                                               condition = 'input.plotMajorGrid == true',
-                                               checkboxInput("plotMinorGrid",
-                                                             "Plot Minor Grid",
-                                                             FALSE))
-                                      ),
-                                      column(12,
-                                             hr())),
-                             tabPanel("Theme and colors",
-                             
-                             column(12,
-                                    selectInput("plotTheme",
-                                                label = h5("Theme"),
-                                                choices = list(
-                                                  "Default (Grey)" = "theme_grey()",
-                                                  "Black & White" = "theme_bw()",
-                                                  "Linedraw" = "theme_linedraw()",
-                                                  "Light" = "theme_light()",
-                                                  "Dark" = "theme_dark()",
-                                                  "Minimal" = "theme_minimal()",
-                                                  "Classic" = "theme_classic()",
-                                                  "Void" = "theme_void()",
-                                                  "Cowplot" = "theme_cowplot()"
-                                                ),
-                                                selected = "theme_cowplot()")),
-                             column(12,
-                                    pickerInput(
-                                      inputId = "plotPalette",
-                                      label = h5("Palette"),
-                                      choices = colors_pal,
-                                      selected = "Set1",
-                                      width = "100%",
-                                      choicesOpt = list(
-                                        content = sprintf(
-                                          "<div style='width:100%%;padding:2px;border-radius:4px;background:%s;color:%s'>%s</div>",
-                                          unname(background_pals),
-                                          colortext_pals,
-                                          names(background_pals)
-                                        )
-                                      )
-                                    )),
-                             column(12,
-
-                             hr())),
-                             tabPanel("Titles",
-                                      column(12,
-                                             textInput("plotTitle",
-                                                       label = h5("Main Plot Title"),
-                                                       value = "Main Plot Title")),
-                                      column(6,
-                                             textInput("xAxisTitle",
-                                                       label = h5("x Axis Title"),
-                                                       value = "x Axis Title")
-                                      ),
-                                      column(6,
-                                             textInput("yAxisTitle",
-                                                       label = h5("y Axis Title"),
-                                                       value = "y Axis Title")
-                                      ),
-                                      column(6,
-                                             numericInput("titleFontSize",
-                                                          label = h5("Main Title Font Size"),
-                                                          value = 20,
-                                                          min = 0)),
-                                      column(6,
-                                             numericInput("axisLabelFontSize",
-                                                          label = h5("Axis Title Font Size"),
-                                                          value = 15,
-                                                          min = 0)),
-                                      column(12,
-                                             hr()))
-                 ,
-                             tabPanel("Scale",
-                                      column(6,
-                                             numericInput("scaleFontSize",
-                                                          label = h5("Scale Text Font Size"),
-                                                          value = 15,
-                                                          min = 0)),
-                                      column(6,
-                                             numericInput("xAxisAngle",
-                                                          label = h5("X Axis Scale Angle"),
-                                                          value = 0,
-                                                          min = 0,
-                                                          max = 360)),
-                                      column(6,
-                                             selectInput("xAxishjust",
-                                                         label = h5("Horizontal Scale Justification"),
-                                                         choices = list(
-                                                           "Left" = 0,
-                                                           "Middle" = 0.5,
-                                                           "Right" = 1),
-                                                         selected = 0)),
-                                      column(6,
-                                             selectInput("xAxisvjust",
-                                                         label = h5("Vertical Scale Justification"),
-                                                         choices = list(
-                                                           "Top" = 0,
-                                                           "Middle" = 0.5,
-                                                           "Bottom" = 1),
-                                                         selected = 0)),
-                                      column(12,
-                                             checkboxInput("autoScale",
-                                                           "Automatic Scale Limits",
-                                                           TRUE)),
-                                      conditionalPanel(
-                                        condition = "input.autoScale == false",
-                                        uiOutput("scaleLimitsUI")
-                                      ),
-                                      column(12,
-                                             hr()))
-        # column(12,
-        #        hr())))),
-      ))),
-      column(12,
-             h4("Download the plot")),
-      column(12,
-             p("Select the image format or download a zip file with all the 
-               images, the script and data used to generate the plot.")),
-      column(6,
-             selectInput("downloadFormat",
-                         label = "Image format",
-                         choices = list(
-                           "Vectorial" = list(
-                             "pdf" = "pdf",
-                             "svg" = "svg",
-                             "eps" = "eps"
-                           ),
-                           "Non-vectorial" = list(
-                             "tiff" = "tiff",
-                             "png" = "png")
-                         ),
-                         selected = "pdf"),
-             downloadButton("downloadPlot", 
-                            label = "Download Image"),
-             br(),
-             br(),
-             downloadButton('downloadZip',
-                            label = 'Download Zip')),
-
-             
-      ## Clearfix
-      tags$div(class = 'clearfix')
-    
+                   tabPanel("General Options",
+                            column(12,
+                                   h4("Size")),
+                            column(6,
+                                   numericInput("height",
+                                                label = h5("Plot Height"),
+                                                value = 600)
+                            ),
+                            column(6,
+                                   numericInput("width",
+                                                label = h5("Plot Width"),
+                                                value = 600)
+                            ),
+                            column(6,
+                                   checkboxInput("plotLegend",
+                                                 "Show Legend",
+                                                 FALSE)
+                            ),
+                            column(6,
+                                   checkboxInput("plotMajorGrid",
+                                                 "Plot Major Grid",
+                                                 FALSE)
+                            ),
+                            column(6,
+                                   conditionalPanel(
+                                     condition = 'input.plotMajorGrid == true',
+                                     checkboxInput("plotMinorGrid",
+                                                   "Plot Minor Grid",
+                                                   FALSE))
+                            ),
+                            column(12,
+                                   hr())),
+                   tabPanel("Theme and colors",
+                            
+                            column(12,
+                                   selectInput("plotTheme",
+                                               label = h5("Theme"),
+                                               choices = list(
+                                                 "Default (Grey)" = "theme_grey()",
+                                                 "Black & White" = "theme_bw()",
+                                                 "Linedraw" = "theme_linedraw()",
+                                                 "Light" = "theme_light()",
+                                                 "Dark" = "theme_dark()",
+                                                 "Minimal" = "theme_minimal()",
+                                                 "Classic" = "theme_classic()",
+                                                 "Void" = "theme_void()",
+                                                 "Cowplot" = "theme_cowplot()"
+                                               ),
+                                               selected = "theme_cowplot()")),
+                            column(12,
+                                   pickerInput(
+                                     inputId = "plotPalette",
+                                     label = h5("Palette"),
+                                     choices = colors_pal,
+                                     selected = "Set1",
+                                     width = "100%",
+                                     choicesOpt = list(
+                                       content = sprintf(
+                                         "<div style='width:100%%;padding:2px;border-radius:4px;background:%s;color:%s'>%s</div>",
+                                         unname(background_pals),
+                                         colortext_pals,
+                                         names(background_pals)
+                                       )
+                                     )
+                                   )),
+                            column(12,
+                                   
+                                   hr())),
+                   tabPanel("Titles",
+                            column(12,
+                                   textInput("plotTitle",
+                                             label = h5("Main Plot Title"),
+                                             value = "Main Plot Title")),
+                            column(6,
+                                   textInput("xAxisTitle",
+                                             label = h5("x Axis Title"),
+                                             value = "x Axis Title")
+                            ),
+                            column(6,
+                                   textInput("yAxisTitle",
+                                             label = h5("y Axis Title"),
+                                             value = "y Axis Title")
+                            ),
+                            column(6,
+                                   numericInput("titleFontSize",
+                                                label = h5("Main Title Font Size"),
+                                                value = 20,
+                                                min = 0)),
+                            column(6,
+                                   numericInput("axisLabelFontSize",
+                                                label = h5("Axis Title Font Size"),
+                                                value = 15,
+                                                min = 0)),
+                            column(12,
+                                   hr()))
+                   ,
+                   tabPanel("Scale",
+                            column(6,
+                                   numericInput("scaleFontSize",
+                                                label = h5("Scale Text Font Size"),
+                                                value = 15,
+                                                min = 0)),
+                            column(6,
+                                   numericInput("xAxisAngle",
+                                                label = h5("X Axis Scale Angle"),
+                                                value = 0,
+                                                min = 0,
+                                                max = 360)),
+                            column(6,
+                                   selectInput("xAxishjust",
+                                               label = h5("Horizontal Scale Justification"),
+                                               choices = list(
+                                                 "Left" = 0,
+                                                 "Middle" = 0.5,
+                                                 "Right" = 1),
+                                               selected = 0)),
+                            column(6,
+                                   selectInput("xAxisvjust",
+                                               label = h5("Vertical Scale Justification"),
+                                               choices = list(
+                                                 "Top" = 0,
+                                                 "Middle" = 0.5,
+                                                 "Bottom" = 1),
+                                               selected = 0)),
+                            column(12,
+                                   checkboxInput("autoScale",
+                                                 "Automatic Scale Limits",
+                                                 TRUE)),
+                            conditionalPanel(
+                              condition = "input.autoScale == false",
+                              uiOutput("scaleLimitsUI")
+                            ),
+                            column(12,
+                                   hr()))
+                 )
+        )
+      )
     ),
     mainPanel(
       tabsetPanel(type = "tabs",
@@ -265,9 +251,9 @@ ui <- fluidPage(
                   tabPanel("Plot",
                            br(),
                            withSpinner(
-                            plotOutput("rmcorrPlot", 
-                               height = "auto"))
-                    
+                             plotOutput("rmcorrPlot", 
+                                        height = "auto"))
+                           
                   ),
                   tabPanel("R Code",
                            column(8,
@@ -277,8 +263,9 @@ ui <- fluidPage(
                   tabPanel("Processed Data",
                            # verbatimTextOutput("rmcorrDataSummary"),
                            htmlOutput("rmcorrDataSummary"),
-                           tableOutput("rmcorrData"))
-                  ,
+                           tableOutput("rmcorrData")),
+                  tabPanel("Download",
+                           htmlOutput("rmcorrDownload")),
                   tabPanel("About",
                            includeHTML("www/about.html"))
                   
@@ -289,6 +276,12 @@ ui <- fluidPage(
 
 
 server <- function(input, output, session) {
+  
+  observe({
+    session$setCurrentTheme(
+      if (isTRUE(input$dark_mode)) dark else light
+    )
+  })
   
   # Read the input data.
   inputData <- callModule(dataUpload,"rmcorr")
@@ -380,14 +373,12 @@ my.rmc <- rmcorr(participant = {subColumn},
   
   # update plot titles:
   observeEvent(input$m1Column, {
-      updateTextInput(session, "xAxisTitle", value = input$m1Column)}
-    )
+    updateTextInput(session, "xAxisTitle", value = input$m1Column)}
+  )
   observeEvent(input$m2Column, {
     updateTextInput(session, "yAxisTitle", value = input$m2Column)}
   )
   
-    # 
-  #Add diag info: Sample size (N) and mean repeated measures (k) with range?
   
   #Need warnings for missing data, non-numeric input in X and Y? 
   
@@ -409,10 +400,10 @@ my.rmc <- rmcorr(participant = {subColumn},
     plotFigure()},
     height = function(x) input$height,
     width = function(x) input$width
-
+    
   )
   
- 
+  
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
@@ -472,6 +463,33 @@ my.rmc <- rmcorr(participant = {subColumn},
     inputData$inputData()
   })
   
+  output$rmcorrDownload <- renderUI({
+    req(inputData$name())
+    tagList(
+      h4("Download the plot"),
+      p("Select the image format or download a zip file with all the 
+               images, the script and data used to generate the plot."),
+      selectInput("downloadFormat",
+                  label = "Image format",
+                  choices = list(
+                    "Vectorial" = list(
+                      "pdf" = "pdf",
+                      "svg" = "svg",
+                      "eps" = "eps"
+                    ),
+                    "Non-vectorial" = list(
+                      "tiff" = "tiff",
+                      "png" = "png")
+                  ),
+                  selected = "pdf"),
+      downloadButton("downloadPlot", 
+                     label = "Download Image"),
+      br(),
+      downloadButton('downloadZip',
+                     label = 'Download Zip')
+    )
+  })
+  
   # Download button
   output$downloadPlot <- downloadHandler(
     filename = function() {
@@ -494,8 +512,6 @@ my.rmc <- rmcorr(participant = {subColumn},
         ggsave(file,
                plot = plotFigure(),
                device = input$downloadFormat,
-               # Width and height are in inches. We increase the dpi to 300, so we
-               # have to divide by 72 (original default pixels per inch) 
                width = input$width / 72,
                height = input$height / 72,
                units = "in",
@@ -561,6 +577,6 @@ my.rmc <- rmcorr(participant = {subColumn},
     },
     contentType = "application/zip"
   )
-
+  
 }
 shinyApp(ui = ui, server = server)
