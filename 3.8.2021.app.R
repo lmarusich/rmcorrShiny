@@ -6,32 +6,56 @@ library(glue)
 library(stringr)
 library(tidyr)
 library(dplyr)
+library(ggsci)
+library(bslib) #https://rstudio.github.io/bslib/index.html
 
-source("source/dataUploadUI.R", local = TRUE)
-source("source/dataUpload.R", local = TRUE)
-source("source/formatCode.R", local = TRUE)
-source("source/createPlot.R", local = TRUE)
+
+source("source/dataUploadUI.R",   local = TRUE)
+source("source/dataUpload.R",     local = TRUE)
+source("source/formatCode.R",     local = TRUE)
+source("source/createPlot.R",     local = TRUE)
 source("source/paletteColours.R", local = TRUE)
+source("source/paletteColours.R", local = TRUE)
+source("source/downloadPlot.R",   local = TRUE)
 
+#Items to add:
+#1) Add: Sample size (N) and mean repeated measures (k) with range (min and max)?
+#2) Need warnings for: missing data, non-numeric input in X and Y, and too few palette colors (N/A since ggsci and qual pals are removed)? 
+#4) Palettes and plots
+  #a) Set default with enough colors to graph all participants. 
+  #b)DONE! Drop ggsci and qual palettes? 
+  #  DONE! Maybe pals recommended? https://cran.r-project.org/web/packages/pals/vignettes/pals_examples.html
+  #c) Cut off the first color in sequential by default? The first color is usually too faint to see 
+  #d)DONE! Add download plot and download zip buttons: 
+#5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
+#6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 
-# if (!require("pacman")) install.packages("pacman")
-# pacman::p_load(shiny, rmcorr, rlang, tidyverse, shinythemes, RColorBrewer, pals, gbRd, rvest) #thematic
+#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
 
-#Intriguing but doesn't look stable and hasn't been updated in a while 
-#https://rstudio.github.io/shinymeta/index.html
-#remotes::install_github("rstudio/shinymeta")
-#require(shinymeta)
+#Pie in the sky items
+#1) Power calculation: Could be an additional panel?
+#2) Additional plot options: Print stats on plot and specify the location where it's printed
+#3) Interactive Tutorial
 
-
+light <- bs_theme()
+dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 
 ui <- fluidPage(
-  theme = shinytheme("paper"),
+  theme = light,
+  div(
+    class = "custom-control custom-switch", 
+    tags$input(
+      id = "dark_mode", type = "checkbox", class = "custom-control-input",
+      onclick = HTML("Shiny.setInputValue('dark_mode', document.getElementById('dark_mode').value);")
+    ),
+    tags$label("Dark mode", `for` = "dark_mode", class = "custom-control-label")),
+  #theme = shinytheme("paper"),
   # CSS, fixes palette picker (//github.com/gabrifc/raincloud-shiny/issues/12)
-  # tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
-  #            #downloadPlot, #downloadZip {margin-top: 25px}"), 
+  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
+              #downloadPlot, #downloadZip {margin-top: 25px}"), 
   
   #Title 
-  titlePanel("Repeated Measures Correlation"),
+  titlePanel("Shiny Repeated Measures Correlation"),
   
   # Sidebar  
   sidebarLayout(
@@ -106,10 +130,40 @@ ui <- fluidPage(
                                                              "Plot Minor Grid",
                                                              FALSE))
                                       ),
+                          column(12, hr()),
+                          column(12,
+                                 h4("Download the plot")),
+                          # downloadPlotUI(id = 'rainCloudDownload',
+                          #                label = "Image format",
+                          #                buttonLabel = "Download"),
+                          column(12,
+                                 p("Select the image format or download a zip file with all the 
+                                    images, the script and data used to generate the plot.")),
+                          column(4,
+                                 selectInput("downloadFormat",
+                                             label = "Image format",
+                                             choices = list(
+                                               "Vectorial" = list(
+                                                 "pdf" = "pdf",
+                                                 "svg" = "svg",
+                                                 "eps" = "eps"
+                                               ),
+                                               "Non-vectorial" = list(
+                                                 "tiff" = "tiff",
+                                                 "png" = "png")
+                                             ),
+                                             selected = "pdf")),
+                          column(4,
+                                 downloadButton("downloadPlot", 
+                                                label = "Download Image")),
+                          column(12, hr()), 
+                          column(4,
+                                 downloadButton('downloadZip',
+                                                label = 'Download Zip')),
+                          
                                       column(12,
                                              hr())),
-                             tabPanel("Theme and colors",
-                             
+                tabPanel("Theme and colors",
                              column(12,
                                     selectInput("plotTheme",
                                                 label = h5("Theme"),
@@ -257,83 +311,18 @@ ui <- fluidPage(
   )
 )
 
-#   tabsetPanel(
-#     tabPanel("Explore", fluid = T,
-#              sidebarLayout(
-#                sidebarPanel(
-#                  fileInput("file1", "Choose CSV File", accept = ".csv"),
-#                  checkboxInput("header", "Header", TRUE),
-#                  #also allow them to paste in data?
-#                  
-#                  selectInput("subvar", label = "Subject Variable", choices = NULL),
-#                  selectInput("xvar", label = "x Variable", choices = NULL),
-#                  selectInput("yvar", label = "y Variable", choices = NULL),
-#                  
-#                  #only enable this if three columns are selected?
-#                  actionButton("compute", label = "Compute repeated measures correlation"),
-#                  actionButton("plot", label = "Plot"),
-#                  
-#                  #Move to a better place
-#                  br(),
-#                  br(), 
-#                  br(),
-#                  h4("Plot Options"), 
-#                  checkboxInput("legend", label = "Legend", value = FALSE),
-#                  selectInput("palette",  label = "Color Palette", choices = c("viridis", "parula", "coolwarm", "stepped")),
-#                  
-#                  br(),
-#                  br(),
-#                  helpText("This Shiny app computes and visualizes repeated measures correlation (rmcorr). Rmcorr is the common within-individual linear association for paired, 
-#                     repeated measures data.  Rmcorr is conceptually similar to a null multilevel model: A fixed slope and varying intercept by participant. For details 
-#                     about rmcorr and analyzing repeated measures data see below."),
-#                  helpText(a(href = "http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00456/full", "Journal Article: Bakdash and Marusich (2017)")),
-#                  helpText(a(href = "https://doi.org/10.3389/fpsyg.2019.01201", "Corrigendum to Journal Article (equations): Bakdash and Marusich (2019)")),
-#                  helpText(a(href = "https://cran.r-project.org/web/packages/rmcorr/", "rmcorr R package")), 
-#                  helpText(a(href = "https://doi.org/10.1038/nn.3648", "Journal Article: Aarts et al. (2014), Excellent overview on why repeated measures should be modeled and overview of multilevel modeling")),
-#                  helpText(a(href = "https://github.com/lmarusich/shiny_rmcorr", target="_blank", "Shiny code for this app")),
-#                  
-#                ), 
-#                mainPanel(
-#                  h2("Dataset"),
-#                  DT::dataTableOutput("df"),
-#                  h1("Model Output"),
-#                  uiOutput(outputId = "rmc"),
-#                  h1("Plot"),
-#                  plotOutput("rmcplot"),
-#                  downloadButton('downloadPlot'),
-#                ) 
-#              )
-#     ),
-#     tabPanel("Tutorial", fluid = T,
-#              sidebarLayout(
-#                sidebarPanel(
-#                  selectInput("exdata", label = "Choose example dataset", 
-#                              choices = c("Bland1995" = "bland1995", 
-#                                          "Raz2005" = "raz2005", 
-#                                          "Gilden2010" = "gilden2010")),
-#                  sliderInput("bslider", label = "Between correlation", min = -1, max = 1, step = 0.1,
-#                              value = 0, animate = T),
-#                  sliderInput("wslider", label = "Within correlation", min = -1, max = 1, step = 0.1,
-#                              value = 0, animate = T)
-#                ),
-#                mainPanel(
-#                  h2("Example Dataset"),
-#                  uiOutput("documentation"),
-#                  br(),
-#                  DT::dataTableOutput("exdf")
-#                )
-#              )
-#     )
-#   )
-# )
 server <- function(input, output, session) {
   
   
+  observe({
+    session$setCurrentTheme(
+      if (isTRUE(input$dark_mode)) dark else light
+    )
+    })
   
   # Read the input data.
   # inputData <- moduleServer("rainCloud", dataUpload)
   inputData <- callModule(dataUpload,"rainCloud")
-  
   
   # Process the data. This is a reactive depending on the inputData!
   processedData <- reactive({
@@ -426,47 +415,8 @@ server <- function(input, output, session) {
   observeEvent(input$m2Column, {
     updateTextInput(session, "yAxisTitle", value = input$m2Column)}
   )
-  
-  
-  
-  
-  # df <- reactive({
-  #   file <- input$file1
-  #   ext <- tools::file_ext(file$datapath)
-  #   
-  #   req(file)
-  #   validate(need(ext == "csv", "Please upload a csv file"))
-  #   
-  #   read.csv(file$datapath, header = input$header)
-  # })
-  # 
-  # 
-  # output$df <- DT::renderDataTable(df())
-  # 
-  # observe({
-  #   choices1 = colnames(df())
-  #   updateSelectInput(session,"subvar", choices =  choices1, selected = choices1[1]) #selected to set default column
-  #   updateSelectInput(session,"xvar",   choices =  choices1, selected = choices1[2])
-  #   updateSelectInput(session,"yvar",   choices =  choices1, selected = choices1[3])
-  # })
-  # 
-  # pal.choices <- eventReactive(input$palette, {(input$palette)})
-  # #observe({updateSelectInput(session, "palette", selected = pal.choices$pal)})
-  # 
-  # data <- eventReactive(input$compute, {
-  #   rmcorr(input$subvar, input$xvar, input$yvar, dataset = df())
-  #   
-  # })
-  # 
-  # # observeEvent(input$legend == FALSE, { returnValue <- "No Legend" }) $tableOut <- if(input$legend == F) Yes
-  # # # observe({updateSelectInput(session, "legend")})
-  # # # output$legend <- reactive(input$legend)
-  # # # renderPrint({output$legend})
-  # 
-  #Add diag info: Sample size (N) and mean repeated measures (k) with range?
-  
-  #Need warnings for missing data, non-numeric input in X and Y? 
-  
+
+
   # Generate the plot code based on input options but do not evaluate yet.
   plotCode <- reactive({createPlot(input)})
   
@@ -489,8 +439,6 @@ server <- function(input, output, session) {
   )
   
   
-  
-  
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
@@ -508,7 +456,40 @@ server <- function(input, output, session) {
     
   })
   
-  # Print the data
+  # Download button
+  output$downloadPlot <- downloadHandler(
+    filename = function() {
+      # rainCloudPlot-inputdata.txt.pdf
+      paste(paste('rainCloudPlot-',inputData$name(), sep = ""), 
+            input$downloadFormat, sep = ".")
+    },
+    content = function(file) {
+      if(input$downloadFormat == 'tiff') {
+        ggsave(file,
+               plot = plotFigure(),
+               device = input$downloadFormat,
+               # Width and height are in inches. We increase the dpi to 300, so we
+               # have to divide by 72 (original default pixels per inch) 
+               width = input$width / 72,
+               height = input$height / 72,
+               compression = "lzw",
+               units = "in",
+               dpi = 300)
+      } else {
+        ggsave(file,
+               plot = plotFigure(),
+               device = input$downloadFormat,
+               # Width and height are in inches. We increase the dpi to 300, so we
+               # have to divide by 72 (original default pixels per inch) 
+               width = input$width / 72,
+               height = input$height / 72,
+               units = "in",
+               dpi = 300)
+      }
+    }
+  )
+  
+# Print the data
   output$rmcorrResults <- renderUI({
     req(inputData$name())
     CIlevel <- processedData()$rmc()$CI.level * 100
@@ -542,24 +523,5 @@ server <- function(input, output, session) {
     req(inputData$name())
     inputData$inputData()
   })
-  # })
-  
-  # output$downloadPlot <- downloadHandler(
-  #   filename = function() { paste(input$dataset, '.pdf', sep='') },
-  #   content = function(file) {
-  #     ggsave(file, plot = plotInput(), device = "pdf")
-  #   }
-  # )
-  # 
-  # output$exdf <- DT::renderDataTable({
-  #   get(input$exdata)
-  # })
-  # 
-  # tmp <- tempfile()
-  # onSessionEnded(function(){ unlink(tmp) })
-  # output$documentation <- renderUI({
-  #   Rd2HTML(Rd_fun(input$exdata, keep_section = "\\source"),tmp)
-  #   HTML(read_html(tmp) %>% html_nodes("p")%>% html_text())
-  # })
 }
 shinyApp(ui = ui, server = server)

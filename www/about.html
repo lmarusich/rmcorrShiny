@@ -1,14 +1,45 @@
 <h3>About this app</h3>
 <p>This Shiny app computes and visualizes repeated measures correlation (rmcorr). Rmcorr is the common within-individual linear association for paired, repeated measures data.  Rmcorr is conceptually similar to a null multilevel model: A fixed slope and varying intercept by participant. For details about rmcorr and analyzing repeated measures data see below.</p>
-      
-<ul>
-  <li><a href="http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00456/full">Journal Article</a>&nbsp(Bakdash and Marusich, 2017)</li>
-  <li><a href="https://doi.org/10.3389/fpsyg.2019.01201">Corrigendum to Journal Article (equations)</a>&nbsp(Bakdash and Marusich, 2019)</li>
-  <li><a href="https://cran.r-project.org/web/packages/rmcorr/">rmcorr R package</a></li>
-  <li><a href="https://doi.org/10.1038/nn.3648">Journal Article</a>&nbsp(Aarts et al.,2014). Excellent overview on why repeated measures should be modeled and overview of multilevel modeling</li>
-  <li><a href = "https://github.com/lmarusich/shiny_rmcorr">Source code for this Shiny app</a></li>
+
+<h4>Citing rmcorr and rmcorr-shiny</h4>
+<p>TODO: Provide citation info for both rmcorr and rmcorr-shiny</p>
+
+<h4>Credits</h4>
+<ul> 
+<li> This app uses and modifies code from the <a href="https://github.com/gabrifc/raincloud-shiny">raincloud Shiny app</a></li>
+<li> This app also uses the following R packages: </li>
+<!--bslib_0.2.4           shinyWidgets_0.6.0    RColorBrewer_1.1-2    cowplot_1.1.1         ggplot2_3.3.3         ggsci_2.9             dplyr_1.0.3          
+    tidyr_1.1.3           stringr_1.4.0         glue_1.4.2            rmcorr_0.4.1          shinycssloaders_1.0.0 shinythemes_1.2.0     shiny_1.6.0          
+-->
+</ul> 
+
+<h5>Example Data: Publication Sources and Description</h5>
+<ul> 
+<li> <a href="https://www.bmj.com/content/310/6977/446.short"> bland1995</a>&nbsp Health science: Repeated measures, by participant, of pH (degree of base or acidity) and PacO2 (partial pressure of carbon dioxide)  </li>
+<li> <a href="https://doi.org/10.1037/a0016464"> gilden2010</a>&nbsp Psychology: Reaction time and accuracy for a visual search task averages by participant, by repeated block</li>
+<li> <a href="https://journals.sagepub.com/doi/abs/10.1177/0018720815619515"> marusich_2016_exp2</a>&nbsp Psychology: Repeated measures, by block for pairs of participants, of their time to capture High Value Targets and their Mission Awareness Rating Scale (MARS) for each block. MARS evaluates subjective situation awareness ("knowing what is going on")</li>
+<li> <a href="https://doi.org/10.1093/cercor/bhi044"> raz2005</a>&nbsp Neuroscience: Volume of a brain area (cerebellar hemisphere) measured twice per participant at different ages, approx 5 years apart </li>
 </ul>
 
-<p>TODO: Acknowledge raincloud Shiny app</p>
+<h4>Source code for app</h3>      
+<ul> 
+<li><a href="https://github.com/lmarusich/shiny_rmcorr">Source code for this Shiny app</a></li>
+</ul>
 
-<p>TODO: Provide citation info for both rmcorr and rmcorr-shiny</p>
+<h4>Additional information about rmcorr</h3>      
+<ul>
+  <li><a href="http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00456/full">Bakdash and Marusich (2017): </a>&nbspJournal Article for rmcorr<li><a href="https://doi.org/10.3389/fpsyg.2019.01201">Bakdash and Marusich (2019):</a>&nbspCorrigendum to Journal Article (equations)</li>
+  <li><a href="https://cran.r-project.org/web/packages/rmcorr/">rmcorr R package</a></li>
+  <li><a href="https://www.bmj.com/content/310/6977/446.short">Bland and Altman (1995a)</a>&nbsp,  
+      <a href ="https://www.bmj.com/content/310/6980/633.short">Bland and Altman (1995b):</a>&nbspRmcorr is based on these two papers</li> 
+</ul>
+
+
+<h4>Alternative to rmcorr: Resources for multilevel modeling</h3>
+<p>Mulitlevel-modeling is a more complicated alternative to rmcorr, but multilevel modeling has capabilities that rmcorr does not. Multilevel modeling permits varying slopes whereas rmcorr <i>always</i> fits a common or fixed slope across participants. In addition, multilevel modeling can include additional variables (not just two dependent measures and participants) including more complex data structures (e.g., non-linear data, time-varying data, and more than two levels of nesting). See the <a href="http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00456/full">Journal Article for rmcorr</a> and references below more information.</p>
+<ul> 
+  <li><a href="http://mfviz.com/hierarchical-models/">Website</a>&nbsp(Freeman). Intuitive visual explanation of multilevel modeling</li>
+  <li><a href="https://doi.org/10.1038/nn.3648">Journal Article</a>&nbsp(Aarts et al., 2014). Excellent overview on why repeated measures should be modeled and overview of multilevel modeling</li>
+  <li><a href="https://cogsci.mindmodeling.org/2018/papers/0009/0009.pdf">Conference paper</a>&nbsp(Singmann, 2018). Informative tutorial on multilevel modeling</li>
+  <li><a href="https://books.google.com/books?hl=en&lr=&id=c9xLKzZWoZ4C">Book</a>&nbsp(Gelman and Hill, 2006). Comprehensive book on multilevel modeling with detailed explanations, equations, and examples using real data</li>
+  </ul>
