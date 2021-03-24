@@ -73,16 +73,16 @@ vjust = {input$xAxisvjust})) + ')
   
   if (input$addText == TRUE){
     
-    p <- paste0(p, 'annotate("text", \\
-x = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-Inf,Inf)}, \\
-y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, \\
-label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),\\
-~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
-                   ifelse(my.rmc$p < 0.01, "< 0.01",
-                      ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.04, "< 0.05",
-                      paste0("= ",round(my.rmc$p, digits = 2))))))), \\
-hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, \\
-vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
+    p <- paste0(p, 'annotate("text",
+          x = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-Inf,Inf)},
+          y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, 
+          label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
+            ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
+                          ifelse(my.rmc$p < 0.01, "< 0.01",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.04, "< 0.05",
+                              paste0("= ",round(my.rmc$p, digits = 2)))))))), 
+          hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, 
+          vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
   }
   
   ## Remove the 3 last characters of p, as we don't know where is the end
