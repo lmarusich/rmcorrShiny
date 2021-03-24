@@ -1,1 +1,1 @@
-# shiny_rmcorr
+# rmcorrShiny
