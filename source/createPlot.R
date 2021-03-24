@@ -79,7 +79,7 @@ vjust = {input$xAxisvjust})) + ')
           label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
             ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
                           ifelse(my.rmc$p < 0.01, "< 0.01",
-                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.04, "< 0.05",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.045, "< 0.05",
                               paste0("= ",round(my.rmc$p, digits = 2)))))))), 
           hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, 
           vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
