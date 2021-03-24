@@ -16,18 +16,19 @@ source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #2) Need warnings for: missing data, non-numeric input in X and Y? 
-#4) Palettes and plots
-#c) Cut off the first color in sequential by default? The first color is usually too faint to see 
+#4) More less done: Palettes and plots
+#c) Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see 
 #5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 #7) add option to change legend label
+#8) Partially done (need to pad location): Additional plot options: Print stats on plot and specify the location where it's printed
 
 #Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
-#2) Additional plot options: Print stats on plot and specify the location where it's printed
-#3) Interactive Tutorial
+#2) Interactive Tutorial
+#3) bindCache() with plotting
 
 light <- bs_theme()
 dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
@@ -289,7 +290,7 @@ server <- function(input, output, session) {
   processedData <- reactive({
     req(input$CIlevel)
     dataManipulation(input, inputData)
-  })
+  }) 
   
   dataManipulation <- function(input, inputData) {
     
@@ -298,7 +299,7 @@ server <- function(input, output, session) {
     m2Column <- input$m2Column
     
     cleanedData <- select(inputData$inputData(),all_of(c(subColumn, m1Column, m2Column)))
-    df <- reactive({cleanedData})
+    df <- reactive({cleanedData}) %>% bindCache(cleanedData)
     
     my.rmc = reactive({
       req(input$subColumn)
@@ -314,7 +315,7 @@ server <- function(input, output, session) {
     
     n = reactive({
       length(unique(cleanedData[[subColumn]]))
-    })
+    }) %>% bindCache(unique(cleanedData[[subColumn]]))
     
     ##Add code for calculating rmcorr
     code <- reactive({
@@ -343,7 +344,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     # We don't render the table without inputData.
     req(inputData$name())
     processedData()$rmc()$resamples
-  })
+  }) %>% bindCache(processedData()$rmc()$resamples)
   
   # UI - Data - Filter the data.
   output$DataFilterColumnsUI <- renderUI({
@@ -381,7 +382,7 @@ my.rmc <- rmcorr(participant = {subColumn},
   #Need warnings for missing data, non-numeric input in X and Y? 
   
   # Generate the plot code based on input options but do not evaluate yet.
-  plotCode <- reactive({createPlot(input)})
+  plotCode <- reactive({createPlot(input)}) %>% bindCache({createPlot(input)})
   
   # Evaluate the code based on the processed data.
   plotFigure <- reactive({
@@ -399,7 +400,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     height = function(x) input$height,
     width = function(x) input$width
     
-  )
+  ) 
   
   
   # ScriptCode
@@ -417,7 +418,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     # inputData$code()
     scriptCode()
     
-  })
+  }) %>% bindCache(scriptCode())
   
   # Print the data
   output$rmcorrResults <- renderUI({
