@@ -254,7 +254,7 @@ ui <- fluidPage(
                            
                   ),
                   tabPanel("R Code",
-                           column(8,
+                           column(12,
                                   h4("R Code"),
                                   withSpinner(
                                     verbatimTextOutput("rmcorrCode")))),

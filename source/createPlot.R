@@ -6,7 +6,7 @@ library("pals")
 
 
 createPlot <- function(input) {
-
+  
   p <- 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
   group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
 geom_point(aes(colour = factor({input$subColumn}))) + \\
@@ -17,7 +17,7 @@ ylab("{input$yAxisTitle}") + \\
 xlab("{input$xAxisTitle}") + \\
 {input$plotTheme} + \\
 scale_shape_identity() + ')
-
+  
   if (input$plotLegend == FALSE) {
     p <- paste0(p, 'theme(legend.position = "none",
              plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
@@ -34,7 +34,7 @@ vjust = {input$xAxisvjust})) + ')
 hjust = {input$xAxishjust}, \\
 vjust = {input$xAxisvjust})) + ')
   }
-
+  
   if (input$plotMajorGrid == TRUE) {
     if (input$plotMinorGrid == TRUE) {
       p <- paste0(p, 'background_grid(major = "xy", minor = "xy") + ')
@@ -42,10 +42,10 @@ vjust = {input$xAxisvjust})) + ')
       p <- paste0(p, 'background_grid(major = "xy", minor = "none") + ')
     }
   }
-
+  
   if (input$plotPalette != "default") {
-
-      #New palettes from pals 
+    
+    #New palettes from pals 
     if (input$plotPalette == "coolwarm") {
       p <- paste0(p, 'scale_colour_manual(values = coolwarm(n)) + ')
     } else if (input$plotPalette == "parula") {
@@ -60,32 +60,33 @@ vjust = {input$xAxisvjust})) + ')
       p <- paste0(p, 'scale_colour_manual(values = ocean.phase(n)) + ')   
     } else if (input$plotPalette == "viridis") {
       p <- paste0(p, 'scale_colour_manual(values = viridis(n)) + ')   
-
+      
     } else {
       ## Color Brewer
       p <- paste0(p, 'scale_colour_manual(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')
     }
   }
-
+  
   if (input$autoScale == FALSE) {
     p <- paste0(p, 'ylim({input$minScale}, {input$maxScale}) + ')
   }
   
   if (input$addText == TRUE){
     
-     p <- paste0(p, 'annotate("text", \\
-x = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-Inf,Inf)}, \\
-y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, \\
-label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),\\
-~italic(p)~.(ifelse(my.rmc$p < 0.01, "< 0.01",paste0("= ",round(my.rmc$p, digits = 2)))))), \\
-hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, \\
-vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
+    p <- paste0(p, 'annotate("text",
+          x = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-Inf,Inf)},
+          y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, 
+          label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
+            ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
+                          ifelse(my.rmc$p < 0.01, "< 0.01",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.04, "< 0.05",
+                              paste0("= ",round(my.rmc$p, digits = 2)))))))), 
+          hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, 
+          vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
   }
-
   
   ## Remove the 3 last characters of p, as we don't know where is the end
   p <- substr(p,1,nchar(p)-3)
-
+  
   return(p)
 }
-
