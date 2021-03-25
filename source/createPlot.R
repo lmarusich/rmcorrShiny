@@ -81,8 +81,8 @@ vjust = {input$xAxisvjust})) + ')
                           ifelse(my.rmc$p < 0.01, "< 0.01",
                             ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.045, "< 0.05",
                               paste0("= ",round(my.rmc$p, digits = 2)))))))), 
-          hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",0,1)}, 
-          vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",1,0)}) + ')
+          hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-0.5, 1.5)}, 
+          vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright", 1.5, -0.5)}) + ')
   }
   
   ## Remove the 3 last characters of p, as we don't know where is the end
