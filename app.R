@@ -111,7 +111,7 @@ ui <- fluidPage(
                                       condition = 'input.plotLegend == true',
                                       textInput("legendTitle",
                                                   label = "Legend Title",
-                                                  value = "Participant")),
+                                                  value = "Legend Title")),
                                    h5("Annotations"),
                                    checkboxInput("addText",
                                                  "Add rmcorr output text",
