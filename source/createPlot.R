@@ -36,7 +36,7 @@ hjust = {input$xAxishjust}, \\
 vjust = {input$xAxisvjust})) + ')
   }
 
-  if (input$legendTitle == TRUE) {
+  if (input$legendTitle != "Legend Title") {
     p <- paste0(p, 'labs(colour = ("{input$legendTitle}")) + ')
   }
   
@@ -53,7 +53,7 @@ vjust = {input$xAxisvjust})) + ')
     
     #New palettes from pals 
     if (input$plotPalette == "coolwarm") {
-      p <- paste0(p, 'scale_colour_manual({values = coolwarm(n)) + ')
+      p <- paste0(p, 'scale_colour_manual(values = coolwarm(n)) + ')
     } else if (input$plotPalette == "parula") {
       p <- paste0(p, 'scale_colour_manual(values = parula(n)) + ')
     } else if (input$plotPalette == "ocean.haline") {
