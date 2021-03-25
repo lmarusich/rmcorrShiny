@@ -16,12 +16,14 @@ source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #2) Need warnings for: missing data, non-numeric input in X and Y? 
-#4) More less done: Palettes and plots
 #c) Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see 
 #5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
+#Seed for bootstrapping? 
 #7) add option to change legend label
-#8) Partially done (need to pad location): Additional plot options: Print stats on plot and specify the location where it's printed
+
+#4) DONE:  Palettes and plots
+#8) DONE: Partially done (need to pad location): Additional plot options: Print stats on plot and specify the location where it's printed
 
 #Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
 
@@ -47,7 +49,7 @@ ui <- fluidPage(
              #downloadPlot, #downloadZip {margin-top: 25px}"),
   
   #Title 
-  titlePanel("Shiny Repeated Measures Correlation"),
+  titlePanel("rmcorrShiny"),
   
   # Sidebar  
   sidebarLayout(
@@ -105,6 +107,11 @@ ui <- fluidPage(
                                    checkboxInput("plotLegend",
                                                  "Show Legend",
                                                  FALSE),
+                                   conditionalPanel(
+                                      condition = 'input.plotLegend == true',
+                                      textInput("legendTitle",
+                                                  label = "Legend Title",
+                                                  value = "Participant")),
                                    h5("Annotations"),
                                    checkboxInput("addText",
                                                  "Add rmcorr output text",
@@ -366,6 +373,7 @@ my.rmc <- rmcorr(participant = {subColumn},
                   choices = inputData$conditions(),
                   selected = inputData$conditions()[3],
                   multiple = FALSE)
+
     )
   })
   outputOptions(output, "DataFilterColumnsUI", suspendWhenHidden = FALSE)
@@ -377,8 +385,7 @@ my.rmc <- rmcorr(participant = {subColumn},
   observeEvent(input$m2Column, {
     updateTextInput(session, "yAxisTitle", value = input$m2Column)}
   )
-  
-  
+
   #Need warnings for missing data, non-numeric input in X and Y? 
   
   # Generate the plot code based on input options but do not evaluate yet.

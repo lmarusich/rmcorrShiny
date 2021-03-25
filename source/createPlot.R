@@ -16,7 +16,8 @@ geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + '
 ylab("{input$yAxisTitle}") + \\
 xlab("{input$xAxisTitle}") + \\
 {input$plotTheme} + \\
-scale_shape_identity() + ')
+scale_shape_identity() + ')  
+
   
   if (input$plotLegend == FALSE) {
     p <- paste0(p, 'theme(legend.position = "none",
@@ -30,10 +31,15 @@ vjust = {input$xAxisvjust})) + ')
     p <- paste0(p, 'theme(plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
              axis.title = element_text(size = {input$axisLabelFontSize}),
              axis.text = element_text(size = {input$scaleFontSize}),
-             axis.text.x = element_text(angle = {input$xAxisAngle}, \\
+             axis.text.x = element_text(angle = {input$xAxisAngle},
 hjust = {input$xAxishjust}, \\
 vjust = {input$xAxisvjust})) + ')
   }
+
+  if (input$legendTitle == TRUE) {
+    p <- paste0(p, 'labs(colour = ("{input$legendTitle}")) + ')
+  }
+  
   
   if (input$plotMajorGrid == TRUE) {
     if (input$plotMinorGrid == TRUE) {
@@ -47,7 +53,7 @@ vjust = {input$xAxisvjust})) + ')
     
     #New palettes from pals 
     if (input$plotPalette == "coolwarm") {
-      p <- paste0(p, 'scale_colour_manual(values = coolwarm(n)) + ')
+      p <- paste0(p, 'scale_colour_manual({values = coolwarm(n)) + ')
     } else if (input$plotPalette == "parula") {
       p <- paste0(p, 'scale_colour_manual(values = parula(n)) + ')
     } else if (input$plotPalette == "ocean.haline") {
@@ -67,6 +73,7 @@ vjust = {input$xAxisvjust})) + ')
     }
   }
   
+
   if (input$autoScale == FALSE) {
     p <- paste0(p, 'ylim({input$minScale}, {input$maxScale}) + ')
   }
@@ -79,7 +86,7 @@ vjust = {input$xAxisvjust})) + ')
           label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
             ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
                           ifelse(my.rmc$p < 0.01, "< 0.01",
-                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.045, "< 0.05",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p >= 0.045, "< 0.05",
                               paste0("= ",round(my.rmc$p, digits = 2)))))))), 
           hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-0.5, 1.5)}, 
           vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright", 1.5, -0.5)}) + ')
