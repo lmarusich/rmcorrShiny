@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  24 MAR 2021 09:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  25 MAR 2021 21:58
 entering extended mode
 **./paper.tex
 (paper.tex
@@ -942,7 +942,22 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 149.
-(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/grffile\grffile.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count447
+\FV@InFile=\read5
+\FV@TabBox=\box69
+\c@FancyVerbLine=\count448
+\FV@StepNumber=\count449
+\FV@OutFile=\write7
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip91
+\fb@frw=\dimen282
+\fb@frh=\dimen283
+\FrameRule=\dimen284
+\FrameSep=\dimen285
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/grffile\grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
@@ -950,39 +965,39 @@ line 40.
 ) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/parskip\parskip.sty
 Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
 )
-\@quotelevel=\count447
-\@quotereset=\count448
+\@quotelevel=\count450
+\@quotereset=\count451
 (paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 195.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 235.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+35.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 195.
-LaTeX Font Info:    ... okay on input line 195.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring ON on input line 195.
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring ON on input line 235.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/refcount\refcount.sty
@@ -992,14 +1007,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count449
+\c@section@level=\count452
 )
-LaTeX Info: Redefining \ref on input line 195.
-LaTeX Info: Redefining \pageref on input line 195.
-LaTeX Info: Redefining \nameref on input line 195.
+LaTeX Info: Redefining \ref on input line 235.
+LaTeX Info: Redefining \pageref on input line 235.
+LaTeX Info: Redefining \nameref on input line 235.
 (paper.out) (paper.out)
-\@outlinefile=\write7
-\openout7 = `paper.out'.
+\@outlinefile=\write8
+\openout8 = `paper.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1017,8 +1032,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'paper.bbl' not found.
 No file paper.bbl.
-Package biblatex Info: Reference section=0 on input line 195.
-Package biblatex Info: Reference segment=0 on input line 195.
+Package biblatex Info: Reference section=0 on input line 235.
+Package biblatex Info: Reference segment=0 on input line 235.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -1052,7 +1067,7 @@ Package biblatex Info: Reference segment=0 on input line 195.
 * \@reversemargintrue
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 195.
+LaTeX Info: Redefining \microtypecontext on input line 235.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1072,14 +1087,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 196
+LaTeX Font Info:    Trying to load font information for U+msa on input line 236
 .
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 196
+LaTeX Font Info:    Trying to load font information for U+msb on input line 236
 .
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1087,15 +1102,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
-Package hyperref Warning: Suppressing link with empty target on input line 222.
+Package hyperref Warning: Suppressing link with empty target on input line 262.
 
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 222.
+Package hyperref Warning: Suppressing link with empty target on input line 262.
 
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 222.
+Package hyperref Warning: Suppressing link with empty target on input line 262.
 
 
 File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
@@ -1111,10 +1126,12 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 287.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 321.
 [1
 
 ]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 351.
 File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
 s/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
@@ -1128,11 +1145,24 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
+File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
+s/resources/JOSS-logo.png>
+
+Package fancyhdr Warning: \headheight is too small (62.59596pt): 
+(fancyhdr)                Make it at least 62.60347pt, for example:
+(fancyhdr)                \setlength{\headheight}{62.60347pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
+
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
 (paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 356.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 7084D205B2083F390A261E050E16222B;141.
 Package logreq Info: Writing requests to 'paper.run.xml'.
@@ -1140,12 +1170,12 @@ Package logreq Info: Writing requests to 'paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34780 strings out of 414218
- 681969 string characters out of 2902543
- 1405608 words of memory out of 3000000
- 51794 multiletter control sequences out of 15000+200000
- 539194 words of font info for 70 fonts, out of 3000000 for 9000
+ 35247 strings out of 414218
+ 688853 string characters out of 2902543
+ 1415544 words of memory out of 3000000
+ 52253 multiletter control sequences out of 15000+200000
+ 539202 words of font info for 71 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,75p,1196b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on paper.pdf (2 pages).
+Output written on paper.pdf (3 pages).
