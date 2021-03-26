@@ -22,7 +22,7 @@ affiliations:
  - name: Department of Psychology and Special Education, Texas A&M--Commerce
    index: 3
 # citation_author: Price-Whelan et. al.
-date: 23 March 2021
+date: 26 March 2021
 year: 2021
 bibliography: paper.bib
 output: rticles::joss_article
@@ -45,8 +45,8 @@ not be analyzed as such. Erroneously modeling repeated measures data as independ
 observations is surprisingly prevalent in published research, even though such results
 will generally be misleading [@aarts2014solution; @lazic2010problem; @bakdash2020statistical].
 A common solution to this problem is to use aggregated data: first taking an average of the 
-repeated measures data of each person so that each person again contributes a single data
-point, and then calculating the correlation from these averages.  
+repeated measures data of each person so that each person again contributes a single paired data
+point, and then calculating the correlation from these averages (between-participants).  
 
 Instead of aggregation, an alternative solution is to calculate the repeated measures
 correlation [@Bakdash2017; @Bland446; @Bland633], which assesses the common
@@ -60,17 +60,17 @@ patterns among individuals that aggregation may obscure [@Bakdash2017].
 
 We previously developed the ``rmcorr`` R package [@R-rmcorr] to make the repeated measures
 correlation technique widely available for researchers; it has since also been adapted as 
-a function in the Pingouin statistics package [@Vallat2018] for Python. However, the use 
+a function in the ``Pingouin`` statistics package [@Vallat2018] for Python. However, the use 
 of both of these packages requires some facility with  programming languages and thus they 
 are not universally accessible. 
 
 Here we introduce the ``rmcorrShiny`` application, which provides an intuitive graphical
 interface for computing and plotting the repeated measures correlation (see Figure 1 below
-demonstrating the application using brain area volume and age data from Raz [-@raz2005regional]). 
+demonstrating the application using brain area volume and age data from Raz [-@raz2005regional]).  
 
 The primary features of ``rmcorrShiny`` include:
 
-* The ability to import data in different file formats or use one of four included sample 
+* The ability to import data in a variety of different file formats or to use one of four included sample 
 datasets.
 * The display of raw output from ``rmcorr`` as well as formatted output for reporting
 results. 
@@ -79,14 +79,21 @@ results.
 [@R-RColorBrewer] and ``pals`` [@R-pals] packages).
 * Customized R code using the data and options chosen by the user that can be directly
 pasted and executed in R to produce the same output as in ``rmcorrShiny``.
-* The ability to download plots (in a variety of file formats) or a .zip file of all output.
+* The ability to download plots (in multiple file formats) or a .zip file of all output.
 
-Note that many features in ''rmcorrShiny'' were based on modifications of code in the 
-``Raincloud-shiny`` app [@raincloudshiny] \textcolor{red}{(Laura: I like the new language, but what do you think about the citation?
-I found his name through Twitter, but maybe it's kind of creepy to do that? He doesn't have his name on the app or on the github) }
+Note that many features in ``rmcorrShiny``, including the panel interface, were based on modifications of the ``Shiny`` [@R-shiny-ref] code in the 
+``Raincloud-shiny`` app [@raincloudshiny].  
+\textcolor{red}{(Laura: I like the new language, but what do you think about the citation?
+I found his name through Twitter, but maybe it's kind of creepy to do that? He doesn't have his name on the app or on the github). It would 
+be nice to cite by name: I found this on the repo for raincloud-shiny: https://github.com/gabrifc I added the name to the repo citation, switched it to 
+software}
 
-\textcolor{red}{Screenshot (placeholder until we have a near-final version?)}
+\textcolor{red}{Screenshot (placeholder until we have a near-final version?) Added a placeholder figure. The quality is very medicore. Will save it uncompressed for the final version}
 
+\begin{figure}[h]
+\includegraphics{Raz_rmcorr_plot.png}
+\caption{`` rmcorrShiny`` plot of neuroscience data from [@raz2005regional], two paired repeated measures of age and volume for a brain area approximately 5 years apart. Note the strong, the strong common negative association among participants for decreasing volume in the brain area with age regardless of initial age at the first time period.}
+\end{figure}
 
 ``rmcorrShiny`` can be used in a web browser [**here**](https://lmarusich.shinyapps.io/shiny_rmcorr/) 
 or it can be installed from Github and run in R, using the following commands \textcolor{red}{(BIG TODO):}

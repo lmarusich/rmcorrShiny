@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# ## ggplot & cowplot theme
+## ggplot & cowplot theme
 library("ggplot2")
 library("cowplot")
 library("RColorBrewer")
@@ -93,8 +92,8 @@ vjust = {input$xAxisvjust})) +
   p <- substr(p,1,nchar(p)-3)
 
   return(p)
-}
-=======
+
+
 # ## ggplot & cowplot theme
 library("ggplot2")
 library("cowplot")
@@ -182,8 +181,8 @@ vjust = {input$xAxisvjust})) + ')
           y = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright",Inf,-Inf)}, 
           label = bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
             ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001", 
-                          ifelse(my.rmc$p < 0.01, "< 0.01",
-                            ifelse(my.rmc$p < 0.05 & my.rmc$p >= 0.045, "< 0.05",
+                          else(my.rmc$p < 0.01, "< 0.01",
+                            else(my.rmc$p < 0.05 & my.rmc$p >= 0.045, "< 0.05",
                               paste0("= ",round(my.rmc$p, digits = 2)))))))), 
           hjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "bottomleft",-0.5, 1.5)}, 
           vjust = {ifelse(input$textLocation == "topleft" || input$textLocation == "topright", 1.5, -0.5)}) + ')
@@ -191,7 +190,5 @@ vjust = {input$xAxisvjust})) + ')
   
   ## Remove the 3 last characters of p, as we don't know where is the end
   p <- substr(p,1,nchar(p)-3)
-  
   return(p)
-}
->>>>>>> 2f50255d471ce9727c5ba07035ffb5958324037f
+}}

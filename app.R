@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 library(shiny)
 library(shinythemes)
 library(shinycssloaders)
@@ -601,7 +600,7 @@ my.rmc <- rmcorr(participant = {subColumn},
 
 }
 shinyApp(ui = ui, server = server)
-=======
+
 library(shiny)
 library(shinythemes)
 library(shinycssloaders)
@@ -1190,4 +1189,3 @@ my.rmc <- rmcorr(participant = {subColumn},
   
 }
 shinyApp(ui = ui, server = server)
->>>>>>> 2f50255d471ce9727c5ba07035ffb5958324037f
