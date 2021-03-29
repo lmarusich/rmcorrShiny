@@ -1,4 +1,3 @@
-# ## ggplot & cowplot theme
 library("ggplot2")
 library("cowplot")
 library("RColorBrewer")
@@ -92,4 +91,3 @@ vjust = {input$xAxisvjust})) +
   p <- substr(p,1,nchar(p)-3)
 
   return(p)
-}

@@ -621,3 +621,4 @@ my.rmc <- rmcorr(participant = {subColumn},
 
 }
 shinyApp(ui = ui, server = server)
+
