@@ -4,7 +4,7 @@ library("tidyr")
 # library("glue")
 
 dataUpload <- function(input, output, session) {
-  
+
   # The selected file, if any
   userFile <- reactive({
     # If no file is selected, don't do anything
@@ -26,7 +26,7 @@ dataUpload <- function(input, output, session) {
         } else if (input$whichsampleData == 'marusich2016'){
           return(list('name' = 'marusich2016_exp2.csv',
                       'datapath' = 'marusich2016_exp2.csv'))
-          
+
         }
       }
       req(input$excelFile)
@@ -36,7 +36,7 @@ dataUpload <- function(input, output, session) {
   datapath <- reactive({
     userFile()$datapath
   })
-  
+
   inputData <- reactive({
     read.delim2(
       userFile()$datapath,
@@ -47,16 +47,16 @@ dataUpload <- function(input, output, session) {
       dec = input$decimalPoint
     )
   })
-  
+
   conditions <- reactive({
     colnames(inputData())
   })
-  
+
   name <- reactive({
     userFile()$name
   })
-  
-  
+
+
   code <- reactive({
     quoteCode <- ifelse(input$quote == '\'', '"{input$quote}"', '\'{input$quote}\'')
     sepCode <- ifelse(input$sep == '\t', '\\t', '{input$sep}')
@@ -64,10 +64,12 @@ dataUpload <- function(input, output, session) {
 inputData <- read.delim2("{name()}",
                           header = {input$header},
                           sep = \'', sepCode, '\',
-                          quote = ', quoteCode, ', 
+                          quote = ', quoteCode, ',
                           check.names = FALSE,
                           dec = \'{input$decimalPoint}\')\n\n')})
-  
+
+
+
   return(list(
     inputData = inputData,
     conditions = conditions,
