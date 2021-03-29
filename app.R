@@ -15,20 +15,19 @@ source("source/createPlot.R", local = TRUE)
 source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
-#2) Need warnings for: missing data, non-numeric input in X and Y?
-#4) More less done: Palettes and plots
-#c) Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see
+#2) DONE? Jon: Default R warnings seem sufficient. Need warnings for: missing data, non-numeric input in X and Y?
+#4) DONE: More less done: Palettes and plots
 #5) LM: Maybe fixed? How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 #LM: this is interesting (#6), but i lean towards it being out of scope for this app.
-
-
-#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code
+#Jon: Agreed
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
-#2) Interactive Tutorial
+#2) Interactive Tutorial or video tutorial with narrated overview? Doesn't have to be as fancy as this one, but I like the general approach:
+# http://www.higherordernetwork.com/ (NS-CTA funded work)
 #3) bindCache() with plotting
+#c) Going pass on this one for now. Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see
 
 light <- bs_theme()
 dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
@@ -75,6 +74,13 @@ ui <- fluidPage(
                                    checkboxInput("bootstrap", "Bootstrap CIs?", FALSE)),
                             conditionalPanel(
                               condition = 'input.bootstrap == true',
+                              column(12,
+                                     numericInput("bootseed",
+                                                  label = h5("Bootstrapping Seed Value"),
+                                                  value = 33,
+                                                  step  = 1,
+                                                  min   = -999,
+                                                  max   = 999)),
                               column(12,
                                      numericInput("bootstrapnreps",
                                                   label = h5("Number of resamples"),
@@ -317,6 +323,7 @@ server <- function(input, output, session) {
 
     my.rmc = reactive({
       req(input$subColumn)
+      set.seed(input$bootseed)
       rmcorr(participant = subColumn,
              measure1 = m1Column,
              measure2 = m2Column,

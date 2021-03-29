@@ -84,9 +84,10 @@ Note that many features in ``rmcorrShiny``, including the panel interface, were 
 
 
 \textcolor{red}{Screenshot Added a placeholder figure. The quality is very medicore. Will save it uncompressed for the final version.
-LM: I think using the plot output tab is good for the screenshot, but maybe the choosing variables tab for the input? we can talk about it}
+LM: I think using the plot output tab is good for the screenshot, but maybe the choosing variables tab for the input? we can talk about it
+Jon: Updated the figure. TIFF version won't render, but the jpg looks decent. BMP is huge with minimal diff in quality.}
 
-![Screenshot of the `` rmcorrShiny`` app, showing an input tab with \textcolor{red}{Discuss} options and the Plot output tab, using example data from Raz et al. [-@raz2005regional]\label{fig:example}](Raz_rmcorr_plot.png)
+![Screenshot of the `` rmcorrShiny`` app, showing the Data--Variables tabs (left sdie) and the Plot tab (right side), using sample data from Raz et al. [-@raz2005regional]\label{fig:example}](rmcorr_example_input_plot.jpg)
 
 ``rmcorrShiny`` can be used in a web browser [**here**](https://lmarusich.shinyapps.io/shiny_rmcorr/) 
 or the package can be installed from Github and run in R, using the following commands \textcolor{red}{(BIG TODO):}
