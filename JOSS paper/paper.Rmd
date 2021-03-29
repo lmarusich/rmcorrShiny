@@ -21,8 +21,7 @@ affiliations:
    index: 2
  - name: Department of Psychology and Special Education, Texas A&M--Commerce
    index: 3
-# citation_author: Price-Whelan et. al.
-date: 26 March 2021
+date: 29 March 2021
 year: 2021
 bibliography: paper.bib
 output: rticles::joss_article
@@ -55,8 +54,10 @@ repeated measures correlation technique is conceptually similar to a null multil
 with a common slope but varying intercept for each individual. Calculating the repeated
 measures correlation has multiple potential benefits. It is simpler and more
 straightforward to implement than a multilevel model, with the potential for far greater
-statistical power than aggregation. It also has the potential to provide insights into
-patterns among individuals that aggregation may obscure [@Bakdash2017]. 
+statistical power than aggregation. It may also provide insights into patterns among
+individuals that aggregation may obscure [@Bakdash2017]. 
+
+# Statement of need
 
 We previously developed the ``rmcorr`` R package [@R-rmcorr] to make the repeated measures
 correlation technique widely available for researchers; it has since also been adapted as 
@@ -64,10 +65,8 @@ a function in the ``Pingouin`` statistics package [@Vallat2018] for Python. Howe
 of both of these packages requires some facility with  programming languages and thus they 
 are not universally accessible. 
 
-Here we introduce the ``rmcorrShiny`` application, which provides an intuitive graphical
-interface for computing and plotting the repeated measures correlation (see Figure 1 below
-demonstrating the application using brain area volume and age data from Raz [-@raz2005regional]).  
-
+Here we introduce ``rmcorrShiny``, a ``Shiny`` [@R-shiny-ref] app, which provides an intuitive graphical
+interface for computing and plotting the repeated measures correlation (see Figure 1 below). 
 The primary features of ``rmcorrShiny`` include:
 
 * The ability to import data in a variety of different file formats or to use one of four included sample 
@@ -81,22 +80,16 @@ results.
 pasted and executed in R to produce the same output as in ``rmcorrShiny``.
 * The ability to download plots (in multiple file formats) or a .zip file of all output.
 
-Note that many features in ``rmcorrShiny``, including the panel interface, were based on modifications of the ``Shiny`` [@R-shiny-ref] code in the 
-``Raincloud-shiny`` app [@raincloudshiny].  
-\textcolor{red}{(Laura: I like the new language, but what do you think about the citation?
-I found his name through Twitter, but maybe it's kind of creepy to do that? He doesn't have his name on the app or on the github). It would 
-be nice to cite by name: I found this on the repo for raincloud-shiny: https://github.com/gabrifc I added the name to the repo citation, switched it to 
-software}
+Note that many features in ``rmcorrShiny``, including the panel interface, were based on modifications of code from the ``Raincloud-shiny`` app [@raincloudshiny].  
 
-\textcolor{red}{Screenshot (placeholder until we have a near-final version?) Added a placeholder figure. The quality is very medicore. Will save it uncompressed for the final version}
 
-\begin{figure}[h]
-\includegraphics{Raz_rmcorr_plot.png}
-\caption{`` rmcorrShiny`` plot of neuroscience data from [@raz2005regional], two paired repeated measures of age and volume for a brain area approximately 5 years apart. Note the strong, the strong common negative association among participants for decreasing volume in the brain area with age regardless of initial age at the first time period.}
-\end{figure}
+\textcolor{red}{Screenshot Added a placeholder figure. The quality is very medicore. Will save it uncompressed for the final version.
+LM: I think using the plot output tab is good for the screenshot, but maybe the choosing variables tab for the input? we can talk about it}
+
+![Screenshot of the `` rmcorrShiny`` app, showing an input tab with \textcolor{red}{Discuss} options and the Plot output tab, using example data from Raz et al. [-@raz2005regional]\label{fig:example}](Raz_rmcorr_plot.png)
 
 ``rmcorrShiny`` can be used in a web browser [**here**](https://lmarusich.shinyapps.io/shiny_rmcorr/) 
-or it can be installed from Github and run in R, using the following commands \textcolor{red}{(BIG TODO):}
+or the package can be installed from Github and run in R, using the following commands \textcolor{red}{(BIG TODO):}
 
 ```r
 devtools::install_github("lmarusich/rmcorrShiny")

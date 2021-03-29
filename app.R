@@ -18,15 +18,10 @@ source("source/paletteColours.R", local = TRUE)
 #2) Need warnings for: missing data, non-numeric input in X and Y?
 #4) More less done: Palettes and plots
 #c) Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see
-#5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
+#5) LM: Maybe fixed? How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 #LM: this is interesting (#6), but i lean towards it being out of scope for this app.
-#7) add option to change legend label
-#8) Partially done (need to pad location): Additional plot options: Print stats on plot and specify the location where it's printed
-#LM: I experimented with letting the user adjust the font size of the annotations, but it turns out that
-#will interact with the padding you've implemented (bigger font sizes start moving closer to the center)
-#so I think it's best to just set a single font size for that, and if they really need to change it, they
-#can grab the R code we provide and do it themselves in an R session.
+
 
 #Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code
 
@@ -468,7 +463,9 @@ my.rmc <- rmcorr(participant = {subColumn},
     CIlevel <- processedData()$rmc()$CI.level * 100
     str_rrm <- paste("Repeated measures correlation: ", round(processedData()$rmc()$r, digits = 3))
     str_df  <- paste("Degrees of freedom: ", processedData()$rmc()$df)
-    str_p   <- paste("p-value:", round(processedData()$rmc()$p, digits = 3))
+    str_p   <- paste("p-value:", ifelse(processedData()$rmc()$p < .001,
+                                        format(processedData()$rmc()$p, scientific = T, digits =3),
+                                               round(processedData()$rmc()$p, digits = 3)))
     str_CI  <- paste(CIlevel,"% Confidence Interval: ",
                      paste0(round(processedData()$rmc()$CI[1], digits = 3), sep = ", ", round(processedData()$rmc()$CI[2], digits = 3)), sep = "")
     HTML(paste(str_rrm, str_df, str_p, str_CI, sep = '</br>'))
