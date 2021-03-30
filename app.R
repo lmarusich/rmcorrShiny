@@ -16,6 +16,7 @@ source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
+#2) I'm thinking maybe leave out the citation section in the About page until we can list the JOSS paper?
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
