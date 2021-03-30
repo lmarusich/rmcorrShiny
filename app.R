@@ -15,12 +15,7 @@ source("source/createPlot.R", local = TRUE)
 source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
-#2) DONE? Jon: Default R warnings seem sufficient. Need warnings for: missing data, non-numeric input in X and Y?
-#4) DONE: More less done: Palettes and plots
-#5) LM: Maybe fixed? How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
-#6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
-#LM: this is interesting (#6), but i lean towards it being out of scope for this app.
-#Jon: Agreed
+#1) Do we want to do something different about how the bootstrap resamples are presented?
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
@@ -365,7 +360,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     # We don't render the table without inputData.
     req(inputData$name())
     processedData()$rmc()$resamples
-  }) %>% bindCache(processedData()$rmc()$resamples)
+  }, colnames = F, rownames = T) %>% bindCache(processedData()$rmc()$resamples)
 
   # UI - legend title
   output$legendTitleUI <- renderUI({
@@ -483,7 +478,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     req(inputData$name())
     CIlevel <- processedData()$rmc()$CI.level * 100
     HTML(glue("r<sub>rm</sub>({processedData()$rmc()$df}) =
-              {round(processedData()$rmc()$r, digits = 2)},
+              {format(round(processedData()$rmc()$r, digits = 2), nsmall = 2)},
               {CIlevel}% CI [{round(processedData()$rmc()$CI[1], digits = 3)},
               {round(processedData()$rmc()$CI[2], digits = 3)}],
               {ifelse(processedData()$rmc()$p < .001, 'p < 0.001', paste('p = ',round(processedData()$rmc()$p, digits = 3),sep = ''))}"))
