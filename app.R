@@ -15,20 +15,15 @@ source("source/createPlot.R", local = TRUE)
 source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
-#2) Need warnings for: missing data, non-numeric input in X and Y?
-#4) More less done: Palettes and plots
-#c) Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see
-#5) LM: Maybe fixed? How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
-#6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
-#LM: this is interesting (#6), but i lean towards it being out of scope for this app.
-
-
-#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code
+#1) Do we want to do something different about how the bootstrap resamples are presented?
+#2) I'm thinking maybe leave out the citation section in the About page until we can list the JOSS paper?
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
-#2) Interactive Tutorial
+#2) Interactive Tutorial or video tutorial with narrated overview? Doesn't have to be as fancy as this one, but I like the general approach:
+# http://www.higherordernetwork.com/ (NS-CTA funded work)
 #3) bindCache() with plotting
+#c) Going pass on this one for now. Jon to-do item: Cut off the first color in sequential by default? The first color is usually too faint to see
 
 light <- bs_theme()
 dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
@@ -75,6 +70,13 @@ ui <- fluidPage(
                                    checkboxInput("bootstrap", "Bootstrap CIs?", FALSE)),
                             conditionalPanel(
                               condition = 'input.bootstrap == true',
+                              column(12,
+                                     numericInput("bootseed",
+                                                  label = h5("Bootstrapping Seed Value"),
+                                                  value = 33,
+                                                  step  = 1,
+                                                  min   = -999,
+                                                  max   = 999)),
                               column(12,
                                      numericInput("bootstrapnreps",
                                                   label = h5("Number of resamples"),
@@ -317,6 +319,7 @@ server <- function(input, output, session) {
 
     my.rmc = reactive({
       req(input$subColumn)
+      set.seed(input$bootseed)
       rmcorr(participant = subColumn,
              measure1 = m1Column,
              measure2 = m2Column,
@@ -358,7 +361,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     # We don't render the table without inputData.
     req(inputData$name())
     processedData()$rmc()$resamples
-  }) %>% bindCache(processedData()$rmc()$resamples)
+  }, colnames = F, rownames = T) %>% bindCache(processedData()$rmc()$resamples)
 
   # UI - legend title
   output$legendTitleUI <- renderUI({
@@ -476,7 +479,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     req(inputData$name())
     CIlevel <- processedData()$rmc()$CI.level * 100
     HTML(glue("r<sub>rm</sub>({processedData()$rmc()$df}) =
-              {round(processedData()$rmc()$r, digits = 2)},
+              {format(round(processedData()$rmc()$r, digits = 2), nsmall = 2)},
               {CIlevel}% CI [{round(processedData()$rmc()$CI[1], digits = 3)},
               {round(processedData()$rmc()$CI[2], digits = 3)}],
               {ifelse(processedData()$rmc()$p < .001, 'p < 0.001', paste('p = ',round(processedData()$rmc()$p, digits = 3),sep = ''))}"))
