@@ -1,71 +1,51 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.24)  29 MAR 2021 12:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  1 APR 2021 13:21
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**paper.tex
-(./paper.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cl
-s
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+**./paper.tex
+(paper.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06> ("C:\Program Files\MiKTeX 2.9\tex/latex/base\
+article.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@section=\count176
-\c@subsection=\count177
-\c@subsubsection=\count178
-\c@paragraph=\count179
-\c@subparagraph=\count180
-\c@figure=\count181
-\c@table=\count182
+\c@part=\count163
+\c@section=\count164
+\c@subsection=\count165
+\c@subsubsection=\count166
+\c@paragraph=\count167
+\c@subparagraph=\count168
+\c@figure=\count169
+\c@table=\count170
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen134
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/marginnote/marg
-innote.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/marginnote\marginnote.
+sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count183
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphi
-cx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval
-.sty
+\c@mn@abspage=\count171
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphi
-cs.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.s
-ty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/gr
-aphics.cfg
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/xe
-tex.def
-File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\xetex.def"
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen139
-\Gin@req@width=\dimen140
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.s
-ty
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/co
-lor.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 225.
@@ -77,519 +57,426 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/preprint/authbl
-k.sty
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/preprint\authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip49
 \@affilsep=\skip50
-\c@Maxaffil=\count184
-\c@authors=\count185
-\c@affil=\count186
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolb
-ox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count187
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titlesec/titles
-ec.sty
+\c@Maxaffil=\count172
+\c@authors=\count173
+\c@affil=\count174
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count175
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/titlesec\titlesec.st
+y
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box47
+\ttl@box=\box45
 \beforetitleunit=\skip51
 \aftertitleunit=\skip52
-\ttl@plus=\dimen141
-\ttl@minus=\dimen142
+\ttl@plus=\dimen137
+\ttl@minus=\dimen138
 \ttl@toksa=\toks16
-\titlewidth=\dimen143
-\titlewidthlast=\dimen144
-\titlewidthfirst=\dimen145
-) (c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.st
-y
+\titlewidth=\dimen139
+\titlewidthlast=\dimen140
+\titlewidthfirst=\dimen141
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count188
-\calc@Bcount=\count189
-\calc@Adimen=\dimen146
-\calc@Bdimen=\dimen147
+\calc@Acount=\count176
+\calc@Bcount=\count177
+\calc@Adimen=\dimen142
+\calc@Bdimen=\dimen143
 \calc@Askip=\skip53
 \calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count190
+\calc@Ccount=\count178
 \calc@Cskip=\skip55
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/frontendlay
-er/tikz.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/
-pgf.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/p
-gfrcs.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfutil-common.tex
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/frontendlayer\tikz.sty" ("C:\Prog
+ram Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf.sty" ("C:\Program Files\MiKTe
+X 2.9\tex/latex/pgf/utilities\pgfrcs.sty" ("C:\Program Files\MiKTeX 2.9\tex/gen
+eric/pgf/utilities\pgfutil-common.tex"
 \pgfutil@everybye=\toks17
-\pgfutil@tempdima=\dimen148
-\pgfutil@tempdimb=\dimen149
+\pgfutil@tempdima=\dimen144
+\pgfutil@tempdimb=\dimen145
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfutil-common-lists.tex))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfutil-latex.def
-\pgfutil@abb=\box48
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfrcs.code.tex
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revis
-ion.tex)
-Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common-lists.te
+x")) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-latex.def"
+\pgfutil@abb=\box46
+("C:\Program Files\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfrcs.code.tex" ("C
+:\Program Files\MiKTeX 2.9\tex/generic/pgf\pgf.revision.tex")
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
 ))
-Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/
-pgfcore.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer
-/pgfsys.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsys.code.tex
-Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfkeys.code.tex
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgfcore.sty" ("C:\Progra
+m Files\MiKTeX 2.9\tex/latex/pgf/systemlayer\pgfsys.sty" ("C:\Program Files\MiK
+TeX 2.9\tex/generic/pgf/systemlayer\pgfsys.code.tex"
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks18
 \pgfkeys@temptoks=\toks19
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfkeysfiltered.code.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeysfiltered.code.te
+x"
 \pgfkeys@tmptoks=\toks20
 ))
-\pgf@x=\dimen150
-\pgf@y=\dimen151
-\pgf@xa=\dimen152
-\pgf@ya=\dimen153
-\pgf@xb=\dimen154
-\pgf@yb=\dimen155
-\pgf@xc=\dimen156
-\pgf@yc=\dimen157
-\pgf@xd=\dimen158
-\pgf@yd=\dimen159
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count191
-\c@pgf@countb=\count192
-\c@pgf@countc=\count193
-\c@pgf@countd=\count194
+\c@pgf@counta=\count179
+\c@pgf@countb=\count180
+\c@pgf@countc=\count181
+\c@pgf@countd=\count182
 \t@pgf@toka=\toks21
 \t@pgf@tokb=\toks22
 \t@pgf@tokc=\toks23
-\pgf@sys@id@count=\count195
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgf.cfg
-File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@sys@id@count=\count183
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgf.cfg"
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-xetex.def
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsys-xetex.def
-File: pgfsys-xetex.def 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsys-dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-xetex.def"
+File: pgfsys-xetex.def 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def"
+File: pgfsys-dvipdfmx.def 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+"
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 )
-\pgfsys@objnum=\count196
+\pgfsys@objnum=\count184
 )))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfsyssoftpath@smallbuffer@items=\count197
-\pgfsyssoftpath@bigbuffer@items=\count198
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.t
+ex"
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count185
+\pgfsyssoftpath@bigbuffer@items=\count186
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlay
-er/pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcore.code.tex
-Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-ath.code.tex
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athcalc.code.tex
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athutil.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athparser.code.tex
-\pgfmath@dimen=\dimen160
-\pgfmath@count=\count199
-\pgfmath@box=\box49
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsysprotocol.code.t
+ex"
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcore.code.tex"
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex" ("C:\Progr
+am Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathcalc.code.tex" ("C:\Program Fil
+es\MiKTeX 2.9\tex/generic/pgf/math\pgfmathutil.code.tex") ("C:\Program Files\Mi
+KTeX 2.9\tex/generic/pgf/math\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count187
+\pgfmath@box=\box47
 \pgfmath@toks=\toks24
 \pgfmath@stack@operand=\toks25
 \pgfmath@stack@operation=\toks26
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.code.tex
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.basic.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.trigonometric.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.random.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.comparison.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.base.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.round.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.misc.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfunctions.integerarithmetics.code.tex)))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-athfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count266
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfi
-nt.code.tex)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@picminx=\dimen161
-\pgf@picmaxx=\dimen162
-\pgf@picminy=\dimen163
-\pgf@picmaxy=\dimen164
-\pgf@pathminx=\dimen165
-\pgf@pathmaxx=\dimen166
-\pgf@pathminy=\dimen167
-\pgf@pathmaxy=\dimen168
-\pgf@xx=\dimen169
-\pgf@xy=\dimen170
-\pgf@yx=\dimen171
-\pgf@yy=\dimen172
-\pgf@zx=\dimen173
-\pgf@zy=\dimen174
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@path@lastx=\dimen175
-\pgf@path@lasty=\dimen176
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@shorten@end@additional=\dimen177
-\pgf@shorten@start@additional=\dimen178
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfpic=\box50
-\pgf@hbox=\box51
-\pgf@layerbox@main=\box52
-\pgf@picture@serial@count=\count267
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgflinewidth=\dimen179
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@pt@x=\dimen180
-\pgf@pt@y=\dimen181
-\pgf@pt@temp=\dimen182
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowsep=\dimen183
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@max=\dimen184
-\pgf@sys@shading@range@num=\count268
-\pgf@shadingcount=\count269
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.code.tex"
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfexternal@startupbox=\box53
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.basic.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.trigonometr
+ic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.random.code
+.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.comparison.
+code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.base.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.round.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.misc.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.integerarit
+hmetics.code.tex"))) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+float.code.tex"
+\c@pgfmathroundto@lastzeros=\count188
+)) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfint.code.tex") ("C:\Pr
+ogram Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathconstruct.c
+ode.tex"
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathusage.code.
+tex"
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorescopes.code.t
+ex"
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box48
+\pgf@hbox=\box49
+\pgf@layerbox@main=\box50
+\pgf@picture@serial@count=\count189
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclaye
-r/pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/p
-gfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfnodeparttextbox=\box54
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoregraphicstate.co
+de.tex"
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen175
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/p
-gfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransformations
+.code.tex"
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorequick.code.te
+x"
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibili
-ty/pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen185
-\pgf@nodesepend=\dimen186
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreobjects.code.te
+x"
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibili
-ty/pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/p
-gffor.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/p
-gfkeys.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgfkeys.code.tex))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmat
-h.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-ath.code.tex))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities
-/pgffor.code.tex
-Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathprocessing.
+code.tex"
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorearrows.code.t
+ex"
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen179
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreshade.code.te
+x"
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count190
+\pgf@shadingcount=\count191
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreimage.code.te
+x"
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfm
-ath.code.tex)
-\pgffor@iter=\dimen187
-\pgffor@skip=\dimen188
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreexternal.code.t
+ex"
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box51
+)) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorelayers.code.
+tex"
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransparency.co
+de.tex"
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepatterns.code.t
+ex"
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleshapes.code.
+tex"
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box52
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-0-65.
+sty"
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-1-18.
+sty"
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgffor.sty" ("C:\Progr
+am Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgfkeys.sty" ("C:\Program Files\MiK
+TeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex")) ("C:\Program Files\MiKTeX
+ 2.9\tex/latex/pgf/math\pgfmath.sty" ("C:\Program Files\MiKTeX 2.9\tex/generic/
+pgf/math\pgfmath.code.tex")) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/util
+ities\pgffor.code.tex"
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex")
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
 \pgffor@stack=\toks27
 \pgffor@toks=\toks28
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendl
-ayer/tikz/tikz.code.tex
-Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
+)) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz\tikz.code.t
+ex"
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries
-/pgflibraryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count270
-\pgfplotmarksize=\dimen189
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibraryplothandlers.
+code.tex"
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count192
+\pgfplotmarksize=\dimen185
 )
-\tikz@lastx=\dimen190
-\tikz@lasty=\dimen191
-\tikz@lastxsaved=\dimen192
-\tikz@lastysaved=\dimen193
-\tikz@lastmovetox=\dimen194
-\tikz@lastmovetoy=\dimen195
-\tikzleveldistance=\dimen196
-\tikzsiblingdistance=\dimen197
-\tikz@figbox=\box55
-\tikz@figbox@bg=\box56
-\tikz@tempbox=\box57
-\tikz@tempbox@bg=\box58
-\tikztreelevel=\count271
-\tikznumberofchildren=\count272
-\tikznumberofcurrentchild=\count273
-\tikz@fig@count=\count274
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/p
-gfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count275
-\pgfmatrixcurrentcolumn=\count276
-\pgf@matrix@numberofcolumns=\count277
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikz@lastmovetox=\dimen190
+\tikz@lastmovetoy=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
+\tikz@figbox=\box53
+\tikz@figbox@bg=\box54
+\tikz@tempbox=\box55
+\tikz@tempbox@bg=\box56
+\tikztreelevel=\count193
+\tikznumberofchildren=\count194
+\tikznumberofcurrentchild=\count195
+\tikz@fig@count=\count196
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count197
+\pgfmatrixcurrentcolumn=\count198
+\pgf@matrix@numberofcolumns=\count199
 )
-\tikz@expandcount=\count278
+\tikz@expandcount=\count266
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendl
-ayer/tikz/libraries/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperr
-ef.sty
-Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcm
-ds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.s
-ty
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hyperref.sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdftexcmds/pdft
-excmds.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds.sty"
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/inf
-warerr.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.
+sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvs
-etkeys.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/kvsetkeys\kvsetkeys.
+sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/
-kvdefinekeys.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdf
-escape.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/pdfescape\pdfescape.
+sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor
-.sty
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/let
-ltxmacro.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/letltxmacro\letltxmacr
+o.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook
-.sty
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvopt
-ions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.st
+y
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen198
-\Hy@linkcounter=\count279
-\Hy@pagecounter=\count280
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc
-.def
-File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperr
-ef-langpatches.def
-File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
-nguages
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intca
-lc.sty
+\@linkdim=\dimen194
+\Hy@linkcounter=\count267
+\Hy@pagecounter=\count268
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/intcalc\intcalc.st
+y
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etex
-cmds.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/etexcmds\etexcmds.st
+y
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count281
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.
-def
-File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
-)
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+\Hy@SavedSpaceFactor=\count269
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count282
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count270
+("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen199
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset
-.sty
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen195
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bi
-gintcalc.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/bigintcalc\bigintcal
+c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count283
-\Field@Width=\dimen256
-\Fld@charsize=\dimen257
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
+\Fld@menulength=\count271
+\Field@Width=\dimen196
+\Fld@charsize=\dimen197
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-l
-tx.sty
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
-ge
-with kernel methods
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/atbegshi\atbegshi.st
+y
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count284
-\c@Item=\count285
-\c@Hfootnote=\count286
+\Hy@abspage=\count272
+\c@Item=\count273
+\c@Hfootnote=\count274
 )
 Package hyperref Info: Driver (autodetected): hxetex.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex
-.def
-File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/str
-ingenc.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hxetex.def"
+File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\puenc.def"
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+)
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/stringenc\stringenc.
+sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box59
-\c@Hy@AnnotLevel=\count287
-\HyField@AnnotCount=\count288
-\Fld@listcount=\count289
-\c@bookmark@seq@number=\count290
+\pdfm@box=\box57
+\c@Hy@AnnotLevel=\count275
+\HyField@AnnotCount=\count276
+\Fld@listcount=\count277
+\c@bookmark@seq@number=\count278
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/
-rerunfilecheck.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-
-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
-with kernel methods
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/atveryend\atveryend.st
+y
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter
-/uniquecounter.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/uniquecounter\unique
+counter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -599,68 +486,52 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 Package hyperref Info: Option `breaklinks' set `true' on input line 12.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption
-.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption
-3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen258
-\captionmargin@=\dimen259
-\captionwidth=\dimen260
-\caption@tempdima=\dimen261
-\caption@indent=\dimen262
-\caption@parindent=\dimen263
-\caption@hangindent=\dimen264
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.sty
+Package: caption 2020/09/02 v3.5a Customizing captions (AR)
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.sty
+Package: caption3 2020/08/30 v2.0 caption3 kernel (AR)
+\captionmargin=\dimen198
+\captionmargin@=\dimen199
+\captionwidth=\dimen256
+\caption@tempdima=\dimen257
+\caption@indent=\dimen258
+\caption@parindent=\dimen259
+\caption@hangindent=\dimen260
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count291
-\c@continuedfloat=\count292
+\c@caption@flags=\count279
+\c@continuedfloat=\count280
 Package caption Info: hyperref package is loaded.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolo
-rbox.sty
-Package: tcolorbox 2020/10/09 version 4.42 text color boxes
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/verbatim.
-sty
-Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/tcolorbox\tcolorbox.sty"
+Package: tcolorbox 2019/11/15 version 4.22 text color boxes
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\verbatim.sty"
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks29
 \verbatim@line=\toks30
 \verbatim@in@stream=\read3
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ
-.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/environ\environ.sty"
 Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trim
-spaces.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/trimspaces\trimspaces.sty"
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks31
 )
-\tcb@titlebox=\box60
-\tcb@upperbox=\box61
-\tcb@lowerbox=\box62
-\tcb@phantombox=\box63
-\c@tcbbreakpart=\count293
-\c@tcblayer=\count294
-\c@tcolorbox@number=\count295
+\tcb@titlebox=\box58
+\tcb@upperbox=\box59
+\tcb@lowerbox=\box60
+\tcb@phantombox=\box61
+\c@tcbbreakpart=\count281
+\c@tcblayer=\count282
+\tcolorbox@number=\count283
+\tcb@temp=\box62
+\tcb@temp=\box63
 \tcb@temp=\box64
 \tcb@temp=\box65
-\tcb@temp=\box66
-\tcb@temp=\box67
 \tcb@out=\write4
 \tcb@record@out=\write5
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssym
-b.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfon
-ts.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks32
 \symAMSa=\mathgroup4
@@ -668,85 +539,68 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath
-.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip57
 For additional information on amsmath, use the `?' option.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext
-.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.
-sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks33
-\ex@=\dimen265
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.
-sty
+\ex@=\dimen261
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen266
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.
-sty
+\pmbraise@=\dimen262
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count296
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count297
-\leftroot@=\count298
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count299
-\DOTSCASE@=\count300
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box68
-\strutbox@=\box69
-\big@size=\dimen267
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count301
-\c@MaxMatrixCols=\count302
+\inf@bad=\count284
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count285
+\leftroot@=\count286
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count287
+\DOTSCASE@=\count288
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box66
+\strutbox@=\box67
+\big@size=\dimen263
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count289
+\c@MaxMatrixCols=\count290
 \dotsspace@=\muskip17
-\c@parentequation=\count303
-\dspbrk@lvl=\count304
+\c@parentequation=\count291
+\dspbrk@lvl=\count292
 \tag@help=\toks34
-\row@=\count305
-\column@=\count306
-\maxfields@=\count307
+\row@=\count293
+\column@=\count294
+\maxfields@=\count295
 \andhelp@=\toks35
-\eqnshift@=\dimen268
-\alignsep@=\dimen269
-\tagshift@=\dimen270
-\tagwidth@=\dimen271
-\totwidth@=\dimen272
-\lineht@=\dimen273
+\eqnshift@=\dimen264
+\alignsep@=\dimen265
+\tagshift@=\dimen266
+\tagwidth@=\dimen267
+\totwidth@=\dimen268
+\lineht@=\dimen269
 \@envbody=\toks36
 \multlinegap=\skip58
 \multlinetaggap=\skip59
 \mathdisplay@stack=\toks37
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex
-.sty
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\ifxetex.sty"
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluate
-x.sty
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\ifluatex.sty"
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/seqsplit/seqspl
-it.sty
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/seqsplit\seqsplit.st
+y
 Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins,
  etc.) 
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.s
-ty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/base\fixltx2e.sty"
 Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
 Applying: [2015/01/01] Old fixltx2e package on input line 46.
 
@@ -755,65 +609,57 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 (fixltx2e)                See the latexrelease package for details.
 
 Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.sty
-Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.s
-ty
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.sty"
+Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count308
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.d
-ef
+\lrq@indent=\count296
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count309
-\c@listtotal=\count310
-\c@listcount=\count311
-\c@liststart=\count312
-\c@liststop=\count313
-\c@citecount=\count314
-\c@citetotal=\count315
-\c@multicitecount=\count316
-\c@multicitetotal=\count317
-\c@instcount=\count318
-\c@maxnames=\count319
-\c@minnames=\count320
-\c@maxitems=\count321
-\c@minitems=\count322
-\c@citecounter=\count323
-\c@maxcitecounter=\count324
-\c@savedcitecounter=\count325
-\c@uniquelist=\count326
-\c@uniquename=\count327
-\c@refsection=\count328
-\c@refsegment=\count329
-\c@maxextratitle=\count330
-\c@maxextratitleyear=\count331
-\c@maxextraname=\count332
-\c@maxextradate=\count333
-\c@maxextraalpha=\count334
-\c@abbrvpenalty=\count335
-\c@highnamepenalty=\count336
-\c@lownamepenalty=\count337
-\c@maxparens=\count338
-\c@parenlevel=\count339
-\blx@tempcnta=\count340
-\blx@tempcntb=\count341
-\blx@tempcntc=\count342
-\blx@maxsection=\count343
-\blx@maxsegment@0=\count344
-\blx@notetype=\count345
-\blx@parenlevel@text=\count346
-\blx@parenlevel@foot=\count347
-\blx@sectionciteorder@0=\count348
-\blx@entrysetcounter=\count349
-\blx@biblioinstance=\count350
+\c@tabx@nest=\count297
+\c@listtotal=\count298
+\c@listcount=\count299
+\c@liststart=\count300
+\c@liststop=\count301
+\c@citecount=\count302
+\c@citetotal=\count303
+\c@multicitecount=\count304
+\c@multicitetotal=\count305
+\c@instcount=\count306
+\c@maxnames=\count307
+\c@minnames=\count308
+\c@maxitems=\count309
+\c@minitems=\count310
+\c@citecounter=\count311
+\c@maxcitecounter=\count312
+\c@savedcitecounter=\count313
+\c@uniquelist=\count314
+\c@uniquename=\count315
+\c@refsection=\count316
+\c@refsegment=\count317
+\c@maxextratitle=\count318
+\c@maxextratitleyear=\count319
+\c@maxextraname=\count320
+\c@maxextradate=\count321
+\c@maxextraalpha=\count322
+\c@abbrvpenalty=\count323
+\c@highnamepenalty=\count324
+\c@lownamepenalty=\count325
+\c@maxparens=\count326
+\c@parenlevel=\count327
+\blx@tempcnta=\count328
+\blx@tempcntb=\count329
+\blx@tempcntc=\count330
+\blx@maxsection=\count331
+\blx@maxsegment@0=\count332
+\blx@notetype=\count333
+\blx@parenlevel@text=\count334
+\blx@parenlevel@foot=\count335
+\blx@sectionciteorder@0=\count336
+\blx@entrysetcounter=\count337
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -824,87 +670,85 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip67
 \blx@bcfin=\read4
 \blx@bcfout=\write6
-\blx@langwohyphens=\language3
-\c@mincomprange=\count351
-\c@maxcomprange=\count352
-\c@mincompwidth=\count353
+\blx@langwohyphens=\language78
+\c@mincomprange=\count338
+\c@maxcomprange=\count339
+\c@mincompwidth=\count340
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm
-.def
-File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\blx-dm.def"
+File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count354
-\c@savedafterword=\count355
-\c@annotator=\count356
-\c@savedannotator=\count357
-\c@author=\count358
-\c@savedauthor=\count359
-\c@bookauthor=\count360
-\c@savedbookauthor=\count361
-\c@commentator=\count362
-\c@savedcommentator=\count363
-\c@editor=\count364
-\c@savededitor=\count365
-\c@editora=\count366
-\c@savededitora=\count367
-\c@editorb=\count368
-\c@savededitorb=\count369
-\c@editorc=\count370
-\c@savededitorc=\count371
-\c@foreword=\count372
-\c@savedforeword=\count373
-\c@holder=\count374
-\c@savedholder=\count375
-\c@introduction=\count376
-\c@savedintroduction=\count377
-\c@namea=\count378
-\c@savednamea=\count379
-\c@nameb=\count380
-\c@savednameb=\count381
-\c@namec=\count382
-\c@savednamec=\count383
-\c@translator=\count384
-\c@savedtranslator=\count385
-\c@shortauthor=\count386
-\c@savedshortauthor=\count387
-\c@shorteditor=\count388
-\c@savedshorteditor=\count389
-\c@labelname=\count390
-\c@savedlabelname=\count391
-\c@institution=\count392
-\c@savedinstitution=\count393
-\c@lista=\count394
-\c@savedlista=\count395
-\c@listb=\count396
-\c@savedlistb=\count397
-\c@listc=\count398
-\c@savedlistc=\count399
-\c@listd=\count400
-\c@savedlistd=\count401
-\c@liste=\count402
-\c@savedliste=\count403
-\c@listf=\count404
-\c@savedlistf=\count405
-\c@location=\count406
-\c@savedlocation=\count407
-\c@organization=\count408
-\c@savedorganization=\count409
-\c@origlocation=\count410
-\c@savedoriglocation=\count411
-\c@origpublisher=\count412
-\c@savedorigpublisher=\count413
-\c@publisher=\count414
-\c@savedpublisher=\count415
-\c@language=\count416
-\c@savedlanguage=\count417
-\c@origlanguage=\count418
-\c@savedoriglanguage=\count419
-\c@pageref=\count420
-\c@savedpageref=\count421
+\c@afterword=\count341
+\c@savedafterword=\count342
+\c@annotator=\count343
+\c@savedannotator=\count344
+\c@author=\count345
+\c@savedauthor=\count346
+\c@bookauthor=\count347
+\c@savedbookauthor=\count348
+\c@commentator=\count349
+\c@savedcommentator=\count350
+\c@editor=\count351
+\c@savededitor=\count352
+\c@editora=\count353
+\c@savededitora=\count354
+\c@editorb=\count355
+\c@savededitorb=\count356
+\c@editorc=\count357
+\c@savededitorc=\count358
+\c@foreword=\count359
+\c@savedforeword=\count360
+\c@holder=\count361
+\c@savedholder=\count362
+\c@introduction=\count363
+\c@savedintroduction=\count364
+\c@namea=\count365
+\c@savednamea=\count366
+\c@nameb=\count367
+\c@savednameb=\count368
+\c@namec=\count369
+\c@savednamec=\count370
+\c@translator=\count371
+\c@savedtranslator=\count372
+\c@shortauthor=\count373
+\c@savedshortauthor=\count374
+\c@shorteditor=\count375
+\c@savedshorteditor=\count376
+\c@labelname=\count377
+\c@savedlabelname=\count378
+\c@institution=\count379
+\c@savedinstitution=\count380
+\c@lista=\count381
+\c@savedlista=\count382
+\c@listb=\count383
+\c@savedlistb=\count384
+\c@listc=\count385
+\c@savedlistc=\count386
+\c@listd=\count387
+\c@savedlistd=\count388
+\c@liste=\count389
+\c@savedliste=\count390
+\c@listf=\count391
+\c@savedlistf=\count392
+\c@location=\count393
+\c@savedlocation=\count394
+\c@organization=\count395
+\c@savedorganization=\count396
+\c@origlocation=\count397
+\c@savedoriglocation=\count398
+\c@origpublisher=\count399
+\c@savedorigpublisher=\count400
+\c@publisher=\count401
+\c@savedpublisher=\count402
+\c@language=\count403
+\c@savedlanguage=\count404
+\c@origlanguage=\count405
+\c@savedoriglanguage=\count406
+\c@pageref=\count407
+\c@savedpageref=\count408
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -921,57 +765,45 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip81
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-un
-icode.def)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\blx-unicode.def")
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-co
-mpat.def
-File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\blx-compat.def"
+File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.def
-File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count422
-\c@textcitetotal=\count423
-\c@textcitemaxnames=\count424
-\c@biburlbigbreakpenalty=\count425
-\c@biburlbreakpenalty=\count426
-\c@biburlnumpenalty=\count427
-\c@biburlucpenalty=\count428
-\c@biburllcpenalty=\count429
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.def"
+File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+\c@textcitecount=\count409
+\c@textcitetotal=\count410
+\c@textcitemaxnames=\count411
+\c@biburlbigbreakpenalty=\count412
+\c@biburlbreakpenalty=\count413
+\c@biburlnumpenalty=\count414
+\c@biburlucpenalty=\count415
+\c@biburllcpenalty=\count416
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count430
+\c@smartand=\count417
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/nu
-meric.bbx
-File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/bbx\numeric.bbx"
+File: numeric.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/st
-andard.bbx
-File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count431
-\c@bbx:relatedtotal=\count432
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/bbx\standard.bbx"
+File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count418
+\c@bbx:relatedtotal=\count419
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/cbx/nu
-meric.cbx
-File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/cbx\numeric.cbx"
+File: numeric.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -986,34 +818,28 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.cfg
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex\biblatex.cfg"
 File: biblatex.cfg 
-))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geomet
-ry.sty
+)) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.s
+ty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.
-sty
+("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count433
-\Gm@cntv=\count434
-\c@Gm@tempcnt=\count435
-\Gm@bindingoffset=\dimen274
-\Gm@wd@mp=\dimen275
-\Gm@odd@mp=\dimen276
-\Gm@even@mp=\dimen277
-\Gm@layoutwidth=\dimen278
-\Gm@layoutheight=\dimen279
-\Gm@layouthoffset=\dimen280
-\Gm@layoutvoffset=\dimen281
+\Gm@cnth=\count420
+\Gm@cntv=\count421
+\c@Gm@tempcnt=\count422
+\Gm@bindingoffset=\dimen270
+\Gm@wd@mp=\dimen271
+\Gm@odd@mp=\dimen272
+\Gm@even@mp=\dimen273
+\Gm@layoutwidth=\dimen274
+\Gm@layoutheight=\dimen275
+\Gm@layouthoffset=\dimen276
+\Gm@layoutvoffset=\dimen277
 \Gm@dimlist=\toks38
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyh
-dr.sty
+("C:\Program Files\MiKTeX 2.9\tex/xelatex/xetexconfig\geometry.cfg")) (C:\Users
+\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
 \f@nch@headwidth=\skip82
@@ -1026,124 +852,124 @@ rs
 \f@nch@O@olf=\skip89
 \f@nch@O@orf=\skip90
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/xelatex/mathspec/math
-spec.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/xelatex/mathspec\mathspec.st
+y
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontsp
-ec.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xpar
-se/xparse.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.
-sty
-Package: expl3 2021-02-18 L3 programming layer (loader) 
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3bac
-kend-xetex.def
-File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
-(|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count436
-\l__color_backend_stack_int=\count437
-\g__color_backend_stack_int=\count438
-\g__graphics_track_int=\count439
-\l__pdf_internal_box=\box70
-\g__pdf_backend_object_int=\count440
-\g__pdf_backend_annotation_int=\count441
-\g__pdf_backend_link_int=\count442
+("C:\Program Files\MiKTeX 2.9\tex/latex/fontspec\fontspec.sty" ("C:\Program Fil
+es\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse.sty" ("C:\Program Files\MiKTeX
+ 2.9\tex/latex/l3kernel\expl3.sty"
+Package: expl3 2020-04-06 L3 programming layer (loader) 
+("C:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-xdvipdfmx.def"
+File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count423
+\l__pdf_internal_box=\box68
+\g__pdf_backend_object_int=\count424
+\g__pdf_backend_annotation_int=\count425
 ))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xpar
-se/xparse-2020-10-01.sty
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xpar
-se/xparse-generic.tex)))
+Package: xparse 2020-03-06 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count426
+\g__xparse_grabber_int=\count427
+\l__xparse_m_args_int=\count428
+\l__xparse_v_nesting_int=\count429
+)
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontsp
-ec-xetex.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/fontspec\fontspec-xetex.sty"
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count443
-\l__fontspec_language_int=\count444
-\l__fontspec_strnum_int=\count445
-\l__fontspec_tmp_int=\count446
-\l__fontspec_tmpa_int=\count447
-\l__fontspec_tmpb_int=\count448
-\l__fontspec_tmpc_int=\count449
-\l__fontspec_em_int=\count450
-\l__fontspec_emdef_int=\count451
-\l__fontspec_strong_int=\count452
-\l__fontspec_strongdef_int=\count453
-\l__fontspec_tmpa_dim=\dimen282
-\l__fontspec_tmpb_dim=\dimen283
-\l__fontspec_tmpc_dim=\dimen284
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.st
-y
-Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontsp
-ec.cfg)))
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval
-.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyv
-al.tex
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvut
-ils.tex
+\l__fontspec_script_int=\count430
+\l__fontspec_language_int=\count431
+\l__fontspec_strnum_int=\count432
+\l__fontspec_tmp_int=\count433
+\l__fontspec_tmpa_int=\count434
+\l__fontspec_tmpb_int=\count435
+\l__fontspec_tmpc_int=\count436
+\l__fontspec_em_int=\count437
+\l__fontspec_emdef_int=\count438
+\l__fontspec_strong_int=\count439
+\l__fontspec_strongdef_int=\count440
+\l__fontspec_tmpa_dim=\dimen278
+\l__fontspec_tmpb_dim=\dimen279
+\l__fontspec_tmpc_dim=\dimen280
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/fontspec\fontspec.cfg"))) ("C:\Progra
+m Files\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.tex" ("C:\Program Fil
+es\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.tex"
 \XKV@toks=\toks39
 \XKV@tempa@toks=\toks40
 )
-\XKV@depth=\count454
+\XKV@depth=\count441
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\c@eu@=\count455
-\c@eu@i=\count456
-\c@mkern=\count457
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote
-.sty
+\c@eu@=\count442
+\c@eu@i=\count443
+\c@mkern=\count444
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.s
-ty
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty"
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
-Package hyperref Info: Option `unicode' set `true' on input line 151.
-Package hyperref Info: Option `breaklinks' set `true' on input line 151.
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype.st
+y
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+\MT@toks=\toks41
+\MT@count=\count445
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen281
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count446
 
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyv
-rb.sty
-Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count458
-\FV@InFile=\read5
-\FV@TabBox=\box71
-\c@FancyVerbLine=\count459
-\FV@StepNumber=\count460
-\FV@OutFile=\write7
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype-xe
+tex.def
+File: microtype-xetex.def 2019/11/18 v2.7d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 258.
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.s
-ty
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype.cf
+g
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+))
+Package hyperref Info: Option `unicode' set `true' on input line 151.
+
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/stringenc\se-ascii-p
+rint.def
+File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
+
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 151.
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count447
+\FV@InFile=\read5
+\FV@TabBox=\box69
+\c@FancyVerbLine=\count448
+\FV@StepNumber=\count449
+\FV@OutFile=\write7
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip91
-\fb@frw=\dimen285
-\fb@frh=\dimen286
-\FrameRule=\dimen287
-\FrameSep=\dimen288
-)
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile
-.sty
+\fb@frw=\dimen282
+\fb@frh=\dimen283
+\FrameRule=\dimen284
+\FrameSep=\dimen285
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/grffile\grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/parskip\parskip.sty
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
 )
 \csllabelwidth=\skip92
 \cslhangindent=\skip93
-\@quotelevel=\count461
-\@quotereset=\count462
-(./paper.aux)
+\@quotelevel=\count450
+\@quotereset=\count451
+(paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 263.
@@ -1157,7 +983,7 @@ LaTeX Font Info:    ... okay on input line 263.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 263.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
 63.
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 263.
@@ -1171,26 +997,24 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 263.
 LaTeX Font Info:    ... okay on input line 263.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 263.
 LaTeX Font Info:    ... okay on input line 263.
+ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box70
 Package hyperref Info: Link coloring ON on input line 263.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namere
-f.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcou
-nt.sty
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestrin
-g/gettitlestring.sty
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/generic/gettitlestring\getti
+tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count463
+\c@section@level=\count452
 )
 LaTeX Info: Redefining \ref on input line 263.
 LaTeX Info: Redefining \pageref on input line 263.
 LaTeX Info: Redefining \nameref on input line 263.
-(./paper.out) (./paper.out)
+(paper.out) (paper.out)
 \@outlinefile=\write8
 \openout8 = `paper.out'.
 
@@ -1198,25 +1022,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/en
-glish.lbx
-File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\english.lbx"
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Document encoding is UTF8 ....
-Package biblatex Info: ... and expl3
-(biblatex)             2021-02-18 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-ca
-se-expl3.sty
-Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
-)
 \openout6 = `paper.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
@@ -1224,10 +1036,9 @@ Package biblatex Info: ... file 'paper.bbl' not found.
 No file paper.bbl.
 Package biblatex Info: Reference section=0 on input line 263.
 Package biblatex Info: Reference segment=0 on input line 263.
-*geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1258,19 +1069,39 @@ Package biblatex Info: Reference segment=0 on input line 263.
 * \@reversemargintrue
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Info: Redefining \microtypecontext on input line 263.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-LatinMode
+rnRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+(C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 LaTeX Font Info:    Trying to load font information for U+msa on input line 264
 .
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.f
-d
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 264
 .
-
-(c:/Users/Jonathan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.f
-d
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\DoD_Admin\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
 Package hyperref Warning: Suppressing link with empty target on input line 290.
@@ -1284,82 +1115,87 @@ Package hyperref Warning: Suppressing link with empty target on input line 290.
 Package hyperref Warning: Suppressing link with empty target on input line 290.
 
 
-File: C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates
-/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates/joss
-/resources/JOSS-logo.png>
+File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
+s/resources/JOSS-logo.png>
 
 Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                Make it at least 62.60347pt, for example:
+(fancyhdr)                \setlength{\headheight}{62.60347pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+(fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 345.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 350.
 [1
 
 ]
 File: rmcorr_example_input_plot.jpg Graphic file (type bmp)
 <rmcorr_example_input_plot.jpg>
-File: C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates
-/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates/joss
-/resources/JOSS-logo.png>
+File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
+s/resources/JOSS-logo.png>
 
 Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                Make it at least 62.60347pt, for example:
+(fancyhdr)                \setlength{\headheight}{62.60347pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+(fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [2]
-Underfull \hbox (badness 1270) in paragraph at lines 432--438
+Underfull \hbox (badness 1270) in paragraph at lines 441--447
 \TU/lmr/m/n/10 G. (2020). Statistical significance filtering overestimates effe
 cts and impedes
  []
 
-File: C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates
-/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates/joss
-/resources/JOSS-logo.png>
+File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
+s/resources/JOSS-logo.png>
 
 Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                Make it at least 62.60347pt, for example:
+(fancyhdr)                \setlength{\headheight}{62.60347pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+(fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [3]
-File: C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates
-/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/Jonathan/Documents/R/win-library/4.0/rticles/rmarkdown/templates/joss
-/resources/JOSS-logo.png>
+File: C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/DoD_Admin/Documents/R/win-library/4.0/rticles/rmarkdown/templates/jos
+s/resources/JOSS-logo.png>
 
 Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                Make it at least 62.60347pt, for example:
+(fancyhdr)                \setlength{\headheight}{62.60347pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+(fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
-[4] (./paper.aux)
+[4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
+(paper.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 42979B4ED0D86FE5695786D45153B82C;432.
+(rerunfilecheck)             Checksum: 2E2BF2375270C88C9310EE1BF12DD62A;200.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33461 strings out of 478922
- 678326 string characters out of 5864876
- 1461639 words of memory out of 5000000
- 52797 multiletter control sequences out of 15000+600000
- 410294 words of font info for 74 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 95i,13n,103p,738b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35271 strings out of 414218
+ 689295 string characters out of 2902543
+ 1416431 words of memory out of 3000000
+ 52275 multiletter control sequences out of 15000+200000
+ 539202 words of font info for 71 fonts, out of 3000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 60i,13n,75p,1196b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on paper.pdf (4 pages).

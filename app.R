@@ -16,7 +16,7 @@ source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
-#2) I'm thinking maybe leave out the citation section in the About page until we can list the JOSS paper?
+#2) I'm thinking maybe leave out the citation section in the About page until we can list the JOSS paper? Jon: Sounds good
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
@@ -42,7 +42,7 @@ ui <- fluidPage(
              #downloadPlot, #downloadZip {margin-top: 25px}"),
 
   #Title
-  titlePanel("Shiny Repeated Measures Correlation"),
+  titlePanel("rmcorrShiny"),
 
   # Sidebar
   sidebarLayout(
@@ -244,11 +244,15 @@ ui <- fluidPage(
                                   withSpinner(
                                     htmlOutput("rmcorrResults"))
                                   ,
-                                  h4("Reportable results"),
-                                  withSpinner(
-                                    htmlOutput("rmcorrReportable"))
-                                  ,
-                                  conditionalPanel(
+                                conditionalPanel(
+                                    condition = 'input.bootstrap == false',
+                                    h4("Reportable results")),
+                                conditionalPanel(
+                                    condition = 'input.bootstrap == true',
+                                  h4("Reportable results (bootstrapped CI)")),
+                                withSpinner(
+                                  htmlOutput("rmcorrReportable")),
+                                conditionalPanel(
                                     condition = 'input.bootstrapout == true',
                                     br(),
                                     h4("Bootstrapped resamples")
