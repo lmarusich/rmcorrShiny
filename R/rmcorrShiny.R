@@ -2,6 +2,7 @@
 #'
 #' rmcorrShiny provides an intuitive interface with options to compute and plot the repeated measures correlation.
 #' @import shiny
+#' @export
 #' @seealso Web version: \url{https://lmarusich.shinyapps.io/shiny_rmcorr/}
 #' @seealso [rmcorr::rmcorr]
 #' @examples
