@@ -1,0 +1,21 @@
+Package: rmcorrShiny
+Title: Compute and plot the repeated measures correlation
+Version: 1.0.0
+Authors@R: 
+    c(person(given = "Laura",
+           family = "Marusich",
+           role = c("aut", "cre"),
+           email = "laura.m.cooper20.civ@mail.mil",
+           comment = c(ORCID = "0000-0002-3524-6110")),
+      person(given = "Jonathan",
+           family = "Bakdash",
+           role = "aut",
+            comment = c(ORCID = "0000-0002-1409-4779")))
+Description: This is a Shiny app to compute and plot the repeated measures correlation, a statistical technique for determining the overall within-individual relationship among paired measures assessed on two or more occasions, first introduced by Bland and Altman (1995). There are options to customize both the analysis and the visualizations, and users also have the ability to download the output, including the plot. For more details on the repeated measures correlation technique, see Bakdash and Marusich (2017) <doi:10.3389/fpsyg.2017.00456>.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    shiny

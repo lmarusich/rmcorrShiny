@@ -1,2 +1,5 @@
 ^rmcorrShiny\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+^JOSS paper$
+^README\.Rmd$
