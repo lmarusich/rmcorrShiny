@@ -30,8 +30,9 @@ devtools::install_github("lmarusich/shiny-rmcorr")
 
 ## Interface
 
-    ![Screenshot of rmcorrShiny with example data](rmcorr_example.input_plot.jpg)
+![Screenshot of rmcorrShiny with example
+data](rmcorr_example_input_plot.jpg)
 
 ## More information and Credits
 
-    See "About this app"
+See “About this app”
