@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rmcorrShiny is to compute and visualize repeated measures correlation (rmcorr). Rmcorr is the common within-individual linear association for paired, repeated measures data. Rmcorr is conceptually similar to a null multilevel model: A fixed slope and varying intercept by participant. 
+The goal of rmcorrShiny is to compute and visualize repeated measures correlation (rmcorr). Rmcorr is the common within-individual linear association for paired, repeated measures data. Rmcorr is conceptually similar to a null multilevel model: a fixed slope and varying intercept by participant. 
 
 ## Installation
 
