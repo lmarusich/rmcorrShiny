@@ -12,20 +12,23 @@ association for paired, repeated measures data. Rmcorr is conceptually
 similar to a null multilevel model: a fixed slope and varying intercept
 by participant.
 
-## Installation
+## Getting Started
 
-You can install the released version of rmcorrShiny from
-[CRAN](https://CRAN.R-project.org) with:
+### 1. Web application
 
-``` r
-install.packages("rmcorrShiny")
-```
+You can access and use rmcorrShiny at
+<https://lmarusich.shinyapps.io/shiny_rmcorr/>
 
-And the development version from [GitHub](https://github.com/) with:
+### 2. R package
+
+You can also install and run rmcorrShiny locally using the following
+code:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("lmarusich/shiny-rmcorr")
+devtools::install_github("lmarusich/rmcorrShiny")
+library(rmcorrShiny)
+rmcorrShiny::rmcorrShiny_run()
 ```
 
 ## Interface

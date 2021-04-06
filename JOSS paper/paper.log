@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  1 APR 2021 13:21
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  5 APR 2021 21:12
 entering extended mode
 **./paper.tex
 (paper.tex
@@ -1147,7 +1147,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [2]
-Underfull \hbox (badness 1270) in paragraph at lines 441--447
+Underfull \hbox (badness 1270) in paragraph at lines 439--445
 \TU/lmr/m/n/10 G. (2020). Statistical significance filtering overestimates effe
 cts and impedes
  []
@@ -1178,11 +1178,11 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 511.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 511.
 (paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 513.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 511.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 511.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 2E2BF2375270C88C9310EE1BF12DD62A;200.
 Package logreq Info: Writing requests to 'paper.run.xml'.
@@ -1192,10 +1192,10 @@ Package logreq Info: Writing requests to 'paper.run.xml'.
 Here is how much of TeX's memory you used:
  35271 strings out of 414218
  689295 string characters out of 2902543
- 1416431 words of memory out of 3000000
+ 1417431 words of memory out of 3000000
  52275 multiletter control sequences out of 15000+200000
  539202 words of font info for 71 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,13n,75p,1196b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,75p,1196b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on paper.pdf (4 pages).
