@@ -94,8 +94,8 @@ this brain area. See Bakdash and Marusich [-@Bakdash2017] for more information a
 interpreting repeated measures correlation.  
 \label{fig:example}](rmcorr_example_input_plot.jpg)
 
-``rmcorrShiny`` can be used in a web browser [**here**](https://lmarusich.shinyapps.io/shiny_rmcorr/) 
-or the package can be installed from Github and run locally in ``R``, using the following commands \textcolor{red}{(BIG TODO):}
+``rmcorrShiny`` can be used in a web browser [**here**](https://lmarusich.shinyapps.io/shiny_rmcorr/), 
+or the package can be installed from Github and run locally in ``R``, using the following commands: 
 
 ```r
 devtools::install_github("lmarusich/rmcorrShiny")
@@ -110,7 +110,5 @@ not be interpreted as representing the official policies, either expressed or im
 the U.S. Army Combat Capabilities Development Command Army Research Laboratory or the U.S. 
 Government. The U.S. Government is authorized to reproduce and distribute reprints for 
 Government purposes notwithstanding any copyright notation. 
-
-\textcolor{red}{We acknowledge contributions from.... }
 
 # References
