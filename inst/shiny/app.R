@@ -6,6 +6,7 @@ library(glue)
 library(stringr)
 library(tidyr)
 library(dplyr)
+library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 
 source("source/dataUploadUI.R", local = TRUE)
@@ -38,7 +39,7 @@ ui <- fluidPage(
     ),
     tags$label("Dark mode", `for` = "dark_mode", class = "custom-control-label")),
   # CSS, fixes palette picker
-  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
+  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}"),
              #downloadPlot, #downloadZip {margin-top: 25px}"),
 
   #Title
@@ -530,10 +531,12 @@ my.rmc <- rmcorr(participant = {subColumn},
       downloadButton("downloadPlot",
                      label = "Download Image"),
       br(),
+      br(),
       downloadButton('downloadZip',
                      label = 'Download Zip')
     )
   })
+  outputOptions(output, "rmcorrDownload", suspendWhenHidden = FALSE)
 
   # Download button
   output$downloadPlot <- downloadHandler(
@@ -564,6 +567,8 @@ my.rmc <- rmcorr(participant = {subColumn},
       }
     }
   )
+  outputOptions(output, "downloadPlot", suspendWhenHidden = FALSE)
+
 
   # Download zip file with script, data, and plots.
   output$downloadZip <- downloadHandler(
@@ -622,7 +627,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     },
     contentType = "application/zip"
   )
-
+  outputOptions(output, "downloadZip", suspendWhenHidden = FALSE)
 }
 shinyApp(ui = ui, server = server)
 
