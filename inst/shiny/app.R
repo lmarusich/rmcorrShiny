@@ -9,11 +9,11 @@ library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 
-source("source/dataUploadUI.R", local = TRUE)
-source("source/dataUpload.R", local = TRUE)
-source("source/formatCode.R", local = TRUE)
-source("source/createPlot.R", local = TRUE)
-source("source/paletteColours.R", local = TRUE)
+# source("source/dataUploadUI.R", local = TRUE)
+# source("source/dataUpload.R", local = TRUE)
+# source("source/formatCode.R", local = TRUE)
+# source("source/createPlot.R", local = TRUE)
+# source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
@@ -300,7 +300,7 @@ server <- function(input, output, session) {
   })
 
   # Read the input data.
-  inputData <- callModule(dataUpload,"rmcorr")
+  inputData <- dataUpload(id = "rmcorr")
 
 
   # Process the data. This is a reactive depending on the inputData!
