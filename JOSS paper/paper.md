@@ -63,9 +63,7 @@ We previously developed the ``rmcorr`` package [@R-rmcorr] in  ``R`` [@Rcore] to
 correlation technique widely available for researchers; it has since also been adapted as 
 a function in the ``Pingouin`` statistics package [@Vallat2018] for Python. However, the use 
 of both of these packages requires some facility with programming languages, which may limit
-accessibility. 
-
-Here we introduce ``rmcorrShiny``, a ``Shiny`` [@R-shiny-ref] app, which provides an intuitive graphical
+accessibility. Here we introduce ``rmcorrShiny``, a ``Shiny`` [@R-shiny-ref] app, which provides an intuitive graphical
 interface for computing and plotting the repeated measures correlation (see \autoref{fig:example}). 
 The primary features of ``rmcorrShiny`` include:
 
@@ -100,7 +98,7 @@ or the package can be installed from Github and run locally in ``R``, using the 
 ```r
 devtools::install_github("lmarusich/rmcorrShiny")
 library(rmcorrShiny)
-rmcorrShiny::rmcorrShiny_run()
+rmcorrShiny::rmcorrShiny()
 ```
 
 # Acknowledgements
@@ -109,6 +107,8 @@ The views and conclusions contained in this document are those of the authors an
 not be interpreted as representing the official policies, either expressed or implied, of 
 the U.S. Army Combat Capabilities Development Command Army Research Laboratory or the U.S. 
 Government. The U.S. Government is authorized to reproduce and distribute reprints for 
-Government purposes notwithstanding any copyright notation. 
+Government purposes notwithstanding any copyright notation.
+
+We would like to thank Derek Anderson and Erin Zaroukian for helpful feedback on the `` rmcorrShiny`` app.
 
 # References
