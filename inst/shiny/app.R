@@ -6,13 +6,9 @@ library(glue)
 library(stringr)
 library(tidyr)
 library(dplyr)
+library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 
-source("source/dataUploadUI.R", local = TRUE)
-source("source/dataUpload.R", local = TRUE)
-source("source/formatCode.R", local = TRUE)
-source("source/createPlot.R", local = TRUE)
-source("source/paletteColours.R", local = TRUE)
 
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
@@ -28,6 +24,8 @@ source("source/paletteColours.R", local = TRUE)
 light <- bs_theme()
 dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 
+options(shiny.sanitize.errors = T)
+
 ui <- fluidPage(
   theme = light,
   div(
@@ -38,7 +36,7 @@ ui <- fluidPage(
     ),
     tags$label("Dark mode", `for` = "dark_mode", class = "custom-control-label")),
   # CSS, fixes palette picker
-  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
+  tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}"),
              #downloadPlot, #downloadZip {margin-top: 25px}"),
 
   #Title
@@ -240,6 +238,11 @@ ui <- fluidPage(
       tabsetPanel(type = "tabs",
                   tabPanel("Results",
                            column(8,
+                                  h4("Variables"),
+                                  withSpinner(
+                                    htmlOutput("showvariables")
+
+                                  ),
                                   h4("Output from rmcorr"),
                                   withSpinner(
                                     htmlOutput("rmcorrResults"))
@@ -299,7 +302,7 @@ server <- function(input, output, session) {
   })
 
   # Read the input data.
-  inputData <- callModule(dataUpload,"rmcorr")
+  inputData <- dataUpload(id = "rmcorr")
 
 
   # Process the data. This is a reactive depending on the inputData!
@@ -324,14 +327,20 @@ server <- function(input, output, session) {
     my.rmc = reactive({
       req(input$subColumn)
       set.seed(input$bootseed)
-      rmcorr(participant = subColumn,
-             measure1 = m1Column,
-             measure2 = m2Column,
-             dataset = cleanedData,
-             CI.level = input$CIlevel,
-             CIs = ifelse(input$bootstrap, "bootstrap", "analytic"),
-             nreps = input$bootstrapnreps,
-             bstrap.out = input$bootstrapout)
+
+      validate(
+        need(is.numeric(cleanedData[[m1Column]]), "The 'Measure 1' column must be numeric"),
+        need(is.numeric(cleanedData[[m2Column]]), "The 'Measure 2' column must be numeric")
+      )
+        rmcorr(participant = subColumn,
+               measure1 = m1Column,
+               measure2 = m2Column,
+               dataset = cleanedData,
+               CI.level = input$CIlevel,
+               CIs = ifelse(input$bootstrap, "bootstrap", "analytic"),
+               nreps = input$bootstrapnreps,
+               bstrap.out = input$bootstrapout)
+
     })
 
     n = reactive({
@@ -402,6 +411,17 @@ my.rmc <- rmcorr(participant = {subColumn},
   outputOptions(output, "DataFilterColumnsUI", suspendWhenHidden = FALSE, priority = 10)
 
 
+  output$showvariables <- renderUI({
+    req(inputData$name())
+    subvar <- paste("Subject variable: <b>", input$subColumn, "</b>")
+    m1var <- paste("Measure 1: <b>", input$m1Column, "</b>")
+    m2var <- paste("Measure 2: <b>", input$m2Column, "</b>")
+
+    HTML(paste(subvar, m1var, m2var, sep = '</br>'))
+
+  })
+
+
   # update plot titles:
   observeEvent(input$m1Column, {
     updateTextInput(session, "xAxisTitle", value = input$m1Column)}
@@ -422,8 +442,6 @@ my.rmc <- rmcorr(participant = {subColumn},
     colsupdated(FALSE)
   }, priority = 100)
 
-
-  #Need warnings for missing data, non-numeric input in X and Y?
 
   # Generate the plot code based on input options but do not evaluate yet.
   plotCode <- reactive({createPlot(input)}) %>% bindCache({createPlot(input)})
@@ -530,10 +548,12 @@ my.rmc <- rmcorr(participant = {subColumn},
       downloadButton("downloadPlot",
                      label = "Download Image"),
       br(),
+      br(),
       downloadButton('downloadZip',
                      label = 'Download Zip')
     )
   })
+  outputOptions(output, "rmcorrDownload", suspendWhenHidden = FALSE)
 
   # Download button
   output$downloadPlot <- downloadHandler(
@@ -564,6 +584,8 @@ my.rmc <- rmcorr(participant = {subColumn},
       }
     }
   )
+  outputOptions(output, "downloadPlot", suspendWhenHidden = FALSE)
+
 
   # Download zip file with script, data, and plots.
   output$downloadZip <- downloadHandler(
@@ -622,7 +644,7 @@ my.rmc <- rmcorr(participant = {subColumn},
     },
     contentType = "application/zip"
   )
-
+  outputOptions(output, "downloadZip", suspendWhenHidden = FALSE)
 }
 shinyApp(ui = ui, server = server)
 

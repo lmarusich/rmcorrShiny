@@ -1,5 +1,5 @@
 ## Adding RColorBrewer here also because 'brewer.pal.info' is required to load
-## the UI at this moment. Same thing with ggsci
+## the UI at this moment.
 library("RColorBrewer")
 library("pals")
 
@@ -10,7 +10,7 @@ library("shinyWidgets")
 colors_pal <- lapply(
   X = split(
     x = brewer.pal.info,
-    f = factor(brewer.pal.info$category, 
+    f = factor(brewer.pal.info$category,
                labels = c("Diverging", "Qualitative", "Sequential"))
   ),
   FUN = rownames
@@ -40,7 +40,7 @@ get_brewer_name <- function(name) {
   unlist(res)
 }
 
-background_pals <- sapply(unlist(colors_pal, use.names = FALSE), 
+background_pals <- sapply(unlist(colors_pal, use.names = FALSE),
                           get_brewer_name)
 
  background_pals$coolwarm        <- coolwarm(n = ncolors)
@@ -71,5 +71,5 @@ background_pals <- unlist(lapply(X = background_pals, FUN = linear_gradient))
 
 
 #length(colors_pal)
-colortext_pals <- rep(c("white", "black", "white"), 
+colortext_pals <- rep(c("white", "black", "white"),
                       times = sapply(colors_pal, length))
