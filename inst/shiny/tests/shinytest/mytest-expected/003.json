@@ -1,6 +1,6 @@
 {
   "input": {
-    "addText": true,
+    "addText": false,
     "autoScale": true,
     "axisLabelFontSize": 15,
     "bootseed": 33,
@@ -11,32 +11,45 @@
     "dark_mode": false,
     "downloadFormat": "pdf",
     "height": 600,
-    "legendTitle": "Participants",
-    "m1Column": "pH",
-    "m2Column": "PaCO2",
-    "plotLegend": true,
+    "legendTitle": "Participant",
+    "m1Column": "Age",
+    "m2Column": "Volume",
+    "plotLegend": false,
     "plotMajorGrid": false,
     "plotMinorGrid": false,
-    "plotPalette": "PRGn",
-    "plotTheme": "theme_cowplot()",
-    "plotTitle": "Title",
+    "plotPalette": "BrBG",
+    "plotTheme": "theme_light()",
+    "plotTitle": "Main Plot Title",
     "rmcorr-decimalPoint": ".",
-    "rmcorr-excelFile": null,
+    "rmcorr-excelFile": {
+      "name": [
+        "raz2005.csv"
+      ],
+      "size": [
+        4298
+      ],
+      "type": [
+        "text/csv"
+      ],
+      "datapath": [
+        "0.csv"
+      ]
+    },
     "rmcorr-header": true,
     "rmcorr-quote": "",
     "rmcorr-sampleData": true,
     "rmcorr-sep": ",",
     "rmcorr-whichsampleData": "bland1995",
     "scaleFontSize": 15,
-    "subColumn": "Subject",
+    "subColumn": "Participant",
     "textLocation": "topleft",
-    "titleFontSize": 30,
+    "titleFontSize": 20,
     "width": 600,
     "xAxisAngle": 0,
     "xAxishjust": "0",
-    "xAxisTitle": "pH",
+    "xAxisTitle": "Age",
     "xAxisvjust": "0",
-    "yAxisTitle": "PaCO2"
+    "yAxisTitle": "Volume"
   },
   "output": {
     "bootstrapResamples": {
@@ -48,7 +61,7 @@
       ]
     },
     "DataFilterColumnsUI": {
-      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"subColumn-label\" for=\"subColumn\"><h5>Detected columns<\/h5>\n                             Subject column:<\/label>\n  <div>\n    <select id=\"subColumn\"><option value=\"Subject\" selected>Subject<\/option>\n<option value=\"pH\">pH<\/option>\n<option value=\"PaCO2\">PaCO2<\/option><\/select>\n    <script type=\"application/json\" data-for=\"subColumn\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m1Column-label\" for=\"m1Column\">Measure 1 column<\/label>\n  <div>\n    <select id=\"m1Column\"><option value=\"Subject\">Subject<\/option>\n<option value=\"pH\" selected>pH<\/option>\n<option value=\"PaCO2\">PaCO2<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m1Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m2Column-label\" for=\"m2Column\">Measure 2 column:<\/label>\n  <div>\n    <select id=\"m2Column\"><option value=\"Subject\">Subject<\/option>\n<option value=\"pH\">pH<\/option>\n<option value=\"PaCO2\" selected>PaCO2<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m2Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>",
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"subColumn-label\" for=\"subColumn\"><h5>Detected columns<\/h5>\n                             Subject column:<\/label>\n  <div>\n    <select id=\"subColumn\"><option value=\"Participant\" selected>Participant<\/option>\n<option value=\"Age\">Age<\/option>\n<option value=\"Volume\">Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"subColumn\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m1Column-label\" for=\"m1Column\">Measure 1 column<\/label>\n  <div>\n    <select id=\"m1Column\"><option value=\"Participant\">Participant<\/option>\n<option value=\"Age\" selected>Age<\/option>\n<option value=\"Volume\">Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m1Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m2Column-label\" for=\"m2Column\">Measure 2 column:<\/label>\n  <div>\n    <select id=\"m2Column\"><option value=\"Participant\">Participant<\/option>\n<option value=\"Age\">Age<\/option>\n<option value=\"Volume\" selected>Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m2Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>",
       "deps": [
         {
           "name": "selectize",
@@ -70,7 +83,7 @@
       ]
     },
     "legendTitleUI": {
-      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"legendTitle-label\" for=\"legendTitle\">Legend Title<\/label>\n  <input id=\"legendTitle\" type=\"text\" class=\"form-control\" value=\"Subject\"/>\n<\/div>",
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"legendTitle-label\" for=\"legendTitle\">Legend Title<\/label>\n  <input id=\"legendTitle\" type=\"text\" class=\"form-control\" value=\"Participant\"/>\n<\/div>",
       "deps": [
 
       ]
@@ -114,13 +127,19 @@
       ]
     },
     "rmcorrReportable": {
-      "html": "r<sub>rm<\/sub>(38) =\n-0.51,\n95% CI [-0.711,\n-0.223],\np < 0.001",
+      "html": "r<sub>rm<\/sub>(71) =\n-0.70,\n95% CI [-0.805,\n-0.564],\np < 0.001",
       "deps": [
 
       ]
     },
     "rmcorrResults": {
-      "html": "Repeated measures correlation:  -0.507<\/br>Degrees of freedom:  38<\/br>p-value: 8.47e-04<\/br>95% Confidence Interval: -0.711, -0.223",
+      "html": "Repeated measures correlation:  -0.704<\/br>Degrees of freedom:  71<\/br>p-value: 3.56e-12<\/br>95% Confidence Interval: -0.805, -0.564",
+      "deps": [
+
+      ]
+    },
+    "showvariables": {
+      "html": "Subject variable: <b> Participant <\/b><\/br>Measure 1: <b> Age <\/b><\/br>Measure 2: <b> Volume <\/b>",
       "deps": [
 
       ]

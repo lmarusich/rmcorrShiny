@@ -1,25 +1,25 @@
 {
   "input": {
-    "addText": true,
+    "addText": false,
     "autoScale": true,
     "axisLabelFontSize": 15,
     "bootseed": 33,
     "bootstrap": false,
     "bootstrapnreps": 100,
     "bootstrapout": false,
-    "CIlevel": 0.95,
+    "CIlevel": 0.9,
     "dark_mode": false,
     "downloadFormat": "pdf",
     "height": 600,
     "legendTitle": "Participant",
     "m1Column": "Age",
     "m2Column": "Volume",
-    "plotLegend": true,
+    "plotLegend": false,
     "plotMajorGrid": false,
     "plotMinorGrid": false,
-    "plotPalette": "PRGn",
-    "plotTheme": "theme_cowplot()",
-    "plotTitle": "Title",
+    "plotPalette": "Spectral",
+    "plotTheme": "theme_light()",
+    "plotTitle": "Main Plot Title",
     "rmcorr-decimalPoint": ".",
     "rmcorr-excelFile": {
       "name": [
@@ -43,7 +43,7 @@
     "scaleFontSize": 15,
     "subColumn": "Participant",
     "textLocation": "topleft",
-    "titleFontSize": 30,
+    "titleFontSize": 20,
     "width": 600,
     "xAxisAngle": 0,
     "xAxishjust": "0",
@@ -127,13 +127,19 @@
       ]
     },
     "rmcorrReportable": {
-      "html": "r<sub>rm<\/sub>(71) =\n-0.70,\n95% CI [-0.805,\n-0.564],\np < 0.001",
+      "html": "r<sub>rm<\/sub>(71) =\n-0.70,\n90% CI [-0.792,\n-0.589],\np < 0.001",
       "deps": [
 
       ]
     },
     "rmcorrResults": {
-      "html": "Repeated measures correlation:  -0.704<\/br>Degrees of freedom:  71<\/br>p-value: 3.56e-12<\/br>95% Confidence Interval: -0.805, -0.564",
+      "html": "Repeated measures correlation:  -0.704<\/br>Degrees of freedom:  71<\/br>p-value: 3.56e-12<\/br>90% Confidence Interval: -0.792, -0.589",
+      "deps": [
+
+      ]
+    },
+    "showvariables": {
+      "html": "Subject variable: <b> Participant <\/b><\/br>Measure 1: <b> Age <\/b><\/br>Measure 2: <b> Volume <\/b>",
       "deps": [
 
       ]

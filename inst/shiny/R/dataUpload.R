@@ -54,6 +54,8 @@ dataUpload <- function(id){
         )
       })
 
+
+
       conditions <- reactive({
         colnames(inputData())
       })

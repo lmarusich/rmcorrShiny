@@ -1,6 +1,6 @@
 {
   "input": {
-    "addText": true,
+    "addText": false,
     "autoScale": true,
     "axisLabelFontSize": 15,
     "bootseed": 33,
@@ -11,15 +11,15 @@
     "dark_mode": false,
     "downloadFormat": "pdf",
     "height": 600,
-    "legendTitle": "Participants",
+    "legendTitle": "Subject",
     "m1Column": "pH",
     "m2Column": "PaCO2",
-    "plotLegend": true,
+    "plotLegend": false,
     "plotMajorGrid": false,
     "plotMinorGrid": false,
-    "plotPalette": "PRGn",
+    "plotPalette": "BrBG",
     "plotTheme": "theme_cowplot()",
-    "plotTitle": "Title",
+    "plotTitle": "Main Plot Title",
     "rmcorr-decimalPoint": ".",
     "rmcorr-excelFile": null,
     "rmcorr-header": true,
@@ -30,7 +30,7 @@
     "scaleFontSize": 15,
     "subColumn": "Subject",
     "textLocation": "topleft",
-    "titleFontSize": 30,
+    "titleFontSize": 20,
     "width": 600,
     "xAxisAngle": 0,
     "xAxishjust": "0",
@@ -121,6 +121,12 @@
     },
     "rmcorrResults": {
       "html": "Repeated measures correlation:  -0.507<\/br>Degrees of freedom:  38<\/br>p-value: 8.47e-04<\/br>95% Confidence Interval: -0.711, -0.223",
+      "deps": [
+
+      ]
+    },
+    "showvariables": {
+      "html": "Subject variable: <b> Subject <\/b><\/br>Measure 1: <b> pH <\/b><\/br>Measure 2: <b> PaCO2 <\/b>",
       "deps": [
 
       ]
