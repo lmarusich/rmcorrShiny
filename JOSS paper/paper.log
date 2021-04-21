@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  20 APR 2021 13:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7380 64-bit) (preloaded format=xelatex 2020.4.17)  20 APR 2021 19:10
 entering extended mode
 **./paper.tex
 (paper.tex
@@ -1128,7 +1128,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 351.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 347.
 [1
 
 ]
@@ -1147,7 +1147,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [2]
-Underfull \hbox (badness 1270) in paragraph at lines 440--446
+Underfull \hbox (badness 1270) in paragraph at lines 443--449
 \TU/lmr/m/n/10 G. (2020). Statistical significance filtering overestimates effe
 cts and impedes
  []
@@ -1178,11 +1178,11 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.0075pt}.
 
 [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 512.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 512.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 515.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 515.
 (paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 512.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 512.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 515.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 515.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 2E2BF2375270C88C9310EE1BF12DD62A;200.
 Package logreq Info: Writing requests to 'paper.run.xml'.

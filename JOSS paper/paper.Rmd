@@ -32,9 +32,9 @@ journal: JOSS
 # Summary
 
 The most common techniques for calculating the correlation between two variables 
-(e.g., Pearson correlation coefficient) assume that each pair of data points arises from
+(e.g., Pearson correlation coefficient) assume that each pair of data points arises from an 
 independent observation. Take, for example, a study that calculates the correlation
-between a person's age and the volume of a region of the brain. In this example, each
+between age and the volume of a specific brain region for a sample of people. In this example, each
 individual contributes a data point consisting of a brain volume and an age. However, it 
 is not uncommon for studies to use repeated measures designs, such as a study that collected 
 the brain region volume and age at two different time points [@raz2005regional]. Each 
@@ -63,7 +63,9 @@ We previously developed the ``rmcorr`` package [@R-rmcorr] in  ``R`` [@Rcore] to
 correlation technique widely available for researchers; it has since also been adapted as 
 a function in the ``Pingouin`` statistics package [@Vallat2018] for Python. However, the use 
 of both of these packages requires some facility with programming languages, which may limit
-accessibility. Here we introduce ``rmcorrShiny``, a ``Shiny`` [@R-shiny-ref] app, which provides an intuitive graphical
+accessibility. 
+
+Here we introduce ``rmcorrShiny``, a ``Shiny`` [@R-shiny-ref] app, which provides an intuitive graphical
 interface for computing and plotting the repeated measures correlation (see \autoref{fig:example}). 
 The primary features of ``rmcorrShiny`` include:
 
@@ -71,9 +73,9 @@ The primary features of ``rmcorrShiny`` include:
 datasets.
 * Options for bootstrapping the confidence interval (CI) for the ``rmcorr`` effect size.
 * The display of raw data and the output from ``rmcorr`` as well as formatted output for reporting scientific results. 
-* Multiple options to generate and customize ``rmcorr`` plots (making use of the 
-``ggplot2`` package [@R-ggplot2; @ggplot22016] with palettes from the ``RColorBrewer`` 
-[@R-RColorBrewer] and ``pals`` [@R-pals] packages).
+* Multiple options to generate and customize ``rmcorr`` plots, making use of the 
+``ggplot2`` package [@R-ggplot2; @ggplot22016] and palettes from the ``RColorBrewer`` 
+[@R-RColorBrewer] and ``pals`` [@R-pals] packages.
 * Customized ``R`` code generated using the data and options chosen by the user that can be directly
 pasted and executed in ``R`` to produce the same output as in ``rmcorrShiny``, or as a 
 starting point for additional customization in ``R``. 
