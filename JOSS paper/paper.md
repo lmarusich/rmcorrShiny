@@ -21,8 +21,12 @@ affiliations:
    index: 2
  - name: Department of Psychology and Special Education, Texas A&M--Commerce
    index: 3
-date: 21 April 2021
+date: 1 April
+year: 2021
 bibliography: paper.bib
+output: rticles::joss_article
+csl: apa.csl
+journal: JOSS
 
 ---
 # Summary
