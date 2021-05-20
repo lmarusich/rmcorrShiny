@@ -26,6 +26,7 @@ dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 options(shiny.sanitize.errors = T)
 
 ui <- fluidPage(
+  tags$head(includeHTML(("google-analytics.html"))),
   theme = light,
   div(
     class = "custom-control custom-switch",
