@@ -1,9 +1,19 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHHCV7TGFD"></script>
 <script>
+  var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+  if (dnt != "1" && dnt != "yes") {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-XHHCV7TGFD');
+  gtag('config', 'G-XHHCV7TGFD',  { 'anonymize_ip': true });
+  } else {
+    console.debug("Respecting Do-Not-Track, not loading analytics. See https://www.paulfurley.com/google-analytics-dnt/");
+  }
 </script>
+
+
+
+
+
+
