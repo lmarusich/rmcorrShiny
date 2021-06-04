@@ -16,8 +16,8 @@ dataUploadUI <- function(id, label = "File input") {
                   choices = list(
                     "bland1995",
                     "gilden2010",
-                    "raz2005",
-                    "marusich2016"
+                    "marusich2016",
+                    "raz2005"
                   ),
                   multiple = FALSE)),
     fileInput(ns("excelFile"),
