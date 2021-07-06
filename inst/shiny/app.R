@@ -9,10 +9,9 @@ library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 
-
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
-#2) I'm thinking maybe leave out the citation section in the About page until we can list the JOSS paper? Jon: Sounds good
+#2) I'm thinking maybe leave out the citation section in the About page until we can list the paper? Jon: Sounds good
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
@@ -27,6 +26,7 @@ dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 options(shiny.sanitize.errors = T)
 
 ui <- fluidPage(
+  tags$head(includeHTML(("google-analytics.html"))),
   theme = light,
   div(
     class = "custom-control custom-switch",
@@ -47,46 +47,37 @@ ui <- fluidPage(
     sidebarPanel(
       tabsetPanel(
         # type = "pills",
-        tabPanel("Data",
+        tabPanel("Input",
+                 dataUploadUI("rmcorr", label = "File input")),
+        tabPanel("Data Options",
+                 uiOutput('DataFilterColumnsUI'),
                  hr(),
-                 tabsetPanel(
-                   tabPanel("Input",
-                            column(12,hr()),
-                            dataUploadUI("rmcorr", label = "File input")),
-                   tabPanel("Variables",
-                            column(12,
-                                   uiOutput('DataFilterColumnsUI')) ),
-                   tabPanel("Data options",
-                            column(12,
-                                   sliderInput("CIlevel",
-                                               label = h5("Confidence Intervals"),
-                                               min = 0.5,
-                                               max = 0.99,
-                                               value = 0.95,
-                                               step = 0.01)),
-                            column(12,
-                                   checkboxInput("bootstrap", "Bootstrap CIs?", FALSE)),
-                            conditionalPanel(
-                              condition = 'input.bootstrap == true',
-                              column(12,
-                                     numericInput("bootseed",
-                                                  label = h5("Bootstrapping Seed Value"),
-                                                  value = 33,
-                                                  step  = 1,
-                                                  min   = -999,
-                                                  max   = 999)),
-                              column(12,
-                                     numericInput("bootstrapnreps",
-                                                  label = h5("Number of resamples"),
-                                                  value = 100,
-                                                  min = 10)),
-                              column(12,
-                                     checkboxInput("bootstrapout", "Show resamples?", FALSE))
-                            )
-                   )
+                 sliderInput("CIlevel",
+                             label = h5("Confidence Intervals"),
+                             min = 0.5,
+                             max = 0.99,
+                             value = 0.95,
+                             step = 0.01),
+
+                 checkboxInput("bootstrap", "Bootstrap CIs?", FALSE),
+                 conditionalPanel(
+                   condition = 'input.bootstrap == true',
+
+                   numericInput("bootseed",
+                                label = h5("Bootstrapping Seed Value"),
+                                value = 33,
+                                step  = 1,
+                                min   = -999,
+                                max   = 999),
+
+                   numericInput("bootstrapnreps",
+                                label = h5("Number of resamples"),
+                                value = 100,
+                                min = 10),
+
+                   checkboxInput("bootstrapout", "Show resamples?", FALSE)
                  )
-        )
-        ,
+        ),
         tabPanel("Plot Options",
                  hr()
                  ,
