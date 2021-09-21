@@ -48,7 +48,7 @@ dataUpload <- function(id){
           header = input$header,
           sep = input$sep,
           quote = input$quote,
-          check.names = FALSE,
+          check.names = TRUE,
           dec = input$decimalPoint
         )
       })
@@ -72,7 +72,7 @@ inputData <- read.delim2("{name()}",
                           header = {input$header},
                           sep = \'', sepCode, '\',
                           quote = ', quoteCode, ',
-                          check.names = FALSE,
+                          check.names = TRUE,
                           dec = \'{input$decimalPoint}\')\n\n')})
 
 
