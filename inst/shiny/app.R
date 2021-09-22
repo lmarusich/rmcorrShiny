@@ -439,7 +439,7 @@ my.rmc <- rmcorr(participant = {subColumn},
 
   # Evaluate the code based on the processed data.
   plotFigure <- reactive({
-    plotData <- inputData$inputData()
+    plotData <- na.omit(inputData$inputData())
     my.rmc <- processedData()$rmc()
     n <- processedData()$n()
     eval(parse(text = glue(plotCode())))
