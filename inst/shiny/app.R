@@ -9,6 +9,8 @@ library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 
+options(shiny.maxRequestSize=30*1024^2)
+
 #Items to add:
 #1) Do we want to do something different about how the bootstrap resamples are presented?
 #2) I'm thinking maybe leave out the citation section in the About page until we can list the paper? Jon: Sounds good
