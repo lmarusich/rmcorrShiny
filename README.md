@@ -28,7 +28,7 @@ code:
 # install.packages("devtools")
 devtools::install_github("lmarusich/rmcorrShiny")
 library(rmcorrShiny)
-rmcorrShiny::rmcorrShiny_run()
+rmcorrShiny::rmcorrShiny()
 ```
 
 ## Interface
