@@ -309,7 +309,6 @@ server <- function(input, output, session) {
 
   dataManipulation <- function(input) {
 
-
     subColumn <- input$subColumn
     m1Column <- input$m1Column
     m2Column <- input$m2Column
@@ -441,7 +440,7 @@ my.rmc <- rmcorr(participant = {subColumn},
 
   # Evaluate the code based on the processed data.
   plotFigure <- reactive({
-    plotData <- na.omit(inputData$inputData())
+    plotData <- inputData$inputData()
     my.rmc <- processedData()$rmc()
     n <- processedData()$n()
     eval(parse(text = glue(plotCode())))

@@ -2,14 +2,18 @@ library("ggplot2")
 library("cowplot")
 library("RColorBrewer")
 library("pals")
+library("dplyr")
 
 
 createPlot <- function(input) {
 
-  p <- 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
+  p <- 'plotData <- na.omit(select(plotData,all_of(c("{input$subColumn}", "{input$m1Column}", "{input$m2Column}")))) \n'
+
+
+  p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
   group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
 geom_point(aes(colour = factor({input$subColumn}))) + \\
-geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + '
+geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + ')
 
   p <- paste0(p, 'ggtitle("{input$plotTitle}") + \\
 ylab("{input$yAxisTitle}") + \\

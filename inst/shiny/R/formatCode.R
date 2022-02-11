@@ -3,7 +3,9 @@ formatCode <- function(input, dataLoadingCode, dataManipulationCode
 
   librariesCode <- getLibrariesCode(input)
 
-  prePlotCode <- '## And plot the data\nplotData <- na.omit(inputData)'
+  # prePlotCode <- '## And plot the data\n'
+  prePlotCode <- '## And plot the data\nplotData <- inputData'
+
 
   allCode <- glue(paste(
                         librariesCode,
