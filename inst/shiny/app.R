@@ -8,6 +8,7 @@ library(tidyr)
 library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
+library(ggiraph)
 
 options(shiny.maxRequestSize=30*1024^2)
 
@@ -259,8 +260,10 @@ ui <- fluidPage(
                   tabPanel("Plot",
                            br(),
                            withSpinner(
-                             plotOutput("rmcorrPlot",
-                                        height = "auto"))
+                             girafeOutput("rmcorrPlot",
+                                        height = "auto")),
+                           verbatimTextOutput("info")
+
 
                   ),
                   tabPanel("R Code",
@@ -443,25 +446,36 @@ my.rmc <- rmcorr(participant = {subColumn},
     plotData <- inputData$inputData()
     my.rmc <- processedData()$rmc()
     n <- processedData()$n()
-    eval(parse(text = glue(plotCode())))
+    eval(parse(text = glue(plotCode()$interactive)))
   })
 
   # Render the plot.
-  output$rmcorrPlot <- renderPlot({
+  output$rmcorrPlot <- renderGirafe({
     # We don't render the plot without inputData.
     req(inputData$name())
-    plotFigure()},
-    height = function(x) input$height,
-    width = function(x) input$width
+    girafe(ggobj = plotFigure(),
+           width_svg = input$width/72,
+           height_svg = input$height/72,
+           options = list(
+             opts_sizing(rescale = FALSE),
+             opts_hover_inv(css = "opacity:0.15"),
+             opts_hover(css = "opacity:1"),
+             opts_selection(type = "none"),
+             opts_toolbar(saveaspng = F)
+           )
+    )
+  })
 
-  )
+
+
+  output$info <- renderText({input$plot_hover$x})
 
 
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
     formatCode(input, inputData$code(), processedData()$code()
-               , plotCode()
+               , plotCode()$static
     )
   })
 

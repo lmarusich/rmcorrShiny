@@ -4,16 +4,29 @@ library("RColorBrewer")
 library("pals")
 library("dplyr")
 
-
 createPlot <- function(input) {
+  return(list(
+    staticplot = makePlotCode(input,"static"),
+    interactive = makePlotCode(input,"interactive")
+  ))
+}
+
+makePlotCode <- function(input, plottype) {
 
   p <- 'plotData <- na.omit(select(plotData,all_of(c("{input$subColumn}", "{input$m1Column}", "{input$m2Column}")))) \n'
 
-
-  p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
+  if (plottype == "static"){
+    p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
   group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
 geom_point(aes(colour = factor({input$subColumn}))) + \\
 geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + ')
+  } else if (plottype == "interactive"){
+    p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
+  group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
+geom_point_interactive(aes(colour = factor({input$subColumn}), data_id = factor({input$subColumn}))) + \\
+geom_line_interactive(aes(y = my.rmc$model$fitted.values, data_id = factor({input$subColumn})), linetype = 1) + ')
+  }
+
 
   p <- paste0(p, 'ggtitle("{input$plotTitle}") + \\
 ylab("{input$yAxisTitle}") + \\
@@ -35,8 +48,12 @@ vjust = {input$xAxisvjust})) + ')
              axis.text = element_text(size = {input$scaleFontSize}),
              axis.text.x = element_text(angle = {input$xAxisAngle}, \\
 hjust = {input$xAxishjust}, \\
-vjust = {input$xAxisvjust})) +
-  guides(colour = guide_legend(title= "{input$legendTitle}")) + ')
+vjust = {input$xAxisvjust})) + ')
+    if (plottype == "static"){
+  p <- paste0(p, 'guides(colour = guide_legend(title= "{input$legendTitle}")) + ')
+    } else if (plottype == "interactive"){
+      p <- paste0(p, 'guides(colour = guide_legend_interactive(title= "{input$legendTitle}")) + ')
+    }
   }
 
   if (input$plotMajorGrid == TRUE) {
@@ -67,7 +84,7 @@ vjust = {input$xAxisvjust})) +
 
     } else {
       ## Color Brewer
-      p <- paste0(p, 'scale_colour_manual(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')
+      p <- paste0(p, 'scale_colour_manual_interactive(values = colorRampPalette(brewer.pal({brewer.pal.info[input$plotPalette,]$maxcolors}, "{input$plotPalette}"))(n)) + ')
     }
   }
 
