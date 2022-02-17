@@ -458,10 +458,15 @@ my.rmc <- rmcorr(participant = {subColumn},
            height_svg = input$height/72,
            options = list(
              opts_sizing(rescale = FALSE),
-             opts_hover_inv(css = "opacity:0.15"),
-             opts_hover(css = "opacity:1"),
+             opts_hover_inv(css = "opacity:0.2"),
+             opts_hover(css = girafe_css(
+               css = "opacity:1;r:2pt;cursor:pointer",
+               line = "stroke-width:2px"
+             )),
              opts_selection(type = "none"),
-             opts_toolbar(saveaspng = F)
+             opts_toolbar(saveaspng = F),
+             opts_zoom(max = 5),
+             opts_tooltip(offx=15)
            )
     )
   })
