@@ -261,9 +261,7 @@ ui <- fluidPage(
                            br(),
                            withSpinner(
                              girafeOutput("rmcorrPlot",
-                                        height = "auto")),
-                           verbatimTextOutput("info")
-
+                                        height = "auto"))
 
                   ),
                   tabPanel("R Code",
@@ -306,6 +304,7 @@ server <- function(input, output, session) {
     req(inputData$name())
     req(input$subColumn)
     req(colsupdated())
+    # browser()
     dataManipulation(input)
   })
 
@@ -470,10 +469,6 @@ my.rmc <- rmcorr(participant = {subColumn},
            )
     )
   })
-
-
-
-  output$info <- renderText({input$plot_hover$x})
 
 
   # ScriptCode
