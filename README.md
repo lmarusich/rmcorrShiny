@@ -33,8 +33,14 @@ rmcorrShiny::rmcorrShiny()
 
 ## Interface
 
+### Screenshot
+
 ![Screenshot of rmcorrShiny with example
 data](rmcorr_example_input_plot.jpg)
+
+### Demo of Interactive Plot
+
+![Animated gif of interactive plot](interactiondemo.gif)
 
 ## More information and Credits
 

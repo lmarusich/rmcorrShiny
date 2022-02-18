@@ -8,6 +8,7 @@ library(tidyr)
 library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
+library(ggiraph)
 
 options(shiny.maxRequestSize=30*1024^2)
 
@@ -259,7 +260,7 @@ ui <- fluidPage(
                   tabPanel("Plot",
                            br(),
                            withSpinner(
-                             plotOutput("rmcorrPlot",
+                             girafeOutput("rmcorrPlot",
                                         height = "auto"))
 
                   ),
@@ -303,6 +304,7 @@ server <- function(input, output, session) {
     req(inputData$name())
     req(input$subColumn)
     req(colsupdated())
+    # browser()
     dataManipulation(input)
   })
 
@@ -443,25 +445,37 @@ my.rmc <- rmcorr(participant = {subColumn},
     plotData <- inputData$inputData()
     my.rmc <- processedData()$rmc()
     n <- processedData()$n()
-    eval(parse(text = glue(plotCode())))
+    eval(parse(text = glue(plotCode()$interactive)))
   })
 
   # Render the plot.
-  output$rmcorrPlot <- renderPlot({
+  output$rmcorrPlot <- renderGirafe({
     # We don't render the plot without inputData.
     req(inputData$name())
-    plotFigure()},
-    height = function(x) input$height,
-    width = function(x) input$width
-
-  )
+    girafe(ggobj = plotFigure(),
+           width_svg = input$width/72,
+           height_svg = input$height/72,
+           options = list(
+             opts_sizing(rescale = FALSE),
+             opts_hover_inv(css = "opacity:0.2"),
+             opts_hover(css = girafe_css(
+               css = "opacity:1;r:2pt;cursor:pointer",
+               line = "stroke-width:2px"
+             )),
+             opts_selection(type = "none"),
+             opts_toolbar(saveaspng = F),
+             opts_zoom(max = 5),
+             opts_tooltip(offx=15)
+           )
+    )
+  })
 
 
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
     formatCode(input, inputData$code(), processedData()$code()
-               , plotCode()
+               , plotCode()$static
     )
   })
 
