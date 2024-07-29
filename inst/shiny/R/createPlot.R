@@ -17,12 +17,11 @@ makePlotCode <- function(input, plottype) {
 
   if (plottype == "static"){
     p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
-  group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
-geom_point(aes(colour = factor({input$subColumn}))) + \\
-geom_line(aes(y = my.rmc$model$fitted.values), linetype = 1) + ')
+  color = factor({input$subColumn}))) + \\
+geom_rmc(my.rmc) + ')
   } else if (plottype == "interactive"){
     p <- paste0(p, 'ggplot(plotData, aes(x = {input$m1Column}, y = {input$m2Column}, \\
-  group = factor({input$subColumn}), color = factor({input$subColumn}))) + \\
+  color = factor({input$subColumn}))) + \\
 geom_point_interactive(aes(colour = factor({input$subColumn}), data_id = factor({input$subColumn}), tooltip = paste0("{input$subColumn}: ", factor({input$subColumn})))) + \\
 geom_line_interactive(aes(y = my.rmc$model$fitted.values, data_id = factor({input$subColumn}), tooltip = paste0("{input$subColumn}: ", factor({input$subColumn}))), linetype = 1) + ')
   }
@@ -39,16 +38,14 @@ scale_shape_identity() + ')
              plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
              axis.title = element_text(size = {input$axisLabelFontSize}),
              axis.text = element_text(size = {input$scaleFontSize}),
-             axis.text.x = element_text(angle = {input$xAxisAngle}, \\
-hjust = {input$xAxishjust}, \\
-vjust = {input$xAxisvjust})) + ')
+             axis.text.x = element_text(angle = {input$xAxisAngle}, hjust = {input$xAxishjust}),
+             axis.text.y = element_text(vjust = {input$yAxisvjust})) + ')
   } else {
     p <- paste0(p, 'theme(plot.title = element_text(size = {input$titleFontSize}, hjust = 0.5),
              axis.title = element_text(size = {input$axisLabelFontSize}),
              axis.text = element_text(size = {input$scaleFontSize}),
-             axis.text.x = element_text(angle = {input$xAxisAngle}, \\
-hjust = {input$xAxishjust}, \\
-vjust = {input$xAxisvjust})) + ')
+             axis.text.x = element_text(angle = {input$xAxisAngle}, hjust = {input$xAxishjust}),
+             axis.text.y = element_text(vjust = {input$yAxisvjust})) + ')
 
   p <- paste0(p, 'guides(colour = guide_legend(title= "{input$legendTitle}")) + ')
 
@@ -87,7 +84,8 @@ vjust = {input$xAxisvjust})) + ')
   }
 
   if (input$autoScale == FALSE) {
-    p <- paste0(p, 'ylim({input$minScale}, {input$maxScale}) + ')
+    p <- paste0(p, 'xlim({input$xminScale}, {input$xmaxScale}) +
+  ylim({input$yminScale}, {input$ymaxScale}) + ')
   }
 
   if (input$addText == TRUE){

@@ -5,10 +5,10 @@ account: lmarusich
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3778364
-bundleId: 5569971
+bundleId: 6636898
 url: https://lmarusich.shinyapps.io/shiny_rmcorr/
-when: 1644604079.08516
-lastSyncTime: 1644604079.08516
+when: 1671037125.75398
+lastSyncTime: 1671037125.75399
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: tests

@@ -20,17 +20,17 @@ source("source/downloadPlot.R",   local = TRUE)
 
 #Items to add:
 #1) Add: Sample size (N) and mean repeated measures (k) with range (min and max)?
-#2) Need warnings for: missing data, non-numeric input in X and Y, and too few palette colors (N/A since ggsci and qual pals are removed)? 
+#2) Need warnings for: missing data, non-numeric input in X and Y, and too few palette colors (N/A since ggsci and qual pals are removed)?
 #4) Palettes and plots
-  #a) Set default with enough colors to graph all participants. 
-  #b)DONE! Drop ggsci and qual palettes? 
+  #a) Set default with enough colors to graph all participants.
+  #b)DONE! Drop ggsci and qual palettes?
   #  DONE! Maybe pals recommended? https://cran.r-project.org/web/packages/pals/vignettes/pals_examples.html
-  #c) Cut off the first color in sequential by default? The first color is usually too faint to see 
-  #d)DONE! Add download plot and download zip buttons: 
+  #c) Cut off the first color in sequential by default? The first color is usually too faint to see
+  #d)DONE! Add download plot and download zip buttons:
 #5) How to handle p-values that round to zero? Round to p < 0.001 instead? Add sci notation elsewhere for exact value in Output at the top?
 #6) Overall fit using data averaged by participant? Output OLS regression and option to add to plots?
 
-#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code  
+#Jon: I can record a video tutorial and we can embed in Shiny- maybe in about? An interactive tutorial in Shiny would be really challenging to code
 
 #Pie in the sky items
 #1) Power calculation: Could be an additional panel?
@@ -43,7 +43,7 @@ dark  <- bs_theme(bg = "black", fg = "white", primary = "lightblue")
 ui <- fluidPage(
   theme = light,
   div(
-    class = "custom-control custom-switch", 
+    class = "custom-control custom-switch",
     tags$input(
       id = "dark_mode", type = "checkbox", class = "custom-control-input",
       onclick = HTML("Shiny.setInputValue('dark_mode', document.getElementById('dark_mode').value);")
@@ -52,12 +52,12 @@ ui <- fluidPage(
   #theme = shinytheme("paper"),
   # CSS, fixes palette picker (//github.com/gabrifc/raincloud-shiny/issues/12)
   tags$style(".bootstrap-select .dropdown-menu li a span.text {width: 100%;}
-              #downloadPlot, #downloadZip {margin-top: 25px}"), 
-  
-  #Title 
+              #downloadPlot, #downloadZip {margin-top: 25px}"),
+
+  #Title
   titlePanel("Shiny Repeated Measures Correlation"),
-  
-  # Sidebar  
+
+  # Sidebar
   sidebarLayout(
     sidebarPanel(
       tabsetPanel(
@@ -73,7 +73,7 @@ ui <- fluidPage(
                                    uiOutput('DataFilterColumnsUI')) ),
                    tabPanel("Data options",
                             column(12,
-                                   sliderInput("CIlevel", 
+                                   sliderInput("CIlevel",
                                                label = h5("Confidence Intervals"),
                                                min = 0.5,
                                                max = 0.99,
@@ -95,7 +95,7 @@ ui <- fluidPage(
                  )
         )
         ,
-        tabPanel("Plot Options", 
+        tabPanel("Plot Options",
                  hr()
                  ,
                  tabsetPanel(
@@ -137,7 +137,7 @@ ui <- fluidPage(
                           #                label = "Image format",
                           #                buttonLabel = "Download"),
                           column(12,
-                                 p("Select the image format or download a zip file with all the 
+                                 p("Select the image format or download a zip file with all the
                                     images, the script and data used to generate the plot.")),
                           column(4,
                                  selectInput("downloadFormat",
@@ -154,13 +154,13 @@ ui <- fluidPage(
                                              ),
                                              selected = "pdf")),
                           column(4,
-                                 downloadButton("downloadPlot", 
+                                 downloadButton("downloadPlot",
                                                 label = "Download Image")),
-                          column(12, hr()), 
+                          column(12, hr()),
                           column(4,
                                  downloadButton('downloadZip',
                                                 label = 'Download Zip')),
-                          
+
                                       column(12,
                                              hr())),
                 tabPanel("Theme and colors",
@@ -289,9 +289,9 @@ ui <- fluidPage(
                                       tableOutput("bootstrapResamples"))
                                   ))),
                   tabPanel("Plot",withSpinner(
-                    plotOutput("rainCloudPlot", 
+                    plotOutput("rainCloudPlot",
                                height = "auto"))
-                    
+
                   ),
                   tabPanel("R Code",
                            column(8,
@@ -300,56 +300,56 @@ ui <- fluidPage(
                                     verbatimTextOutput("rmcorrCode")))),
                   tabPanel("Processed Data",
                            verbatimTextOutput("rainCloudDataSummary"),
-                           
+
                            tableOutput("rainCloudData"))
                   ,
                   tabPanel("About",
                            includeHTML("www/about.html"))
-                  
+
       )
     )
   )
 )
 
 server <- function(input, output, session) {
-  
-  
+
+
   observe({
     session$setCurrentTheme(
       if (isTRUE(input$dark_mode)) dark else light
     )
     })
-  
+
   # Read the input data.
   # inputData <- moduleServer("rainCloud", dataUpload)
   inputData <- callModule(dataUpload,"rainCloud")
-  
+
   # Process the data. This is a reactive depending on the inputData!
   processedData <- reactive({
-    
+
     req(input$CIlevel)
-    # callModule(dataManipulation,"rainCloud", 
+    # callModule(dataManipulation,"rainCloud",
     #           inputData,
     #           # input$subColumn,
     #           input$m1Column,
     #           input$m2Column,
     #           input$CIlevel
     # }
-    
+
     dataManipulation(input, inputData)
-    
+
   })
-  
-  
+
+
   dataManipulation <- function(input, inputData) {
-    
+
     subColumn <- input$subColumn
     m1Column <- input$m1Column
     m2Column <- input$m2Column
-    
+
     cleanedData <- select(inputData$inputData(),all_of(c(subColumn, m1Column, m2Column)))
     df <- reactive({cleanedData})
-    
+
     my.rmc = reactive({
       req(input$subColumn)
       rmcorr(participant = subColumn,
@@ -361,7 +361,7 @@ server <- function(input, output, session) {
              nreps = input$bootstrapnreps,
              bstrap.out = input$bootstrapout)
     })
-    
+
     ##Add code for calculating rmcorr
     code <- reactive({
       glue('## Calculate rmcorr using selected columns
@@ -370,44 +370,60 @@ server <- function(input, output, session) {
            measure2 = {m2Column},
            dataset = inputData)\n\n')
     })
-    
+
     return(list(
       rmc = my.rmc,
       df = df,
       code = code
     ))
   }
-  
+
   output$bootstrapResamples <- renderTable({
     # We don't render the table without inputData.
     req(inputData$name())
     processedData()$rmc()$resamples
   })
-  
+
   # UI - Data - Filter the data.
   output$DataFilterColumnsUI <- renderUI({
     req(inputData$conditions()) #conditions are the column names
     tagList(
       selectInput('subColumn',
                   label = HTML("<h5>Detected columns</h5>
-                             Subject column:"), 
+                             Subject column:"),
                   choices = inputData$conditions(),
                   selected = inputData$conditions()[1],
                   multiple = FALSE),
       selectInput('m1Column',
-                  label = HTML("Measure 1 column"), 
+                  label = HTML("Measure 1 column"),
                   choices = inputData$conditions(),
                   selected = inputData$conditions()[2],
                   multiple = FALSE),
       selectInput('m2Column',
-                  label = HTML("Measure 2 column:"), 
+                  label = HTML("Measure 2 column:"),
                   choices = inputData$conditions(),
                   selected = inputData$conditions()[3],
                   multiple = FALSE)
     )
   })
   outputOptions(output, "DataFilterColumnsUI", suspendWhenHidden = FALSE)
-  
+
+  # UI - Plot - default scale limits.
+  output$scaleLimitsUI <- renderUI({
+    tagList(
+      column(6,
+             numericInput("minScale",
+                          label = h5("Min Scale Limit"),
+                          value = 0)
+      ),
+      column(6,
+             numericInput("maxScale",
+                          label = h5("Max Scale Limit"),
+                          value = round(max(processedData()$df()$value)*1.1))
+      )
+    )
+  })
+
   # update plot titles:
   observeEvent(input$m1Column, {
       updateTextInput(session, "xAxisTitle", value = input$m1Column)}
@@ -419,14 +435,14 @@ server <- function(input, output, session) {
 
   # Generate the plot code based on input options but do not evaluate yet.
   plotCode <- reactive({createPlot(input)})
-  
+
   # Evaluate the code based on the processed data.
   plotFigure <- reactive({
     plotData <- processedData()$df()
     my.rmc <- processedData()$rmc()
     eval(parse(text = glue(plotCode())))
   })
-  
+
   # Render the plot.
   output$rainCloudPlot <- renderPlot({
     # We don't render the plot without inputData.
@@ -437,8 +453,8 @@ server <- function(input, output, session) {
     height = 600,
     width = 600
   )
-  
-  
+
+
   # ScriptCode
   scriptCode <- reactive({
     # cat(file=stderr(), processedData()$code())
@@ -446,21 +462,21 @@ server <- function(input, output, session) {
                , plotCode()
     )
   })
-  
-  
+
+
   output$rmcorrCode <- renderText({
     # We don't render the code without inputData.
     req(inputData$name())
     # inputData$code()
     scriptCode()
-    
+
   })
-  
+
   # Download button
   output$downloadPlot <- downloadHandler(
     filename = function() {
       # rainCloudPlot-inputdata.txt.pdf
-      paste(paste('rainCloudPlot-',inputData$name(), sep = ""), 
+      paste(paste('rainCloudPlot-',inputData$name(), sep = ""),
             input$downloadFormat, sep = ".")
     },
     content = function(file) {
@@ -469,7 +485,7 @@ server <- function(input, output, session) {
                plot = plotFigure(),
                device = input$downloadFormat,
                # Width and height are in inches. We increase the dpi to 300, so we
-               # have to divide by 72 (original default pixels per inch) 
+               # have to divide by 72 (original default pixels per inch)
                width = input$width / 72,
                height = input$height / 72,
                compression = "lzw",
@@ -480,7 +496,7 @@ server <- function(input, output, session) {
                plot = plotFigure(),
                device = input$downloadFormat,
                # Width and height are in inches. We increase the dpi to 300, so we
-               # have to divide by 72 (original default pixels per inch) 
+               # have to divide by 72 (original default pixels per inch)
                width = input$width / 72,
                height = input$height / 72,
                units = "in",
@@ -488,7 +504,7 @@ server <- function(input, output, session) {
       }
     }
   )
-  
+
 # Print the data
   output$rmcorrResults <- renderUI({
     req(inputData$name())
@@ -496,28 +512,28 @@ server <- function(input, output, session) {
     str_rrm <- paste("Repeated measures correlation: ", round(processedData()$rmc()$r, digits = 3))
     str_df  <- paste("Degrees of freedom: ", processedData()$rmc()$df)
     str_p   <- paste("p-value:", round(processedData()$rmc()$p, digits = 3))
-    str_CI  <- paste(CIlevel,"% Confidence Interval: ", 
+    str_CI  <- paste(CIlevel,"% Confidence Interval: ",
                      paste0(round(processedData()$rmc()$CI[1], digits = 3), sep = ", ", round(processedData()$rmc()$CI[2], digits = 3)), sep = "")
     HTML(paste(str_rrm, str_df, str_p, str_CI, sep = '</br>'))
-    
+
   })
-  
+
   output$rmcorrReportable <- renderUI({
     req(inputData$name())
     CIlevel <- processedData()$rmc()$CI.level * 100
-    HTML(glue("r<sub>rm</sub>({processedData()$rmc()$df}) = 
-              {round(processedData()$rmc()$r, digits = 2)}, 
+    HTML(glue("r<sub>rm</sub>({processedData()$rmc()$df}) =
+              {round(processedData()$rmc()$r, digits = 2)},
               {CIlevel}% CI [{round(processedData()$rmc()$CI[1], digits = 3)},
-              {round(processedData()$rmc()$CI[2], digits = 3)}], 
+              {round(processedData()$rmc()$CI[2], digits = 3)}],
               {ifelse(processedData()$rmc()$p < .001, 'p < 0.001', paste('p = ',round(processedData()$rmc()$p, digits = 3),sep = ''))}"))
   })
-  
+
   output$rainCloudDataSummary <- renderPrint({
     # We don't render the table without inputData.
     req(inputData$name())
     summary(processedData()$df())
   })
-  
+
   output$rainCloudData <- renderTable({
     # We don't render the table without inputData.
     req(inputData$name())

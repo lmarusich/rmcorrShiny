@@ -1,0 +1,151 @@
+{
+  "input": {
+    "addText": false,
+    "autoScale": true,
+    "axisLabelFontSize": 15,
+    "bootseed": 33,
+    "bootstrap": false,
+    "bootstrapnreps": 100,
+    "bootstrapout": false,
+    "CIlevel": 0.95,
+    "dark_mode": false,
+    "downloadFormat": "pdf",
+    "height": 600,
+    "legendTitle": "Participant",
+    "m1Column": "Age",
+    "m2Column": "Volume",
+    "plotLegend": false,
+    "plotMajorGrid": false,
+    "plotMinorGrid": false,
+    "plotPalette": "Spectral",
+    "plotTheme": "theme_light()",
+    "plotTitle": "Main Plot Title",
+    "rmcorr-decimalPoint": ".",
+    "rmcorr-excelFile": {
+      "name": [
+        "raz2005.csv"
+      ],
+      "size": [
+        4298
+      ],
+      "type": [
+        "text/csv"
+      ],
+      "datapath": [
+        "0.csv"
+      ]
+    },
+    "rmcorr-header": true,
+    "rmcorr-quote": "",
+    "rmcorr-sampleData": true,
+    "rmcorr-sep": ",",
+    "rmcorr-whichsampleData": "bland1995",
+    "scaleFontSize": 15,
+    "subColumn": "Participant",
+    "textLocation": "topleft",
+    "titleFontSize": 20,
+    "width": 600,
+    "xAxisAngle": 0,
+    "xAxishjust": "0",
+    "xAxisTitle": "Age",
+    "xAxisvjust": "0",
+    "yAxisTitle": "Volume"
+  },
+  "output": {
+    "bootstrapResamples": {
+      "message": "",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    },
+    "DataFilterColumnsUI": {
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"subColumn-label\" for=\"subColumn\"><h5>Detected columns<\/h5>\n                             Subject column:<\/label>\n  <div>\n    <select id=\"subColumn\"><option value=\"Participant\" selected>Participant<\/option>\n<option value=\"Age\">Age<\/option>\n<option value=\"Volume\">Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"subColumn\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m1Column-label\" for=\"m1Column\">Measure 1 column<\/label>\n  <div>\n    <select id=\"m1Column\"><option value=\"Participant\">Participant<\/option>\n<option value=\"Age\" selected>Age<\/option>\n<option value=\"Volume\">Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m1Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"m2Column-label\" for=\"m2Column\">Measure 2 column:<\/label>\n  <div>\n    <select id=\"m2Column\"><option value=\"Participant\">Participant<\/option>\n<option value=\"Age\">Age<\/option>\n<option value=\"Volume\" selected>Volume<\/option>\n<option value=\"Time\">Time<\/option><\/select>\n    <script type=\"application/json\" data-for=\"m2Column\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>",
+      "deps": [
+        {
+          "name": "selectize",
+          "version": "0.12.4",
+          "src": {
+            "href": "selectize-0.12.4"
+          },
+          "meta": null,
+          "script": [
+            "selectize.min.js",
+            "selectize-plugin-a11y.min.js"
+          ],
+          "stylesheet": "selectize.css",
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": true
+        }
+      ]
+    },
+    "legendTitleUI": {
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"legendTitle-label\" for=\"legendTitle\">Legend Title<\/label>\n  <input id=\"legendTitle\" type=\"text\" class=\"form-control\" value=\"Participant\"/>\n<\/div>",
+      "deps": [
+
+      ]
+    },
+    "rmcorrDownload": {
+      "html": "<h4>Download the plot<\/h4>\n<p>Select the image format or download a zip file with all the\n               images, the script and data used to generate the plot.<\/p>\n<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"downloadFormat-label\" for=\"downloadFormat\">Image format<\/label>\n  <div>\n    <select id=\"downloadFormat\"><optgroup label=\"Vectorial\">\n<option value=\"pdf\" selected>pdf<\/option>\n<option value=\"svg\">svg<\/option>\n<option value=\"eps\">eps<\/option>\n<\/optgroup>\n<optgroup label=\"Non-vectorial\">\n<option value=\"tiff\">tiff<\/option>\n<option value=\"png\">png<\/option>\n<\/optgroup><\/select>\n    <script type=\"application/json\" data-for=\"downloadFormat\" data-nonempty=\"\">{\"plugins\":[\"selectize-plugin-a11y\"]}<\/script>\n  <\/div>\n<\/div>\n<a id=\"downloadPlot\" class=\"btn btn-default shiny-download-link \" href=\"\" target=\"_blank\" download>\n  <i class=\"fa fa-download\" role=\"presentation\" aria-label=\"download icon\"><\/i>\n  Download Image\n<\/a>\n<br/>\n<br/>\n<a id=\"downloadZip\" class=\"btn btn-default shiny-download-link \" href=\"\" target=\"_blank\" download>\n  <i class=\"fa fa-download\" role=\"presentation\" aria-label=\"download icon\"><\/i>\n  Download Zip\n<\/a>",
+      "deps": [
+        {
+          "name": "selectize",
+          "version": "0.12.4",
+          "src": {
+            "href": "selectize-0.12.4"
+          },
+          "meta": null,
+          "script": [
+            "selectize.min.js",
+            "selectize-plugin-a11y.min.js"
+          ],
+          "stylesheet": "selectize.css",
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": true
+        },
+        {
+          "name": "font-awesome",
+          "version": "5.15.3",
+          "src": {
+            "href": "font-awesome-5.15.3"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": [
+            "css/all.min.css",
+            "css/v4-shims.min.css"
+          ],
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    },
+    "rmcorrReportable": {
+      "html": "r<sub>rm<\/sub>(71) =\n-0.70,\n95% CI [-0.805,\n-0.564],\np < 0.001",
+      "deps": [
+
+      ]
+    },
+    "rmcorrResults": {
+      "html": "Repeated measures correlation:  -0.704<\/br>Degrees of freedom:  71<\/br>p-value: 3.56e-12<\/br>95% Confidence Interval: -0.805, -0.564",
+      "deps": [
+
+      ]
+    },
+    "showvariables": {
+      "html": "Subject variable: <b> Participant <\/b><\/br>Measure 1: <b> Age <\/b><\/br>Measure 2: <b> Volume <\/b>",
+      "deps": [
+
+      ]
+    }
+  },
+  "export": {
+
+  }
+}

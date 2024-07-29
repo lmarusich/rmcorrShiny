@@ -9,6 +9,7 @@ library(dplyr)
 library(svglite)
 library(bslib) #https://rstudio.github.io/bslib/index.html
 library(ggiraph)
+library(rclipboard)
 
 options(shiny.maxRequestSize=30*1024^2)
 
@@ -31,6 +32,7 @@ options(shiny.sanitize.errors = T)
 ui <- fluidPage(
   tags$head(includeHTML(("google-analytics.html"))),
   theme = light,
+  rclipboardSetup(),
   div(
     class = "custom-control custom-switch",
     tags$input(
@@ -205,15 +207,15 @@ ui <- fluidPage(
                                                  "Left" = 0,
                                                  "Middle" = 0.5,
                                                  "Right" = 1),
-                                               selected = 0),
+                                               selected = .5),
 
-                                   selectInput("xAxisvjust",
+                                   selectInput("yAxisvjust",
                                                label = h5("Vertical Scale Justification"),
                                                choices = list(
                                                  "Top" = 0,
                                                  "Middle" = 0.5,
                                                  "Bottom" = 1),
-                                               selected = 0),
+                                               selected = .5),
 
                                    checkboxInput("autoScale",
                                                  "Automatic Scale Limits",
@@ -265,10 +267,10 @@ ui <- fluidPage(
 
                   ),
                   tabPanel("R Code",
-                           column(12,
-                                  h4("R Code"),
-                                  withSpinner(
-                                    verbatimTextOutput("rmcorrCode")))),
+                           h4("R Code"),
+                           withSpinner(verbatimTextOutput("rmcorrCode")),
+                           uiOutput("clip"),
+                           br()),
                   tabPanel("Processed Data",
                            # verbatimTextOutput("rmcorrDataSummary"),
                            htmlOutput("rmcorrDataSummary"),
@@ -380,6 +382,26 @@ my.rmc <- rmcorr(participant = {subColumn},
     )})
   outputOptions(output, "legendTitleUI", suspendWhenHidden = FALSE)
 
+  # UI - Plot - default scale limits.
+  output$scaleLimitsUI <- renderUI({
+    tagList(
+      column(12,
+             numericInput("xminScale",
+                          label = h6("X Minimum"),
+                          value = floor(min(processedData()$df()[[input$m1Column]]))),
+             numericInput("xmaxScale",
+                          label = h6("X Maximum"),
+                          value = ceiling(max(processedData()$df()[[input$m1Column]]))),
+             numericInput("yminScale",
+                            label = h6("Y Minimum"),
+                            value = floor(min(processedData()$df()[[input$m2Column]]))),
+             numericInput("ymaxScale",
+                          label = h5("Y Maximum"),
+                          value = ceiling(max(processedData()$df()[[input$m2Column]])))
+      )
+    )
+  })
+
   # UI - Data - Filter the data.
   output$DataFilterColumnsUI <- renderUI({
     req(inputData$conditions()) #conditions are the column names
@@ -452,6 +474,8 @@ my.rmc <- rmcorr(participant = {subColumn},
   output$rmcorrPlot <- renderGirafe({
     # We don't render the plot without inputData.
     req(inputData$name())
+    req(plotFigure())
+    # browser()
     girafe(ggobj = plotFigure(),
            width_svg = input$width/72,
            height_svg = input$height/72,
@@ -479,6 +503,15 @@ my.rmc <- rmcorr(participant = {subColumn},
     )
   })
 
+
+  output$clip <- renderUI({
+    rclipButton(
+      inputId = "clipbtn",
+      label = "copy code",
+      clipText = scriptCode(),
+      icon = icon("clipboard")
+    )
+  })
 
   output$rmcorrCode <- renderText({
     # We don't render the code without inputData.
